@@ -1,0 +1,1782 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Mit XMLSpy v2017 sp2 (x64) (http://www.altova.com) von Neways Technologies GmbH (Neways Technologies GmbH) bearbeitet -->
+<!-- edited with XMLSpy v2011 rel. 3 (http://www.altova.com) by Continental Automotive Romania S.R.L. (Continental Automotive Romania S.R.L.) -->
+<!--
+*****************************
+Copyright by Continental AG      
+
+Title        : ProjectConfig.xml
+
+Description  : Contains Brutus and XCompiler configurations specific to W222 project
+
+Environment  : <Description of environment e.g. operating system, processor, etc.
+
+Responsible  : <Person responsible for file>
+
+Guidelines   : <Name and Version of guidelines used>
+
+Revision List:
+Revision 1.21.1.154 2017/06/14 Mock-EXT, Ivo (uid37460) 
+DC MR 60153 MY18 205M/213 Design Variant Coding and Design Switch in Safe State (CR#38737/#29112)
+Revision 1.21.1.153 2017/05/23 15:56:07 Nicolae Bondric  (uid40502)  
+DC MR 59666, L2 Implemenation, Version changed for ttf's on VAR 205 HL
+Revision 1.21.1.152 2017/05/09 15:11:07 Carmen Rob (uidj9676)  
+DC MR 59536 213/205 HL: TRIP Split
+Revision 1.21.1.151 2017/02/14 Mos-EXT Lorena (uidq1862)
+DC MR 58416 ICBWMDL:Split BasicWidgetTree and Folderstructure of the ICBWMDL folder
+Revision 1.21.1.150 2016/12/29 Dranda-EXT Mihai (uidr3055)
+DC MR 57621 TSAMDL: New Responsible Style for 205MOPFHL MY18
+Revision 1.21.1.149 2016/11/28 Rus-EXT Razvan (uidq7682)
+DC MR 57179 BR205MOPF E033 Silhouettes Implementation
+Revision 1.21.1.148 2016/07/21 Andreea Popescu (uidp3785)
+DC MR 54602 Warning 0x2003C9 should also have the dimmed background as for door warnings (0x200571/0x2000F2)
+Revision 1.21.1.147 2016/07/05 Nicusor Bordinc (uid95791)
+DC MR 53812 E023 HL MY17: Removing obsolete screens
+Revision 1.21.1.146 2016/06/25 Andreea Popescu (uidp3785)
+DC MR 54367 Arrows to be introduced again in case of big lists
+MR 53588 MY17: Warning with soft-keys keep unlimited highlight - ÄLP 31944 / Corrections and modifications for shifted issues in E022
+Revision 1.21.1.145 2016/06/08 Carmen Rob (uidj9676)
+MR 54001 ADC : Style specific Text color configuration in HUD
+Revision 1.21.1.144 2016/06/08 Cosmin-Robert Gagea (uidw1880)
+MR 53722 BR213 e23 HL: TRC adaptations of Complex Icon for OdoBase screens
+Revision 1.21.1.143 2016/06/08 Carmen Rob (uidj9676)
+MR 52847 Add AMG Warmup SCA inactive screen
+Revision 1.21.1.142 2016/06/01 Horia, Chis (uidg9973)
+MR 53604 WIMMDL: Nightview warning 0x2004B0 should be configured with nostreet background
+Revision 1.21.1.141 2016/05/26 Moldovan-EXT, Bogdan (uidp0407)
+MR 53286 BR213, CY17,HL, L2 Implementation
+Revision 1.21.1.140 2016/04/09 Nicusor Bordinc (uid95791)
+DC MR 52064 Introduction of DiBa-Softkeys - ÄLP 18504
+Revision 1.21.1.139 2016/03/11 09:58:49CEST Chis, Horia (uidg9973)
+DC MR 52290 Warnings Air_Suspension_Offroad are displayed with street lines
+Revision 1.21.1.139 2016/03/08 Teodorescu-EXT, Corneliu (uidn9015)
+MR 51224 - BR213IC, MY17 HL: Cleanup of ARTEMMIS-Config. for XCMODEL
+Revision 1.21.1.138 2016/02/23 09:58:49CEST Chis, Horia (uidg9973)
+DC MR 51787: BR213MY17, HL, E022, new car silhouette (S_AT213)
+Revision 1.21.1.137 2016/02/27 Chis, Horia
+DC MR 51690 BR222, E022, L2 implementation
+Revision 1.21.1.138 2016/02/16 09:58:49CEST Sopt, Alexandru (uidv8350)
+DC MR 51562: BR 213 MOPF HL E022: Implement automatic generation of Safety features
+Revision 1.21.1.137 2016/01/28 17:02:49 Thekooden, Deepak (uidj7270)
+DC MR 51569: 213MY17: Progressive Sport
+Revision 1.21.1.136 2016/01/06 09:58:49CEST Chis, Horia (uidg9973)
+DC MR 50689: 222MOPF: Wireless charge warning with damping - ÄLP 23440
+Revision 1.21.1.135 2015/12/10 09:58:49CEST Moldovan-EXT, Bogdan (uidp0407)
+DC MR 50875: Changes are needed for creating Display Documentation for BR213HL MY17 E021
+Revision 1.21.1.134 2015/12/04 15:23:10CET Chis-EXT, Horia (uidg9973) 
+DC MR 50769: BR222Mopf, E021, Implement final font solution
+Revision 1.21.1.133 2015/12/04 13:25:30CEST Chis-EXT, Horia (uidg9973)
+DC MR 50938: ANIM: LISA: Bitmap resources update from styleguide 2.0
+Revision 1.21.1.132 2015/11/20 13:25:30CEST Moldovan-EXT, Bogdan (uidp0407)
+DC MR 50689: 222MOPF: Wireless charge warning with damping - ÄLP 23440
+Revision 1.21.1.131 2015/11/16 15:23:10CET Gagea, Cosmin (uidw1880) 
+DC MR 50654: BR222 MOPF E21: TRC AbStart / AbReset implementation of changes to Trip menu for full electric vehicle (ALP 16791)
+Revision 1.21.1.130 2015/10/28 Horia Chis (uidg9973) 
+DC MR 50347 BR222Mopf, E021, L2 Implementation
+Revision 1.21.1.129 2015/10/20 Horia Chis (uidg9973) 
+DC MR 50246 BR222Mopf, E021, new car silhouettes
+Revision 1.21.1.128 2015/09/10 Oliver Teuca (uidv9798) 
+DC MR 49485 Nightview: Cancel display scenario if acoustic warning is active
+Revision 1.21.1.127 2015/08/06 Hent Emil (uid94520) 
+DC MR 49271 222Mopf E021  Xcompiler:Configurations for w222Mopf E021
+Revision 1.21.1.126 2015/08/12 Adela Chirila (uidt6989) 
+DC MR 49229 WIM: Overtaken Nightview Implementation for warnings and slacks from E020 in E021
+Revision 1.21.1.125 2015/07/09 Armin Meisner (uid37488) 
+DC MR 48063 BR213 E009.3 L3 Implementation for IC and HUD
+Revision 1.21.1.124 2015/06/13 Bogdan Voiculescu (uidv0172) 
+DC MR 47901 BR213HL E009.3 MeridiemUnit for SOC_TIME
+Revision 1.21.1.123 2015/05/21 15:46:22CET Carmen Rob (uidj9676) 
+DC MR 47333 BR213 HL: Remove mapping to Dummy ComplexContent
+Revision 1.21.1.122 2015/04/28 15:46:22CET Voiculescu Bogdan (uidv0172) (uidv0172) 
+DC MR 47290 IC213HL: Fixes for resource configuration
+Revision 2015/04/23 Meisner, Armin (uid37488) 
+DC MR 47226 BR213 HL, E009.3, Wrong word position and % position in base- and loading screens
+Revision 1.21.1.120 2015/03/23 15:46:22CET Voiculescu Bogdan (uidv0172) (uidv0172) 
+DC MR 45933 IC213HL: Missing list separator lines in "Progressive"
+Revision 2015/03/05 Gheorghica-EXT, Stefan (uidv8348) 
+MR 46170 - BR213HL, E009.2, L2 implementation
+24.02.2015 23.02.2015 Bogdan Voiculescu (uidv0172)
+DC MR 45788 BR213HL: Calling the Charge Screen by its name
+23.02.2015 Hosu Oana
+DC MR 46394 BR213HL E009.2 Xcomp report clean-up
+13.02.2015 uidw6267  Radu Cheptanariu
+DC MR 46210 Xcompiler: Robustness and Improvements in MultiStyle Handling
+31.01.2015 uidv0172  Bogdan Voiculescu 
+DC MR 42896 Add chrome rings to background and update Backgrounds to E009 styleguide
+21.01.2015 uidj2632  Estera Ungureanu
+DC MR 44738 BR213HL AMG, E009.1 L2 implementation
+22.01.2015 uidv0172  Bogdan Voiculescu 
+DC MR 45893 ANIM:LISA:  ADC list separator position #15300  graphical list virtual positions #15796
+DC MR 45898 ADC lists: fix of cursor/divider x-positions
+12.11.2014 uidv0172  Bogdan Voiculescu 
+12.11.2014 uidv0172  Bogdan Voiculescu 
+DC MR 45010 IC 213HL: Implementation of Boot concept E009.1 (Widgets)
+Revision 2014/11/17 Gheorghica-EXT, Stefan (uidv8348) 
+MR 44722 - Corrections for screen 0x300039 (date) in ICBWMDL
+10.01.2015 Cucerzan, Melania (uidw2516)
+DC MR 44730 213HL E009.1: Charge screen for progressive (follow-up for MR43116)
+19.12.2014 Bordinc, Nicusor (uid95791)
+DC MR 44730 213HL E009.1: Charge screen for progressive (follow-up for MR43116)
+12.12.2014 uidv0172  Bogdan Voiculescu 
+DC MR 44854 213 HL Activation of Dirty Rect renderer for HFO
+21.11.2014 uidv0172  Bogdan Voiculescu 
+DC MR 44418 BR213HL Additional languages for manually modelled text resources
+DC MR 44075 213 HL : Consumption Bargraph in SCA
+13.11.2014 Bordinc, Nicusor (uid95791)
+DC MR 43116 BR213HL: Startup charge screen
+12.11.2014 uidv0172  Bogdan Voiculescu 
+DC MR 44116 HUD: Support progressive architecture
+04.11.2014 uidv0172  Bogdan Voiculescu 
+DC MR 43092 Edrive / Charge graphs - switch from widget to animation
+23.10.2014 uidv0172  Bogdan Voiculescu 
+DC MR 42817 ADC IC: No scroll icons are displayed (DanTe:393)
+21.10.2014 uidv0172  Bogdan Voiculescu 
+DC MR 42710 BR213 HL E9: Change drawing order for Arrows
+17.10.2014 uidv0172  Bogdan Voiculescu 
+DC MR 42710 BR213 HL E9: Change drawing order for Arrows
+16.10.2014 uidv0172  Bogdan Voiculescu 
+DC MR 42961 ANIM: LISA a bitmap optimisations for the textual list and DanTe:450 (external list)
+
+$Log: ProjectConfig.xml  $
+Revision 1.21.1.113 2015/07/09  Voiculescu, Bogdan (uidv0172) 
+DC MR 48274 Xcompiler: Remove BlinkingConfiguration from Xcompiler
+Revision 1.21.1.112 2015/03/30  Albu-EXT, Calin (uidw5006) 
+DC MR 46850 E009.2: Boot Concept adaptations
+Revision 1.21.1.111 2015/03/30 16:58:53CET Gagea, Cosmin (uidw1880) 
+DC MR 46724: 213 HL AMG : Travel Assist Specific only for Pure AMG and AMG SModell.
+Revision 1.21.1.110 2015/03/19  Ungureanu, Estera (uidj2632) 
+DC MR 46656 BR213HL AMG E009.2 SCA List
+DC MR 46478 BR213HL E009.2: Charge screen update
+Revision 1.21.1.110 2015/01/20  Ungureanu, Estera (uidj2632) 
+DC MR 44738 BR213HL AMG, E009.1 L2 implementation
+* Archive:Revision 1.5 2015/01/09 Florin Halmaciu
+* Archive:DC MR 44945 213HL Introducing AMG ShiftUp Bargraph
+* Archive:DC MR 44826 BR213HL AMG Gmeter submenu
+Revision 2014/12/03  Gheorghica-EXT, Stefan (uidv8348) 
+DC MR 44567 - BR213HL, E009.1, L2 implementation
+Revision 1.21.1.123 2014/09/10 16:39:44CEST Voiculescu, Bogdan (uidv0172) 
+Revision 1.23 2014/09/20 12:26:12CEST Xu, Qiang03 (uidw3900) 
+DC MR 42697: BR213HL E009 ATAMDL API module split
+DC MR 42442 ANIM: correction for LISA and SUA
+Revision 1.21.1.122 2014/08/31 17:25:26CEST Hosu, Oana-Valentina (uidw2143) 
+DC MR 42414 Hotfix for Speedo
+Revision 1.21.1.121 2014/08/27 18:40:48CEST Filimon, Andrei (uidt4153) 
+DC MR 42308 213 HL : XC_Model sincronization E008pre41 and E008pre45
+Revision 1.21.1.117.1.1 2014/08/25 12:12:25CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 42301 ANIM: Corrections for INAN, DAMTA, CCSA, AVICFG, CEDAA and XCMODEL
+Revision 1.21.1.120 2014/08/22 17:11:33CEST Gagea, Cosmin (uidw1880) 
+DC MR 40952: E008/WIM: Introduction of warnings in HUD - AELP 7584
+Revision 1.21.1.119 2014/08/22 17:10:11CEST Gagea, Cosmin (uidw1880) 
+DC MR 40952: E008/WIM: Introduction of warnings in HUD - AELP 7584
+Revision 1.21.1.118 2014/08/22 16:01:39CEST Muresan-EXT, Irina (uidv8351) 
+DC MR 42180 - Introduction of Slacks for Progressive based on Traditional
+Revision 1.21.1.117 2014/08/18 17:21:15CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 42169 BR213HL: Introduction of Boot Concept and Configuration of graphic resources for E008
+Revision 1.21.1.116 2014/08/17 19:41:19CEST Hosu, Oana-Valentina (uidw2143) 
+DC MR 41925 BR213 HL_prg, E008 Fonts for digital tacho
+DC MR 41942 Implementation of Speedometer
+Revision 1.21.1.115 2014/08/17 18:37:04CEST Cucerzan, Melania (uidw2516) 
+DC MR 41640 - Turbine - TurbineGraphControl
+DC MR 41641 - Turbine - RPM Manager
+Revision 1.21.1.114 2014/08/17 18:08:36CEST Filimon, Andrei (uidt4153) 
+DC MR 42169 BR213HL: Introduction of Boot Concept and Configuration of graphic resources for E008
+Revision 1.21.1.113 2014/08/17 12:39:06CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 41746 Xcompiler: integration MR for BR213 HL E008 Pre40 (support the multi-architectures 4. step)
+Revision 1.21.1.112 2014/08/17 09:55:39CEST Gagea, Cosmin (uidw1880) 
+DC MR 41449: Telltales: implement progressive variant
+Revision 1.21.1.111 2014/08/14 16:12:30CEST Halmaciu, Florin (uidl6278) 
+DC MR 41979 PF3NG BR213 HL Introduction Package AMAN    Architecture Manager and Configuration of Navigation Logic
+Revision 1.21.1.110 2014/08/13 15:36:54CEST Ungureanu, Estera (uidj2632) 
+DC MR 41755 BR213HL E8pre40  - ANIM PRG: Introduction of CEDISA - Central Display Speedo Animation  (Progressive)
+Revision 1.21.1.109 2014/08/12 18:47:55CEST Ciuca, Gabriela (uidt7271) 
+DC MR 40955 correction
+Revision 1.21.1.108 2014/08/07 17:05:22CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 40923 All DTK Widget Classes Introduction of Complete Model Split providing PackageConfig.xml documents
+Revision 1.21.1.107 2014/08/07 12:36:44CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 41804 ANIM: LISA a bitmap optimisations for the textual list and DanTe:329 (cursor invisible)
+Revision 1.21.1.106 2014/08/07 12:23:42CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 41674 Layer Concept - E008 2nd wave
+Revision 1.21.1.105 2014/08/06 10:41:36CEST Muresan-EXT, Irina (uidv8351) 
+DC MR 41558 - BR213HL E008 Changelist #9288: Implementation of Tire Temperature warnings
+Revision 1.21.1.104 2014/07/31 15:43:47CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 41897 BR213HL E008 pre20 HMI Patches for integration
+Revision 1.21.1.103 2014/07/31 08:33:03CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 41897 BR213HL E008 pre20 HMI Patches for integration
+Revision 1.21.1.102 2014/07/25 15:48:07CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 41357 WIMMDL: Introduction of progressive architecture for WarningsStandard/FaultMemController
+Revision 1.21.1.101 2014/07/25 15:25:54CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 41523 213HL: Warning 0x2003C0 is shown with wrong background
+Revision 1.21.1.100 2014/07/25 13:05:37CEST Gheorghica-EXT, Stefan (uidv8348) 
+DC MR 41790 - Follow-Up MR L2 Implementation
+DC MR 41175 - BR213E008 Menu tree for progressive architecture
+Revision 1.21.1.99 2014/07/23 08:40:51CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 41221 ANIM: Layer concept E008 - step 1
+Revision 1.21.1.98 2014/07/21 15:18:26CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 41357 WIMMDL: Introduction of progressive architecture for WarningsStandard/FaultMemController
+DC MR 41523 213HL: Warning 0x2003C0 is shown with wrong background
+(rollback)
+Revision 1.21.1.97 2014/07/21 15:03:39CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 41523 213HL: Warning 0x2003C0 is shown with wrong background
+Revision 1.21.1.96 2014/07/21 14:57:42CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 41357 WIMMDL: Introduction of progressive architecture for WarningsStandard/FaultMemController
+Revision 1.21.1.95 2014/07/09 12:55:46CEST Gheorghica-EXT, Stefan (uidv8348) 
+DC MR 40955 - BR213 HighLine, E008, L2 Implementation
+Revision 1.21.1.94 2014/06/05 08:50:48CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 41037 Bugfixes for ADC Grids / Lists of BR213 HL E007
+Revision 1.21.1.93 2014/05/28 09:10:25CEST Chirila Rosa, Adela (uidt6989) 
+DC MR 40533 BR213HL. E007, Implementation of L3
+Revision 1.21.1.92 2014/05/27 16:14:16CEST Gheorghica-EXT, Stefan (uidv8348) 
+DC MR 40061 - BR213HL Configuration of graphic resources for E007
+Revision 1.21.1.91 2014/05/23 14:37:18CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 40912 BR213 HL E007 pre40: Fix for XCMODEL issues found during integration
+Revision 1.21.1.90 2014/05/15 09:43:44CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 40792 Animation: remove Brutus warnings of animation conflicts
+Revision 1.21.1.89 2014/04/29 14:59:44CEST Gagea, Cosmin (uidw1880) 
+DC MR 40599: BR213HL_GC:Remove CFG screen's
+Revision 1.21.1.88 2014/04/25 16:43:23CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 39415 ANIM: Introduction of CCSA - Centered Content Switch Animation  (formerly known as Travel Content Switch)
+DC MR 39417 ANIM: Introduction of SCSA - Selectable Content Switch Animation
+DC MR 39418 ANIM: Introduction of SHMA - Single-line Handling Message Animation
+DC MR 40047 ANIM: Introduction of DAMTA - Dynamic Area Menu Turn Animation
+Revision 1.21.1.87 2014/04/17 09:59:52CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 40016 BR213GC_HL: Startup MR for the OFN implementation(GC)
+Revision 1.21.1.86 2014/04/15 08:22:50CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 39885 ANIM: Creation of new gear Animation (GEA)
+Revision 1.21.1.85 2014/04/14 08:47:27CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 34277 BR213 High Line Start up LIST - Widget in 213 HL
+DC MR 39764 BR213HL: Startup MR for package SLDMDL
+Revision 1.21.1.84 2014/04/08 16:37:15CEST Cucerzan, Melania (uidw2516) 
+DC MR 38069 - BR213HL E007, L2-HUD implementation
+Revision 1.21.1.83 2014/04/08 14:48:11CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 40289 XCompiler: Integration MR for the BR213 HL E007 Pre35
+Revision 1.21.1.82 2014/04/08 14:05:12CEST Cucerzan, Melania (uidw2516) 
+DC MR 38069 - BR213HL E007, L2-HUD implementation
+DC MR 40140 - BR213HL, E007 Graphical List (Grid IC_039)
+Revision 1.21.1.81 2014/04/08 13:47:23CEST Gagea, Cosmin (uidw1880) 
+DC MR 37982: WIM: Introduction of "Singleline Acknowledgements" - MR47
+Revision 1.21.1.80 2014/04/02 16:23:39CEST Sopt-EXT, Alexandru (uidv8350) 
+DC MR 37966 Implement Bargraph display for fuel level gauge display
+DC MR 39251 BR213HL GC: Implement right tube changes
+Revision 1.21.1.79 2014/04/01 15:30:19CEST Gagea, Cosmin (uidw1880) 
+DC MR 39953: ANIM: Introduction of BCA - Blinking Content Animation
+Revision 1.21.1.78 2014/03/29 15:49:31CET Gheorghica-EXT, Stefan (uidv8348) 
+DC MR 39825 - Implementation of 213HIL concept in ICBWMDL
+Revision 1.21.1.77 2014/03/29 11:27:12CET Yuan, Peilin (uidw7152) 
+DC MR 39940  BR213HL: Module split HUDSI
+Revision 1.21.1.76 2014/03/28 15:58:03CET Voiculescu, Bogdan (uidv0172) 
+DC MR 39980 ANIM: Layer concept E007pre25
+Revision 1.21.1.75 2014/03/28 15:54:43CET Voiculescu, Bogdan (uidv0172) 
+DC MR 34277 BR213 High Line Start up LIST - Widget in 213 HL
+Revision 1.21.1.74 2014/03/28 15:19:56CET Voiculescu, Bogdan (uidv0172) 
+DC MR 40075 AnimScheduler Configuration in AMMDL initial
+Revision 1.21.1.73 2014/03/28 15:07:39CET Voiculescu, Bogdan (uidv0172) 
+DC MR 39816 ANIM: Introduction of LISA with the Overlay List and the Textual List and related ARTEMMIS patches
+Revision 1.21.1.72 2014/03/27 09:34:11CET Voiculescu, Bogdan (uidv0172) 
+DC MR 40075 AnimScheduler Configuration in AMMDL initial
+Revision 1.21.1.71 2014/03/24 17:57:47CET Cucerzan, Melania (uidw2516) 
+DC MR 38068 - BR213HL, E007, Implementation of L2
+Revision 1.21.1.70 2014/03/19 15:56:23CET Hosu, Oana-Valentina (uidw2143) 
+DC MR 39929 BR213IC-GC-HL_SOP DFW Introduction of the new HilCollectorWidget
+Revision 1.21.1.69 2014/03/17 12:29:26CET Sopt-EXT, Alexandru (uidv8350) 
+DC MR 39641: BR213HL GC: Status area changes for E007
+Revision 1.21.1.68 2014/02/10 16:03:09CET Voiculescu, Bogdan (uidv0172) 
+DC MR 38046 Implementation of preL2 into SW frame
+Revision 1.21.1.67 2014/02/06 09:16:16CET Mircea, Liviu (uidw3748) 
+DC MR 37994 Trip: Correct Trip reset confirmation into IC language
+Revision 1.21.1.66 2014/01/09 09:48:22CET Gheorghica-EXT, Stefan (uidv8348) 
+DC MR 36864 - Introduction of BootMgr into GC-HL system
+Revision 1.21.1.65 2013/12/20 11:40:25CET Filimon, Andrei (uidt4153) 
+DC MR 36695 ANIM TTA (E006) Introduction of the blinking content animation (Telltals only)
+Revision 1.21.1.64 2013/12/20 10:46:40CET Mircea, Liviu (uidw3748) 
+DC MR 36725 ANIM: BGCA(E006): Introduction of the background change animation (e.g. day/night)
+Revision 1.21.1.63 2013/12/11 16:45:45CET Filimon, Andrei (uidt4153) 
+DC MR 36695 ANIM: TTA (E006): Introduction of the blinking content animation (Telltals only)
+DC MR 36696 ANIM: ESA(E006): Introduction of the eco score animation
+DC MR 37396 ANIM: AVICFG (E006): layer concept and init animations
+Revision 1.21.1.62 2013/12/09 09:06:50CET Gheorghica-EXT, Stefan (uidv8348) 
+DC MR 37421 - Startup MR ICBWMDL
+Revision 1.21.1.60 2013/12/06 12:46:45CET Voiculescu, Bogdan (uidv0172) 
+DC MR 34569 HUD: Completion of model split
+DC MR 36475 HUD: Implement and verify the whole HUD and Warping functionality
+Revision 1.21.1.59 2013/11/27 14:34:00CET Filimon, Andrei (uidt4153) 
+Correction of WAG_PackageConfig.xml for integration
+Revision 1.21.1.58 2013/11/21 13:36:41CET Filimon, Andrei (uidt4153) 
+DC MR 36486 Model: Remove WarningsNightView widget from widget tree
+DC MR 36902 Move Configuration_Includes.xml in integrator area
+Revision 1.21.1.57 2013/10/21 12:27:49CEST Filimon, Andrei (uidt4153) 
+Overtake integration patches
+Revision 1.21.1.56 2013/10/21 12:10:51CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 36318 ADC/ExtKI BR213 HL: Kickoff for HUD functionality
+Revision 1.21.1.55 2013/10/07 11:16:30CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 33856 W213 HL ADC/ExtKI: Model split for API/Model/Ressources of the ADC functionality
+Revision 1.21.1.54 2013/10/03 15:59:17CEST Cucerzan, Melania (uidw2516) 
+MR36102 - BR213HL/GC/E005.1/SAC: finalise model split for SAC
+Revision 1.21.1.53 2013/09/27 09:21:14CEST Filimon, Andrei (uidt4153) 
+DC MR 36119 ANIM First animations introduction
+Revision 1.21.1.52 2013/09/25 13:45:10CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 36238 BR213HL: Implementation of generic HUD-part in xcmodel
+Revision 1.21.1.51 2013/09/25 10:51:51CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 36238 BR213HL: Implementation of generic HUD-part in xcmodel
+Revision 1.21.1.50 2013/09/19 16:29:42CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 34967 HUD: HUD Basic Widget Tree (Model split)
+Revision 1.21.1.49 2013/09/17 16:42:15CEST Dumitru, Vasile (uidl6995) 
+DC MR 32326:BR213HL: HUD: Take over of menu HUD-Brightness/Position/Display contents from W205 E012
+Revision 1.21.1.48 2013/09/13 15:57:17CEST Voiculescu, Bogdan (uidv0172) 
+DC MR 33856 W213 HL ADC/ExtKI: Model split for API/Model/Ressources of the ADC functionality
+Revision 1.21.1.47 2013/09/13 14:36:07CEST Sopt-EXT, Alexandru (uidv8350) 
+DC MR 34730 GEAR - model split| DC MR 34731TUBE - model split| DC MR 34787 Status area top - take over scene controller
+Revision 1.21.1.46 2013/09/04 16:05:09CEST Filimon, Andrei (uidt4153) 
+DC MR 34745 Removal of MenuManager and HUD Menu Manager
+DC MR 32584 Silhouette selection in BR213HL
+Revision 1.21.1.45 2013/08/28 14:09:53CEST Chirila Rosa, Adela (uidt6989) 
+DC MR 34379 BR213HL: Startup-MR for ASSYST PLUS (GAR)
+Revision 1.21.1.44 2013/08/28 09:35:10CEST Chirila Rosa, Adela (uidt6989) 
+DC MR 34379 BR213HL: Startup-MR for ASSYST PLUS (GAR)
+Revision 1.21.1.43 2013/08/23 09:38:31CEST Muresan-EXT, Irina (uidv8351) 
+DC MR 34525 - BR213 HL E005.1: correct 'warning screens' without 'street' as background
+Revision 1.21.1.42 2013/08/20 11:05:16CEST Sopt-EXT, Alexandru (uidv8350) 
+DC MR 34352 Coolant bargraph resources
+Revision 1.21.1.41 2013/08/17 14:50:58CEST Filimon, Andrei (uidt4153) 
+DC MR 34652 BR213 Split of Menutree related model parts into TPOL and TPOL_MDL
+Revision 1.21.1.40 2013/08/16 16:39:24CEST Filimon, Andrei (uidt4153) 
+DC MR 34393 BR213-GC-HL: Move Odometer to trcmdl
+Revision 1.21.1.38 2013/08/16 07:02:33CEST Sopt-EXT, Alexandru (uidv8350) 
+DC MR 34633 Coolant bargraph - startup
+Revision 1.21.1.37 2013/08/14 21:08:21CEST Halmaciu, Florin (uidl6278) 
+DC MR 34613 BR213IC HL GC: StartUp APC ('model split', 'API split' and 'refactored BRUTUS' shall also be covered)
+Revision 1.21.1.36 2013/08/14 19:20:05CEST Dumitru, Vasile (uidl6995) 
+DC MR 34652: BR213: Split of Menutree related model parts into TPOL and TPOL_MDL
+Revision 1.21.1.35 2013/08/05 17:26:35CEST Chirila Rosa, Adela (uidt6989) 
+DC MR 34320 BR213HL: Startup-MR for garage level
+Revision 1.21.1.34 2013/06/26 08:29:56CEST Filimon, Andrei (uidt4153) 
+Overtake integration patches
+Revision 1.21.1.33 2013/06/22 15:21:58CEST Dumitru, Vasile (uidl6995) 
+DC MR 33142:BR213HL: Startup-MR for Intelligent Light menu
+Revision 1.21.1.32 2013/06/04 15:19:30CEST Bordinc, Nicusor (uid95791) 
+DC MR 33189 BR213HL E004: Implemenation of Distronic Ring
+Revision 1.21.1.31 2013/06/03 16:45:06CEST Dumitru, Vasile (uidl6995) 
+DC MR 33140: BR213HL: Startup-MR for Attention Assist
+Revision 1.21.1.30 2013/06/03 13:27:19CEST Ciuca, Gabriela (uidt7271) 
+DC MR 33155
+Revision 1.21.1.29 2013/06/01 18:19:19CEST Magherusan, Claudia (uidt8500) 
+DC MR 33157 BR213HL E004: Startup MR for TPM and FTW
+Revision 1.21.1.28 2013/06/01 10:06:24CEST Chirila Rosa, Adela (uidt6989) 
+DC MR 33136 TSA model - Startup (GC)
+Revision 1.21.1.27 2013/05/31 17:01:23CEST Filimon, Andrei (uidt4153) 
+DC MR 33341 KBD Introduction of KeyRouter Widget in Basic Widget Tree
+Revision 1.21.1.26 2013/05/30 08:37:27CEST Voiculescu, Bogdan (uidv0172) 
+MR 33386 - BR213 HL: ADC/ExtKI Startup MR
+Revision 1.21.1.25 2013/05/28 14:41:54CEST Dumitru, Vasile (uidl6995) 
+DC MR 33130: BR213HL: Startup-MR for BSM
+DC MR 33134: BR213HL: Startup-MR for Forward Collision Warning
+DC MR 33142: BR213HL: Startup-MR for Intelligent Light menu
+DC MR 33143: BR213HL: Startup-MR for Intelligent Head Light menu
+DC MR 33144: BR213HL: Startup-MR for ESP toggle menu
+DC MR 33186: BR213HL: Startup-MR for Active Body Control
+Revision 1.21.1.24 2013/05/28 10:26:53CEST Muresan-EXT, Irina (uidv8351) 
+DC MR 33254: BR213HL: Modelsplit Seatbeltwarning
+DC MR 33320: BR213HL: Modelsplit complex warnings (WIM)
+DC MR 33462: BR213HL: Modelsplit WIMController/FaultMemory (WIM)
+Revision 1.21.1.23 2013/05/27 15:53:05CEST Bordinc, Nicusor (uid95791) 
+DC MR 33162 BR213HL E004: Startup MR for FAS graphic
+Revision 1.21.1.22 2013/05/27 15:03:43CEST Voiculescu, Bogdan (uidv0172) 
+MR 33386 - BR213 HL: ADC/ExtKI Startup MR
+Revision 1.21.1.21 2013/05/24 09:12:42CEST Chirila Rosa, Adela (uidt6989) 
+DC MR 33136 TSA model - Startup (GC)
+Revision 1.21.1.20 2013/05/13 10:59:37CEST Filimon, Andrei (uidt4153) 
+DC MR 33093 XCModel: introduce the restructured 'ProjectConfig' into BR213 Projects
+DC MR 33290 Switch Illumination Handler Startup MR W213HL
+Revision 1.21.1.19 2013/03/28 06:58:06CET Filimon, Andrei (uidt4153) 
+DC MR 31309 REV and VEL Gauge Startup MR BR213HL
+Revision 1.21.1.18 2013/03/26 21:18:46CET Filimon, Andrei (uidt4153) 
+DC MR 32123 GS4 - Change GS2 to GS4
+Overtake of integration patches
+Revision 1.21.1.17 2013/03/26 14:06:24CET Chirila Rosa, Adela (uidt6989) 
+DC MR 31323 Startup MR for menu "Daylight running light" in BR213IC-GC-HL
+Revision 1.21.1.16 2013/03/13 17:32:32CET Filimon, Andrei (uidt4153) 
+DC MR 31376 ODOMETER Startup MR BR213 HL
+DC MR 31381 TripComputer Startup MR BR213 HL
+DC MR 32242 Startup for Menutree in BR213IC-GC-HL
+DC MR 32350 BR213HL/E003/SAC:Introduction to Basic Widget Tree
+DC MR 32442 BR213HL/E003/SAC:Implementation of the HMI Message registrations split into seperate  XML document
+Revision 1.21.1.15 2013/03/13 13:59:42CET Bordinc Nicusor (uid95791) (uid95791) 
+DC MR 32130 BR213HL, Implementation of L2
+Revision 1.21.1.14 2013/03/01 18:10:12CET Filimon Andrei (uidt4153) (uidt4153) 
+DC MR 31309 REV and VEL Gauge Startup MR BR213HL
+DC MR 31300 SCM_MDL StartupMR BR213HL
+Revision 1.21.1.13 2013/03/01 17:57:48CET Magherusan Claudia (uidt8500) (uidt8500) 
+DC MR 31278 Tank and Coolant temperature configuration - Startup (GC)
+DC MR 31277 Telltales configuration - Startup (GC)
+DC MR 31276 GEAR - Startup (GC)
+DC MR 31271 Status-line configuration - startup (GC)
+Revision 1.21.1.12 2013/03/01 16:52:37CET Ciuca Gabriela (uidt7271) (uidt7271) 
+DC MR 31362 BackgroundServer Startup MR BR213HL
+Revision 1.21.1.11 2013/03/01 16:48:12CET Filimon Andrei (uidt4153) (uidt4153) 
+DC MR 31279 Widget Tree configuration BR213HL E003
+Revision 1.21.1.10 2013/02/13 10:40:48CET Filimon Andrei (uidt4153) (uidt4153) 
+DC MR 31279 Widget Tree configuration BR213HL E003
+
+*****************************
+-->
+<XCompilerConfiguration Name="W213Config" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../tool/xcomp/mdl/xsd/ProjectConfig.xsd">
+	<Info>
+		<Company>Continental AG</Company>
+		<Customer>Daimler AG</Customer>
+		<ModelLine>IC213</ModelLine>
+		<SamplePhase>E005.1</SamplePhase>
+		<ReleaseNotes>
+			<ReleaseNote author="Andrei Filimon" date="2013-02-12"/>
+		</ReleaseNotes>
+	</Info>
+	<GeneralSettings>
+		<VehicleSilhouette>
+			<MappingTable>
+				<VehicleLine id="default" valueDependency="0">
+					<BodyStyle id="default" valueDependency="0">
+						<Partition id="1"/>
+					</BodyStyle>
+				</VehicleLine>
+				<VehicleLine id="213" valueDependency="1">
+					<BodyStyle id="W" valueDependency="1">
+						<Partition id="1"/>
+					</BodyStyle>
+					<BodyStyle id="S" valueDependency="2">
+						<Partition id="1"/>
+					</BodyStyle>
+					<BodyStyle id="V" valueDependency="3">
+						<Partition id="1"/>
+					</BodyStyle>
+					<BodyStyle id="S_AT" valueDependency="7">
+						<Partition id="1"/>
+					</BodyStyle>
+				</VehicleLine>
+				<VehicleLine id="238" valueDependency="2">
+					<BodyStyle id="C" valueDependency="4">
+						<Partition id="1"/>
+					</BodyStyle>
+					<BodyStyle id="A" valueDependency="5">
+						<Partition id="1"/>
+					</BodyStyle>
+				</VehicleLine>
+				<VehicleLine id="257" valueDependency="3">
+					<BodyStyle id="C" valueDependency="4">
+						<Partition id="1"/>
+					</BodyStyle>
+					<BodyStyle id="X" valueDependency="6">
+						<Partition id="1"/>
+					</BodyStyle>
+				</VehicleLine>
+				<VehicleLine id="213AMG" valueDependency="4">
+					<BodyStyle id="W" valueDependency="1">
+						<Partition id="1"/>
+					</BodyStyle>
+					<BodyStyle id="S" valueDependency="2">
+						<Partition id="1"/>
+					</BodyStyle>
+				</VehicleLine>
+				<VehicleLine id="238AMG" valueDependency="5">
+					<BodyStyle id="C" valueDependency="4">
+						<Partition id="1"/>
+					</BodyStyle>
+					<BodyStyle id="A" valueDependency="5">
+						<Partition id="1"/>
+					</BodyStyle>
+				</VehicleLine>
+				<VehicleLine id="222" valueDependency="6">
+					<BodyStyle id="W" valueDependency="1">
+						<Partition id="1"/>
+					</BodyStyle>
+					<BodyStyle id="V" valueDependency="3">
+						<Partition id="1"/>
+					</BodyStyle>
+					<BodyStyle id="X" valueDependency="6">
+						<Partition id="1"/>
+					</BodyStyle>
+				</VehicleLine>
+				<VehicleLine id="217" valueDependency="7">
+					<BodyStyle id="C" valueDependency="4">
+						<Partition id="1"/>
+					</BodyStyle>
+					<BodyStyle id="A" valueDependency="5">
+						<Partition id="1"/>
+					</BodyStyle>
+				</VehicleLine>
+				<VehicleLine id="222AMG" valueDependency="8">
+					<BodyStyle id="W" valueDependency="1">
+						<Partition id="1"/>
+					</BodyStyle>
+					<BodyStyle id="V" valueDependency="3">
+						<Partition id="1"/>
+					</BodyStyle>
+				</VehicleLine>
+				<VehicleLine id="217AMG" valueDependency="9">
+					<BodyStyle id="C" valueDependency="4">
+						<Partition id="1"/>
+					</BodyStyle>
+					<BodyStyle id="A" valueDependency="5">
+						<Partition id="1"/>
+					</BodyStyle>
+				</VehicleLine>
+				<VehicleLine id="205" valueDependency="10">
+					<BodyStyle id="W" valueDependency="1">
+						<Partition id="1"/>
+					</BodyStyle>
+					<BodyStyle id="S" valueDependency="2">
+						<Partition id="1"/>
+					</BodyStyle>
+					<BodyStyle id="C" valueDependency="4">
+						<Partition id="1"/>
+					</BodyStyle>
+					<BodyStyle id="A" valueDependency="5">
+						<Partition id="1"/>
+					</BodyStyle>
+				</VehicleLine>
+				<VehicleLine id="253" valueDependency="11">
+					<BodyStyle id="N" valueDependency="8">
+						<Partition id="1"/>
+					</BodyStyle>
+					<BodyStyle id="X" valueDependency="6">
+						<Partition id="1"/>
+					</BodyStyle>
+				</VehicleLine>
+				<VehicleLine id="293" valueDependency="12">
+					<BodyStyle id="N" valueDependency="8">
+						<Partition id="1"/>
+					</BodyStyle>
+				</VehicleLine>
+				<VehicleLine id="205AMG" valueDependency="13">
+					<BodyStyle id="W" valueDependency="1">
+						<Partition id="1"/>
+					</BodyStyle>
+					<BodyStyle id="S" valueDependency="2">
+						<Partition id="1"/>
+					</BodyStyle>
+					<BodyStyle id="C" valueDependency="4">
+						<Partition id="1"/>
+					</BodyStyle>
+					<BodyStyle id="A" valueDependency="5">
+						<Partition id="1"/>
+					</BodyStyle>
+				</VehicleLine>
+				<VehicleLine id="253AMG" valueDependency="14">
+					<BodyStyle id="X" valueDependency="6">
+						<Partition id="1"/>
+					</BodyStyle>
+				</VehicleLine>
+				<VehicleLine id="190" valueDependency="15">
+					<BodyStyle id="C" valueDependency="4">
+						<Partition id="1"/>
+					</BodyStyle>
+					<BodyStyle id="R" valueDependency="9">
+						<Partition id="1"/>
+					</BodyStyle>
+					<BodyStyle id="Cgtr" valueDependency="10">
+						<Partition id="1"/>
+					</BodyStyle>
+				</VehicleLine>
+				<VehicleLine id="290" valueDependency="16">
+					<BodyStyle id="X" valueDependency="6">
+						<Partition id="1"/>
+					</BodyStyle>
+				</VehicleLine>
+				<VehicleLine id="290AMG" valueDependency="17">
+					<BodyStyle id="X" valueDependency="6">
+						<Partition id="1"/>
+					</BodyStyle>
+				</VehicleLine>
+			</MappingTable>
+			<DefaultSilhouette bodyStyleID="default" vehicleLineID="default"/>
+			<DaimlerXMLKeywords bodyStyle="DEP_BodyStyle" vehicleLine="DEP_VehicleLine"/>
+			<HILEnumDescriptions filename="XC_HIL_EnumDescriptions.xml"/>
+		</VehicleSilhouette>
+		<MemoryCalculation>
+			<AppliedWidget Type="PrioHandler">
+				<Formula file="..\..\dsm\mdl\03_Configuration\DSM_WidgetMemoryCalculation_Priohandler.xml"/>
+			</AppliedWidget>
+			<AppliedWidget Type="PrioHandlerInfo">
+				<Formula file="..\..\dsm\mdl\03_Configuration\DSM_WidgetMemoryCalculation_PriohandlerInfo.xml"/>
+			</AppliedWidget>
+		</MemoryCalculation>
+		<ConditionDummy Keyword="PLURAL" GuardCondition="((.DEPENDENCY{Language:jpn_Jpan_JP}))  &amp;&amp; ((.API{DUMMY.boGetApiDummyGetter}() != 0x00))"/>
+		<MultiLevelsSwitching variant="VAR213">
+			<MappingTable>
+				<Architecture id="trd" valueDependency="0" default="TRUE" Comment="Traditional" defaultStyle="cla" defaultColor="CT_cla_trd">
+					<Style id="cla" valueDependency="0" Comment="CLA" ColorTable="CT_cla_trd" bitmapGroup="rod_dag_trd"/>
+					<Style id="spo" valueDependency="1" Comment="SPO" ColorTable="CT_spo_trd" bitmapGroup="rod_dag_trd"/>
+					<Style id="perfcla" valueDependency="2" valueReplacement="0" Comment="performance AMG CLA" ColorTable="CT_cla_trd" bitmapGroup="rod_amg_trd"/>
+					<Style id="perfspo" valueDependency="3" valueReplacement="1" Comment="performance AMG SPO" ColorTable="CT_spo_trd" bitmapGroup="rod_amg_trd"/>
+					<Style id="purecla" valueDependency="4" valueReplacement="0" Comment="pure AMG CLA" ColorTable="CT_cla_trd" bitmapGroup="rod_amg_trd"/>
+					<Style id="purespo" valueDependency="5" valueReplacement="1" Comment="pure AMG SPO" ColorTable="CT_spo_trd" bitmapGroup="rod_amg_trd"/>
+					<Style id="scla" valueDependency="6" valueReplacement="0" Comment="pureS AMG SPO" ColorTable="CT_cla_trd" bitmapGroup="rod_amg_trd"/>
+					<Style id="sspo" valueDependency="7" valueReplacement="1" Comment="pureS AMG SPO" ColorTable="CT_spo_trd" bitmapGroup="rod_amg_trd"/>
+				</Architecture>
+				<Architecture id="prg" valueDependency="1" default="FALSE" Comment="Progressive" defaultStyle="spo" defaultColor="CT_prg">
+					<Style id="cla" valueDependency="0" Comment="CLA" ColorTable="CT_prg" bitmapGroup="rod_dag_prg"/>
+					<Style id="spo" valueDependency="1" Comment="SPO" ColorTable="CT_prg" bitmapGroup="rod_dag_prg"/>
+					<Style id="perfcla" valueDependency="2" valueReplacement="0" Comment="performance AMG CLA" ColorTable="CT_prg" bitmapGroup="rod_amg_prg"/>
+					<Style id="perfspo" valueDependency="3" valueReplacement="1" Comment="performance AMG SPO" ColorTable="CT_prg" bitmapGroup="rod_amg_prg"/>
+					<Style id="purecla" valueDependency="4" valueReplacement="0" Comment="pure AMG CLA" ColorTable="CT_prg" bitmapGroup="rod_amg_prg"/>
+					<Style id="purespo" valueDependency="5" valueReplacement="1" Comment="pure AMG SPO" ColorTable="CT_prg" bitmapGroup="rod_amg_prg"/>
+					<Style id="scla" valueDependency="6" valueReplacement="0" Comment="pureS AMG SPO" ColorTable="CT_prg" bitmapGroup="rod_amg_prg"/>
+					<Style id="sspo" valueDependency="7" valueReplacement="1" Comment="pureS AMG SPO" ColorTable="CT_prg" bitmapGroup="rod_amg_prg"/>
+				</Architecture>
+				<Architecture id="default" valueDependency="1" default="False" Comment="Common" defaultStyle="cla" defaultColor="CT_HUD_trd_cla">
+					<Style id="cla" valueDependency="0" Comment="CLA" ColorTable="CT_HUD_trd_cla" bitmapGroup="rod_trd">
+						<StyleArchitecture id="trd" ColorTable="CT_HUD_trd_cla" bitmapGroup="rod_trd"/>
+						<StyleArchitecture id="prg" ColorTable="CT_HUD_prg" bitmapGroup="rod_prg"/>
+					</Style>
+					<Style id="spo" valueDependency="1" Comment="SPO" ColorTable="CT_HUD_trd_spo" bitmapGroup="rod_trd">
+						<StyleArchitecture id="trd" ColorTable="CT_HUD_trd_spo" bitmapGroup="rod_trd"/>
+						<StyleArchitecture id="prg" ColorTable="CT_HUD_prg" bitmapGroup="rod_prg"/>
+					</Style>
+					<Style id="perfcla" valueDependency="2" valueReplacement="0" Comment="performance AMG CLA" ColorTable="CT_HUD_trd_cla" bitmapGroup="rod_amg">
+						<StyleArchitecture id="trd" ColorTable="CT_HUD_trd_cla" bitmapGroup="rod_amg_trd"/>
+						<StyleArchitecture id="prg" ColorTable="CT_HUD_prg" bitmapGroup="rod_amg_prg"/>
+					</Style>
+					<Style id="perfspo" valueDependency="3" valueReplacement="1" Comment="performance AMG SPO" ColorTable="CT_HUD_trd_spo" bitmapGroup="rod_amg">
+						<StyleArchitecture id="trd" ColorTable="CT_HUD_trd_spo" bitmapGroup="rod_amg_trd"/>
+						<StyleArchitecture id="prg" ColorTable="CT_HUD_prg_spo" bitmapGroup="rod_amg_prg"/>
+					</Style>
+					<Style id="purecla" valueDependency="4" valueReplacement="0" Comment="pure AMG CLA" ColorTable="CT_HUD_trd_cla" bitmapGroup="rod_amg">
+						<StyleArchitecture id="trd" ColorTable="CT_HUD_trd_cla" bitmapGroup="rod_amg_trd"/>
+						<StyleArchitecture id="prg" ColorTable="CT_HUD_prg" bitmapGroup="rod_amg_prg"/>
+					</Style>
+					<Style id="purespo" valueDependency="5" valueReplacement="1" Comment="pure AMG SPO" ColorTable="CT_HUD_trd_spo" bitmapGroup="rod_amg">
+						<StyleArchitecture id="trd" ColorTable="CT_HUD_trd_spo" bitmapGroup="rod_amg_trd"/>
+						<StyleArchitecture id="prg" ColorTable="CT_HUD_prg_spo" bitmapGroup="rod_amg_prg"/>
+					</Style>
+					<Style id="scla" valueDependency="6" valueReplacement="0" Comment="pureS AMG SPO" ColorTable="CT_HUD_trd_cla" bitmapGroup="rod_amg">
+						<StyleArchitecture id="trd" ColorTable="CT_HUD_trd_cla" bitmapGroup="rod_amg_trd"/>
+						<StyleArchitecture id="prg" ColorTable="CT_HUD_prg" bitmapGroup="rod_amg_prg"/>
+					</Style>
+					<Style id="sspo" valueDependency="7" valueReplacement="1" Comment="pureS AMG SPO" ColorTable="CT_HUD_trd_spo" bitmapGroup="rod_amg">
+						<StyleArchitecture id="trd" ColorTable="CT_HUD_trd_spo" bitmapGroup="rod_amg_trd"/>
+						<StyleArchitecture id="prg" ColorTable="CT_HUD_prg_spo" bitmapGroup="rod_amg_prg"/>
+					</Style>
+				</Architecture>
+			</MappingTable>
+			<GenDepKeys Architecture="DEP_Architecture" Style="DEP_Style"/>
+		</MultiLevelsSwitching>
+		<MultiLevelsSwitching variant="VAR205">
+			<MappingTable>
+				<Architecture id="trd" valueDependency="0" default="TRUE" Comment="Traditional" defaultStyle="cla" defaultColor="CT_cla_trd">
+					<Style id="cla" valueDependency="0" Comment="CLA" ColorTable="CT_cla_trd" bitmapGroup="rod_trd"/>
+					<Style id="spo" valueDependency="1" Comment="SPO" ColorTable="CT_spo_trd" bitmapGroup="rod_trd"/>
+					<Style id="perfcla" valueDependency="2" valueReplacement="0" Comment="performance AMG CLA" ColorTable="CT_cla_trd" bitmapGroup="rod_amg_trd"/>
+					<Style id="perfspo" valueDependency="3" valueReplacement="1" Comment="performance AMG SPO" ColorTable="CT_spo_trd" bitmapGroup="rod_amg_trd"/>
+					<Style id="purecla" valueDependency="4" valueReplacement="0" Comment="pure AMG CLA" ColorTable="CT_cla_trd" bitmapGroup="rod_amg_trd"/>
+					<Style id="purespo" valueDependency="5" valueReplacement="1" Comment="pure AMG SPO" ColorTable="CT_spo_trd" bitmapGroup="rod_amg_trd"/>
+					<Style id="scla" valueDependency="6" valueReplacement="0" Comment="pureS AMG SPO" ColorTable="CT_cla_trd" bitmapGroup="rod_amg_trd"/>
+					<Style id="sspo" valueDependency="7" valueReplacement="1" Comment="pureS AMG SPO" ColorTable="CT_spo_trd" bitmapGroup="rod_amg_trd"/>
+					<Style id="rsp" valueDependency="8" Comment="RSP" ColorTable="CT_rsp_trd" bitmapGroup="rod_dag_trd" valueReplacement="0"/>
+				</Architecture>
+				<Architecture id="prg" valueDependency="1" default="FALSE" Comment="Progressive" defaultStyle="spo" defaultColor="CT_prg" generateScreenContent="true">
+					<Style id="cla" valueDependency="0" Comment="CLA" ColorTable="CT_prg" bitmapGroup="rod_prg"/>
+					<Style id="spo" valueDependency="1" Comment="SPO" ColorTable="CT_prg" bitmapGroup="rod_prg"/>
+					<Style id="perfcla" valueDependency="2" valueReplacement="0" Comment="performance AMG CLA" ColorTable="CT_prg" bitmapGroup="rod_amg_prg"/>
+					<Style id="perfspo" valueDependency="3" valueReplacement="1" Comment="performance AMG SPO" ColorTable="CT_prg" bitmapGroup="rod_amg_prg"/>
+					<Style id="purecla" valueDependency="4" valueReplacement="0" Comment="pure AMG CLA" ColorTable="CT_prg" bitmapGroup="rod_amg_prg"/>
+					<Style id="purespo" valueDependency="5" valueReplacement="1" Comment="pure AMG SPO" ColorTable="CT_prg" bitmapGroup="rod_amg_prg"/>
+					<Style id="scla" valueDependency="6" valueReplacement="0" Comment="pureS AMG SPO" ColorTable="CT_prg" bitmapGroup="rod_amg_prg"/>
+					<Style id="sspo" valueDependency="7" valueReplacement="1" Comment="pureS AMG SPO" ColorTable="CT_prg" bitmapGroup="rod_amg_prg"/>
+					<Style id="rsp" valueDependency="8" valueReplacement="0" Comment="CLA" ColorTable="CT_prg" bitmapGroup="rod_dag_prg"/>
+				</Architecture>
+				<Architecture id="default" valueDependency="1" default="False" Comment="Common" defaultStyle="cla" defaultColor="CT_HUD_trd_cla">
+					<Style id="cla" valueDependency="0" Comment="CLA" ColorTable="CT_HUD_trd_cla" bitmapGroup="rod_trd">
+						<StyleArchitecture id="trd" ColorTable="CT_HUD_trd_cla" bitmapGroup="rod_trd"/>
+						<StyleArchitecture id="prg" ColorTable="CT_HUD_prg" bitmapGroup="rod_prg"/>
+					</Style>
+					<Style id="spo" valueDependency="1" Comment="SPO" ColorTable="CT_HUD_trd_spo" bitmapGroup="rod_trd">
+						<StyleArchitecture id="trd" ColorTable="CT_HUD_trd_spo" bitmapGroup="rod_trd"/>
+						<StyleArchitecture id="prg" ColorTable="CT_HUD_prg" bitmapGroup="rod_prg"/>
+					</Style>
+					<Style id="perfcla" valueDependency="2" valueReplacement="0" Comment="performance AMG CLA" ColorTable="CT_HUD_trd_cla" bitmapGroup="rod_amg">
+						<StyleArchitecture id="trd" ColorTable="CT_HUD_trd_cla" bitmapGroup="rod_amg_trd"/>
+						<StyleArchitecture id="prg" ColorTable="CT_HUD_prg" bitmapGroup="rod_amg_prg"/>
+					</Style>
+					<Style id="perfspo" valueDependency="3" valueReplacement="1" Comment="performance AMG SPO" ColorTable="CT_HUD_trd_spo" bitmapGroup="rod_amg">
+						<StyleArchitecture id="trd" ColorTable="CT_HUD_trd_spo" bitmapGroup="rod_amg_trd"/>
+						<StyleArchitecture id="prg" ColorTable="CT_HUD_prg_spo" bitmapGroup="rod_amg_prg"/>
+					</Style>
+					<Style id="purecla" valueDependency="4" valueReplacement="0" Comment="pure AMG CLA" ColorTable="CT_HUD_trd_cla" bitmapGroup="rod_amg">
+						<StyleArchitecture id="trd" ColorTable="CT_HUD_trd_cla" bitmapGroup="rod_amg_trd"/>
+						<StyleArchitecture id="prg" ColorTable="CT_HUD_prg" bitmapGroup="rod_amg_prg"/>
+					</Style>
+					<Style id="purespo" valueDependency="5" valueReplacement="1" Comment="pure AMG SPO" ColorTable="CT_HUD_trd_spo" bitmapGroup="rod_amg">
+						<StyleArchitecture id="trd" ColorTable="CT_HUD_trd_spo" bitmapGroup="rod_amg_trd"/>
+						<StyleArchitecture id="prg" ColorTable="CT_HUD_prg_spo" bitmapGroup="rod_amg_prg"/>
+					</Style>
+					<Style id="scla" valueDependency="6" valueReplacement="0" Comment="pureS AMG SPO" ColorTable="CT_HUD_trd_cla" bitmapGroup="rod_amg">
+						<StyleArchitecture id="trd" ColorTable="CT_HUD_trd_cla" bitmapGroup="rod_amg_trd"/>
+						<StyleArchitecture id="prg" ColorTable="CT_HUD_prg" bitmapGroup="rod_amg_prg"/>
+					</Style>
+					<Style id="sspo" valueDependency="7" valueReplacement="1" Comment="pureS AMG SPO" ColorTable="CT_HUD_trd_spo" bitmapGroup="rod_amg">
+						<StyleArchitecture id="trd" ColorTable="CT_HUD_trd_spo" bitmapGroup="rod_amg_trd"/>
+						<StyleArchitecture id="prg" ColorTable="CT_HUD_prg_spo" bitmapGroup="rod_amg_prg"/>
+					</Style>
+					<Style id="rsp" valueDependency="8" valueReplacement="0" Comment="CLA" ColorTable="CT_HUD_trd_cla" bitmapGroup="rod_trd">
+						<StyleArchitecture id="trd" ColorTable="CT_HUD_trd_cla" bitmapGroup="rod_trd"/>
+						<StyleArchitecture id="prg" ColorTable="CT_HUD_prg" bitmapGroup="rod_prg"/>
+					</Style>
+				</Architecture>
+			</MappingTable>
+			<GenDepKeys Architecture="DEP_Architecture" Style="DEP_Style"/>
+		</MultiLevelsSwitching>
+		<UseReducedFontsWithSuffix>_red</UseReducedFontsWithSuffix>
+		<FontNotReduce>dc221ips.ttf</FontNotReduce>
+		<FontNotReduce>mb213reg_it-global_v2_3_min.ttf</FontNotReduce>
+		<FontNotReduce>mb177reg_it_global_v1_6_min.ttf</FontNotReduce>
+		<FontNotReduce>mb292_demi_V1_3.ttf</FontNotReduce>
+		<FontNotReduce>mb292_demiitalic_V2_3.ttf</FontNotReduce>
+		<FontNotReduce>mb292_italic_fix_v2_1.ttf</FontNotReduce>
+		<FontNotReduce>mb292_italic_v2_1.ttf</FontNotReduce>
+		<FontNotReduce>mb292_regular_V1_3.ttf</FontNotReduce>
+		<FontNotReduce>mb292_demi_fix_V1_3.ttf</FontNotReduce>
+		<FontNotReduce>mb292_demiitalic_fix_V2_3.ttf</FontNotReduce>
+		<FontNotReduce>mb292_regular_fix_V1_3.ttf</FontNotReduce>
+		<FontGroup_MappingTable FontFileName="mb213reg_it-global_v2_3_min.ttf" FontGroupID="0"/>
+		<FontGroup_MappingTable FontFileName="mb177reg_it_global_v1_6_min.ttf" FontGroupID="0"/>
+		<FontGroup_MappingTable FontFileName="dc221ips.ttf" FontGroupID="1"/>
+		<FontGroup_MappingTable FontFileName="mb292_demi_V1_3.ttf" FontGroupID="2"/>
+		<FontGroup_MappingTable FontFileName="mb177demi_jp_v1_6_red.ttf" FontGroupID="2"/>
+		<FontGroup_MappingTable FontFileName="mb292_demiitalic_V2_3.ttf" FontGroupID="3"/>
+		<FontGroup_MappingTable FontFileName="mb177reg_jp_v1_6_red.ttf" FontGroupID="3"/>
+		<FontGroup_MappingTable FontFileName="mb292_italic_fix_v2_1.ttf" FontGroupID="4"/>
+		<FontGroup_MappingTable FontFileName="mb292_italic_v2_1.ttf" FontGroupID="5"/>
+		<FontGroup_MappingTable FontFileName="mb292_regular_V1_3.ttf" FontGroupID="6"/>
+		<FontGroup_MappingTable FontFileName="mb292_regular_fix_V1_3.ttf" FontGroupID="6"/>
+		<FontGroup_MappingTable FontFileName="mb292_demi_fix_V1_3.ttf" FontGroupID="7"/>
+		<FontGroup_MappingTable FontFileName="mb292_demiitalic_fix_V2_3.ttf" FontGroupID="8"/>
+		<FontGroup_MappingTable FontFileName="mb177reg_global_v1_6_red.ttf" FontGroupID="9"/>
+		<FontGroup_MappingTable FontFileName="MB213Reg_Italic-Global_V3_6_red.ttf" FontGroupID="10"/>
+		<FontGroup_MappingTable FontFileName="mb177reg_it_global_v1_6_red.ttf" FontGroupID="10"/>
+		<FontGroup_MappingTable FontFileName="MB213Regular-Global_V3_6_red.ttf" FontGroupID="11"/>
+		<FontGroup_MappingTable FontFileName="mb177demi_global_v1_6_red.ttf" FontGroupID="11"/>
+		<FontGroup_MappingTable FontFileName="MB213Regular-JP_V3_6_red.ttf" FontGroupID="12"/>
+		<FontGroup_MappingTable FontFileName="mb177demi_it_global_v1_6_red.ttf" FontGroupID="12"/>
+		<FontGroup_MappingTable FontFileName="MB213Reg_Italic-Global_V3_6.ttf" FontGroupID="13"/>
+		<FontGroup_MappingTable FontFileName="mb177reg_it_global_v1_6.ttf" FontGroupID="13"/>
+		<FontGroup_MappingTable FontFileName="MB213Regular-Global_V3_6.ttf" FontGroupID="14"/>
+		<FontGroup_MappingTable FontFileName="mb177reg_global_v1_6.ttf" FontGroupID="14"/>
+		<FontGroup_MappingTable FontFileName="MB213Regular-JP_V3_6.ttf" FontGroupID="15"/>
+		<FontGroup_MappingTable FontFileName="mb177reg_jp_v1_6.ttf" FontGroupID="15"/>
+		<R2L_Config>
+			<R2L_Language>arb_Arab_SA</R2L_Language>
+			<R2L_Keyword>R2L</R2L_Keyword>
+			<R2L_Util_BiDiCtrlCh Name="LRM" Unicode="0x200E"/>
+			<R2L_Util_BiDiCtrlCh Name="RLM" Unicode="0x200F"/>
+			<R2L_Util_BiDiCtrlCh Name="LRE" Unicode="0x202A"/>
+			<R2L_Util_BiDiCtrlCh Name="RLE" Unicode="0x202B"/>
+			<R2L_Util_BiDiCtrlCh Name="LRO" Unicode="0x202D"/>
+			<R2L_Util_BiDiCtrlCh Name="RLO" Unicode="0x202E"/>
+			<R2L_Util_BiDiCtrlCh Name="PDF" Unicode="0x202C"/>
+			<R2L_Util_Insert_BiDiCtrlCh ScreenID="0x0D0012" PatternID="103668_1111" PreCode="&lt;RLM&gt;&lt;LRM&gt;"/>
+			<R2L_Util_Insert_BiDiCtrlCh ScreenID="0x200242" PatternID="10578_111" PreCode="&lt;LRM&gt;"/>
+			<R2L_Util_Split_Entry ScreenID="0x201004" EntryID="L1_E2"/>
+			<R2L_Util_Split_Entry ScreenID="0x201006" EntryID="L1_E2"/>
+			<R2L_Util_Split_Entry ScreenID="0x201009" EntryID="L1_E2"/>
+			<R2L_Util_NOT_Split_Entry ScreenID="0x010102" EntryID="L6_E8"/>
+			<R2L_Util_NOT_Split_Entry ScreenID="0x010104" EntryID="L6_E8"/>
+			<R2L_Util_NOT_Split_Entry ScreenID="0x010105" EntryID="L6_E8"/>
+			<R2L_Util_NOT_Split_Entry ScreenID="0x420100" EntryID="L3_E7"/>
+			<R2L_Util_NOT_Split_Entry ScreenID="0x420106" EntryID="L3_E7"/>
+			<R2L_Util_NOT_Split_Entry ScreenID="0x42010A" EntryID="L3_E7"/>
+			<ExcludeScreenFrom_NOT_Split_Entry ScreenID="0x201004"/>
+			<ExcludeScreenFrom_NOT_Split_Entry ScreenID="0x201006"/>
+			<ExcludeScreenFrom_NOT_Split_Entry ScreenID="0x201009"/>
+			<ExcludeScreenFrom_NOT_Split_Entry ScreenID="0x2001A6"/>
+			<ExcludeScreenFrom_NOT_Split_Entry ScreenID="0x010100"/>
+			<ExcludeScreenFrom_NOT_Split_Entry ScreenID="0x010101"/>
+			<ExcludeScreenFrom_NOT_Split_Entry ScreenID="0x010102"/>
+			<ExcludeScreenFrom_NOT_Split_Entry ScreenID="0x010104"/>
+			<ExcludeScreenFrom_NOT_Split_Entry ScreenID="0x010105"/>
+			<ExcludeScreenFrom_NOT_Split_Entry ScreenID="0x400003"/>
+			<ExcludeScreenFrom_NOT_Split_Entry ScreenID="0x03002E"/>
+		</R2L_Config>
+		<Project Name="w213HL" Sample="E033"/>
+	</GeneralSettings>
+	<GeneralConfiguration>
+		<AppliedLanguages file="00_ProjectSettings\ActiveLanguages.xml"/>
+		<BrutusBasedConfig>
+			<TypeDescription file="..\..\apif\mdl\APIF_EnumDescriptions.xml"/>
+			<TypeDescription file="..\..\som\mdl\SOM_EnumDescriptions.xml"/>
+			<TypeDescription file="..\..\gs4\mdl\GS4_EnumDescriptions.xml"/>
+			<TypeDescription file="..\..\epf\pkg\was\mdl\EPF_Messages.xml"/>
+			<TypeDescription file="..\..\epf\pkg\apim\mdl\APIM_TypeDescriptions.xml"/>
+			<TypeDescription file="..\..\epf\pkg\was\mdl\WAS_TypeDescriptions.xml"/>
+			<TypeDescription file="..\..\epf\pkg\wcs\mdl\WCS_EnumDescriptions.xml"/>
+			<TypeDescription file="..\..\epf\pkg\wcs\mdl\WCS_TypeDescriptions.xml"/>
+			<TypeDescription file="..\..\epf\pkg\wfc\mdl\WFC_TypeDescriptions.xml"/>
+			<TypeDescription file="..\..\epf\pkg\wrs\mdl\WRS_TypeDescriptions.xml"/>
+			<TypeDescription file="..\..\epf\pkg\wsms\mdl\WSMS_TypeDescriptions.xml"/>
+			<TypeDescription file="..\..\wim\mdl\mdlGenPF3GC\WIM_TypeDescriptions.xml"/>
+			<TypeDescription file="..\..\symangc\mdl\SYMAN_EnumDescriptions.xml"/>
+			<Controllers variant="VAR205" file="..\..\wimmdl\mdl\04_Application\VAR205\WIMController_trd.xml"/>
+			<Controllers variant="VAR213" file="..\..\wimmdl\mdl\04_Application\VAR213\WIMController_trd.xml"/>
+			<Controllers variant="VAR205" file="..\..\wimmdl\mdl\04_Application\VAR205\WIMController_prg.xml"/>
+			<Controllers variant="VAR213" file="..\..\wimmdl\mdl\04_Application\VAR213\WIMController_prg.xml"/>
+			<Controllers file="..\..\wimmdl\mdl\04_Application\VAR213\WIMFaultMemStrategy_trd.xml"/>
+			<Controllers file="..\..\wimmdl\mdl\04_Application\VAR213\WIMFaultMemStrategy_prg.xml"/>
+			<Controllers file="..\..\wimmdl\mdl\04_Application\VAR213\SLACKController_trd.xml"/>
+			<Controllers file="..\..\wimmdl\mdl\04_Application\VAR213\SLACKController_prg.xml"/>
+			<Controllers file="..\..\wimmdl\mdl\06_HUD\04_Application\WIMHudController.xml"/>
+			<Controllers file="..\..\wimmdl\mdl\06_HUD\04_Application\SLACKHudController.xml"/>
+			<Configurations file="..\..\bootmgr\mdl\BootMgr_MessageDescriptions.xml"/>
+			<Configurations file="..\..\symangc\mdl\SYMAN_MessageDescriptions.xml"/>
+			<Configurations file="..\..\wim\mdl\mdlGenPF3GC\WIM_MessageDescriptions.xml"/>
+			<Configurations file="..\..\epf\mdl\Configuration.xml"/>
+			<Configurations file="..\..\epf\mdl\Configuration_HUD.xml"/>
+			<Configurations file="05_Application\DisplayTest\DHI_MessageDescriptions.xml"/>
+			<Configurations file="..\..\admin\adapt\Configuration_Includes.xml"/>
+			<Configurations file="..\..\wim\mdl\mdlGenPF3GC\WIM_GVConfiguration.xml"/>
+			<TypeDescription variant="VAR213" file="03_Configuration\XC_HILOut_EnumDescriptions.xml"/>
+			<TypeDescription variant="VAR205" file="03_Configuration\XC_HILOut_EnumDescriptions_VAR205.xml"/>
+			<API file="..\..\apif\mdl\API.xml"/>
+			<API file="..\..\epf\pkg\apim\out\API_order.xml" ignoreProcessing="true"/>
+			<BrutusConfigFile file="..\..\epf\mdl\Project.xml"/>
+			<BrutusModelPath path="..\..\..\tool\brutus\adapt\model\"/>
+		</BrutusBasedConfig>
+		<RSSTBasedConfig>
+			<grADI_Project file="..\..\gs4\pkg\rsst\mdl\grADI_Project_GS4.xml"/>
+			<grADI_Project file="02_Resources\Dummy\grADI_Project_dummy.xml"/>
+			<RSST_Export file="..\..\gs4\pkg\rsst\mdl\RSST_ExportData_GS4.xml"/>
+			<RSST_Export file="02_Resources\Dummy\RSST_ExportData_dummy.xml"/>
+			<RSST_Export file="03_Configuration\RSST_ExportData_ResourceGroups.xml"/>
+			<RSST_ExportConfigFile file="..\..\..\tool\rsstexp\mdl\IMX_RSST_export.reproj"/>
+		</RSSTBasedConfig>
+		<GVOMonitoring DisplayWidth="1920" DisplayHeight="720">
+			<Output file="..\..\..\adapt\gen\xcomp\gvom_MonitoringAreaDefinition.h"/>
+			<OutputCheckSum file="..\..\..\adapt\gen\xcomp\gvom_MonitoringAreaCheckSum.h" OptimiseCheckSum="Enable"/>
+			<OutputCheckSumVariants>
+				<Variant>VAR205</Variant>
+				<Variant>VAR213</Variant>
+			</OutputCheckSumVariants>
+			<GearLayouts>
+				<GearLayout name="layout_default" value="0" default="true"/>
+				<GearLayout name="layout_horizontal" value="1"/>
+			</GearLayouts>
+		</GVOMonitoring>
+	</GeneralConfiguration>
+	<DisplayConfiguration Name="IC">
+		<DisplaySettings>
+			<IconConfigurationsConfig file="03_Configuration\XC_IC_IconConfigurations.xml"/>
+			<HFOScreenID>0x0F0000</HFOScreenID>
+			<HFOScreenID_DoNotGenerateHilInfo>true</HFOScreenID_DoNotGenerateHilInfo>
+			<WIM_FaultReplacementScreenID>0x030001</WIM_FaultReplacementScreenID>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x2000F2_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x2003C9_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x2003CF_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x2004A2_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x2004A3_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x20047F_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x200077_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x200105_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x200420_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x200421_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x200432_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x200433_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x200480_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x200440_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x200441_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x20050B_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x20050C_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x20050D_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x20050E_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x200527_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x2003C0_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x20059E_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x20059F_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x200601_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x200602_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_prg_WithoutStreet_StaticContent" ScreenName="0x200603_default_prg"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_Dimmed_StaticContent" ScreenName="0x2003C9_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x2003CF_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x2004A2_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x2004A3_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x20047F_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x200077_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x200105_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x200420_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x200421_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x200432_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x200433_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x200480_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x200440_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x200441_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x20050B_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x20050C_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x20050D_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x20050E_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x200527_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x2003C0_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x20059E_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x20059F_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x200601_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x200602_default_trd"/>
+			<WarningScreenBackground_MappingTable BackgroundWidgetName="WarningsStandard_trd_WithoutStreet_StaticContent" ScreenName="0x200603_default_trd"/>
+			<HILConfig>
+				<HILCollectorWidget>HilCollectorWidget</HILCollectorWidget>
+				<HILEnumeration>HIL_tenInfo</HILEnumeration>
+				<API>
+					<Input file="../../icbwmdl/adapt/Tmp_ICBW_Api.c"/>
+					<Output file="../../../adapt/gen/xcomp/ICBW_Api.c"/>
+				</API>
+				<SDH>
+					<Input file="../../icbwmdl/adapt/Tmp_ICBW_Api.sdh"/>
+					<Output file="../../../adapt/gen/xcomp/ICBW_Api.sdh"/>
+				</SDH>
+				<MappingTable>
+					<Types config="bool" value="bo"/>
+					<Types config="float" value="f"/>
+					<Types config="double" value="d"/>
+					<Types config="uint8" value="u8"/>
+					<Types config="uint16" value="u16"/>
+					<Types config="uint32" value="u32"/>
+					<Types config="uint64" value="u64"/>
+					<Types config="int8" value="i8"/>
+					<Types config="int16" value="i16"/>
+					<Types config="int32" value="i32"/>
+				</MappingTable>
+			</HILConfig>
+			<BitmapGroup_MappingTable GroupName="Default" GroupID="rod"/>
+			<TextGroup_MappingTable Hil-ID="0x200002" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200003" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200004" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200005" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200008" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200009" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20000A" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20000B" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20000D" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20001B" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20001E" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20001F" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200020" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200100" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200102" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200104" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200106" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200114" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200115" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200116" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200200" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200202" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200226" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200227" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200244" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200245" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200248" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20026A" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200275" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200276" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200290" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200291" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20031F" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200320" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200322" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200323" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20033B" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20033C" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20033D" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20033E" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20033F" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200340" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200341" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200342" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200345" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200346" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20034C" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20034D" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20034E" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20034F" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200350" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200351" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200352" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200353" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200354" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200355" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200358" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20035A" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20035B" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20035C" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200362" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200363" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200364" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200366" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200368" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200369" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20036A" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20036C" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200371" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200372" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200373" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200374" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200375" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x200383" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20038B" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20038C" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20039A" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20039B" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20039C" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20039D" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20039E" GroupID="1"/>
+			<TextGroup_MappingTable Hil-ID="0x20039F" GroupID="1"/>
+			<FreeWidgetController WidgetName="CHRG_ChargeScreenManager_trd">
+				<Screen Hil-ID="0x420100"/>
+				<Screen Hil-ID="0x420106"/>
+				<Screen Hil-ID="0x42010A"/>
+			</FreeWidgetController>
+			<FreeWidgetController WidgetName="CHRG_ChargeScreenManager_prg">
+				<Screen Hil-ID="0x420100"/>
+				<Screen Hil-ID="0x420106"/>
+				<Screen Hil-ID="0x42010A"/>
+			</FreeWidgetController>
+		</DisplaySettings>
+		<ArchDepSettings>
+			<Architecture variant="VAR213" id="trd">
+				<WarningStandardControllerWidget commonWidget="WarningsStandard_Common_trd_StaticContent" animWidget="WarningsStandard_trd_WithoutAnimation" softKeys="WIMMDL_VC_WarningsStandard_trd_ButtonController" referenceFileLink="WIMMDL_VC_WarningsStandard_trd_ButtonController.xml">WarningsStandard_trd</WarningStandardControllerWidget>
+				<WarningNightViewControllerWidget commonWidget="WarningsNightView_VAR213_trd_StaticContent" animWidget="WarningsNightView_trd_WithoutAnimation" softKeys="WIMMDL_VC_WarningsNightview_trd_ButtonController" referenceFileLink="WIMMDL_VC_WarningsNightview_trd_ButtonController.xml">WarningsNightView_trd</WarningNightViewControllerWidget>
+				<SlacksStandardControllerWidget>SlacksStandard_trd</SlacksStandardControllerWidget>
+				<WIM_FaultMemController softKeys="WIMMDL_VC_FaultMemController_trd_ButtonController" referenceFileLink="WIMMDL_VC_FaultMemController_trd_ButtonController.xml">WIM_FaultMemController_trd</WIM_FaultMemController>
+				<MenuControllerWidget>MenuTree_trd</MenuControllerWidget>
+				<FreeWidgetController WidgetName="SCA_Manager_trd">
+					<Screen Hil-ID="0x3E0010" Focus="false"/>
+					<Screen Hil-ID="0x3E0001" Focus="false"/>
+					<Screen Hil-ID="0x3E0002" Focus="false"/>
+					<Screen Hil-ID="0x300007" Focus="false"/>
+				</FreeWidgetController>
+				<FreeWidgetController WidgetName="SCA_WarmUpAMG_trd">
+					<Screen Hil-ID="0x3E0004" Focus="false"/>
+					<Screen Hil-ID="0x3E0005" Focus="false"/>
+					<Screen Hil-ID="0x3E0009" Focus="false"/>
+					<Screen Hil-ID="0x3E0006" Focus="false"/>
+					<Screen Hil-ID="0x3E0008" Focus="false"/>
+					<Screen Hil-ID="0x3E0007" Focus="false"/>
+					<Screen Hil-ID="0x3E0011" Focus="false"/>
+					<Screen Hil-ID="0x3E0012" Focus="false"/>
+				</FreeWidgetController>
+				<FreeWidgetController WidgetName="SCA_ECOScore_trd">
+					<Screen Hil-ID="0x300005" Focus="false"/>
+					<Screen Hil-ID="0x300018" Focus="false"/>
+					<Screen Hil-ID="0x300038" Focus="false"/>
+					<Screen Hil-ID="0x30003A" Focus="false"/>
+					<Screen Hil-ID="0x300053" Focus="false"/>
+					<Screen Hil-ID="0x300054" Focus="false"/>
+					<Screen Hil-ID="0x300069" Focus="false"/>
+					<Screen Hil-ID="0x300070" Focus="false"/>
+					<Screen Hil-ID="0x300071" Focus="false"/>
+					<Screen Hil-ID="0x300072" Focus="false"/>
+				</FreeWidgetController>
+				<FreeWidgetController WidgetName="SCA_ExtTrip_trd">
+					<Screen Hil-ID="0x300006" Focus="false"/>
+					<Screen Hil-ID="0x30001A" Focus="false"/>
+					<Screen Hil-ID="0x300019" Focus="false"/>
+					<Screen Hil-ID="0x30001C" Focus="false"/>
+					<Screen Hil-ID="0x30001F" Focus="false"/>
+					<Screen Hil-ID="0x300022" Focus="false"/>
+					<Screen Hil-ID="0x300062" Focus="false"/>
+					<Screen Hil-ID="0x300064" Focus="false"/>
+					<Screen Hil-ID="0x300066" Focus="false"/>
+				</FreeWidgetController>
+				<FreeWidgetController WidgetName="SCA_ExtTripAMG_trd">
+					<Screen Hil-ID="0x3E0003" Focus="false"/>
+				</FreeWidgetController>
+				<MenuReferenceFileLinkWidget>MenuTree_ArrowsDefault_StaticContainer_trd.xml</MenuReferenceFileLinkWidget>
+				<ListConfig>
+					<TIL>
+						<Windows_FileName>AVICFG_Windows_TIL_Trd.xml</Windows_FileName>
+						<Bufflets_FileName>AVICFG_Buflets_Trd.xml</Bufflets_FileName>
+						<Animation_Name>TextualList_Trd</Animation_Name>
+						<CursorOffsetX>-60</CursorOffsetX>
+						<CursorOffsetY>0</CursorOffsetY>
+						<InitDAAnimID>Animation_InitDAReduced_ListOnly_Trd</InitDAAnimID>
+						<CommonBuflet>TIL_trd_List</CommonBuflet>
+						<FocusClientID>FMAN_nenDynmArea_Trd</FocusClientID>
+						<DirectMessageFile>XCOMP_DirectMessagingConfig.xml</DirectMessageFile>
+					</TIL>
+					<HFO>
+						<Windows_FileName>AVICFG_Windows_HFO_Trd.xml</Windows_FileName>
+						<Bufflets_FileName>AVICFG_Buflets_Trd.xml</Bufflets_FileName>
+						<Animation_Name>OverlayMenu_Trd</Animation_Name>
+						<CursorOffsetX>383</CursorOffsetX>
+						<CursorOffsetY>0</CursorOffsetY>
+						<InitDAAnimID>Animation_InitDAReduced_ListOnly_Trd</InitDAAnimID>
+						<AVITREND>HMI::AVITREND::DirtyRectRenderer</AVITREND>
+						<CommonBuflet>HFO_trd_List</CommonBuflet>
+						<InvertLayout>Enable</InvertLayout>
+					</HFO>
+					<GIL>
+						<Windows_FileName>AVICFG_Windows_GIL_Trd.xml</Windows_FileName>
+						<Bufflets_FileName>AVICFG_Buflets_Trd.xml</Bufflets_FileName>
+						<Animation_Name>GraphicalList_Trd</Animation_Name>
+						<CursorOffsetX>0</CursorOffsetX>
+						<CursorOffsetY>0</CursorOffsetY>
+						<InitDAAnimID>Animation_InitDAReduced_ListOnly_Trd</InitDAAnimID>
+						<FocusClientID>FMAN_nenDynmArea_Trd</FocusClientID>
+						<DirectMessageFile>XCOMP_DirectMessagingConfig.xml</DirectMessageFile>
+						<CommonBuflet>GIL_trd_List</CommonBuflet>
+					</GIL>
+					<ADC>
+						<Windows_FileName>AVICFG_Windows_ADC_Trd.xml</Windows_FileName>
+						<Bufflets_FileName>AVICFG_Buflets_Trd.xml</Bufflets_FileName>
+						<Animation_Name>TextualList_Trd</Animation_Name>
+						<CursorOffsetX>136</CursorOffsetX>
+						<CursorOffsetY>0</CursorOffsetY>
+						<InitDAAnimID>Animation_InitDAReduced_ListOnly_Trd</InitDAAnimID>
+						<AVITREND>HMI::AVITREND::DirtyRectRenderer</AVITREND>
+						<CommonBuflet>TIL_trd_List</CommonBuflet>
+						<FocusClientID>FMAN_nenDynmArea_Trd</FocusClientID>
+						<DirectMessageFile>ADC_DirectMessagingConfig.xml</DirectMessageFile>
+						<DividerOffsetX>224</DividerOffsetX>
+						<DividerOffsetY>45</DividerOffsetY>
+						<SpeedUpRenderingTransition>Enable</SpeedUpRenderingTransition>
+						<ArrowVisibility>Enable</ArrowVisibility>
+					</ADC>
+					<ADCABC>
+						<Windows_FileName>AVICFG_Windows_ABC_Trd.xml</Windows_FileName>
+						<Bufflets_FileName>AVICFG_Buflets_Trd.xml</Bufflets_FileName>
+						<Animation_Name>AbcAnchoring_Trd</Animation_Name>
+					</ADCABC>
+				</ListConfig>
+				<ADCControllerWidget>MenuTree_trd</ADCControllerWidget>
+				<BitmapGroup_MappingTable GroupName="Default" GroupID="rod_trd"/>
+			</Architecture>
+			<Architecture variant="VAR213" id="prg">
+				<WarningStandardControllerWidget commonWidget="WarningsStandard_Common_prg_StaticContent" animWidget="WarningsStandard_prg_WithoutAnimation" softKeys="WIMMDL_VC_WarningsStandard_prg_ButtonController" referenceFileLink="WIMMDL_VC_WarningsStandard_prg_ButtonController.xml">WarningsStandard_prg</WarningStandardControllerWidget>
+				<WarningNightViewControllerWidget commonWidget="WarningsNightView_VAR213_prg_StaticContent" animWidget="WarningsNightView_prg_WithoutAnimation" softKeys="WIMMDL_VC_WarningsNightview_prg_ButtonController" referenceFileLink="WIMMDL_VC_WarningsNightview_prg_ButtonController.xml">WarningsNightView_prg</WarningNightViewControllerWidget>
+				<SlacksStandardControllerWidget>SlacksStandard_prg</SlacksStandardControllerWidget>
+				<WIM_FaultMemController softKeys="WIMMDL_VC_FaultMemController_prg_ButtonController" referenceFileLink="WIMMDL_VC_FaultMemController_prg_ButtonController.xml">WIM_FaultMemController_prg</WIM_FaultMemController>
+				<MenuControllerWidget>MenuTree_prg</MenuControllerWidget>
+				<FreeWidgetController WidgetName="SCA_Manager_prg">
+					<Screen Hil-ID="0x300039" Focus="false"/>
+					<Screen Hil-ID="0x3E0010" Focus="false"/>
+					<Screen Hil-ID="0x3E0001" Focus="false"/>
+					<Screen Hil-ID="0x3E0002" Focus="false"/>
+					<Screen Hil-ID="0x300007" Focus="false"/>
+				</FreeWidgetController>
+				<FreeWidgetController WidgetName="SCA_WarmUpAMG_prg">
+					<Screen Hil-ID="0x3E0004" Focus="false"/>
+					<Screen Hil-ID="0x3E0005" Focus="false"/>
+					<Screen Hil-ID="0x3E0009" Focus="false"/>
+					<Screen Hil-ID="0x3E0006" Focus="false"/>
+					<Screen Hil-ID="0x3E0008" Focus="false"/>
+					<Screen Hil-ID="0x3E0007" Focus="false"/>
+					<Screen Hil-ID="0x3E0011" Focus="false"/>
+					<Screen Hil-ID="0x3E0012" Focus="false"/>
+				</FreeWidgetController>
+				<FreeWidgetController WidgetName="SCA_ECOScore_prg">
+					<Screen Hil-ID="0x300041" Focus="false"/>
+					<Screen Hil-ID="0x300042" Focus="false"/>
+					<Screen Hil-ID="0x300043" Focus="false"/>
+					<Screen Hil-ID="0x300044" Focus="false"/>
+					<Screen Hil-ID="0x300055" Focus="false"/>
+					<Screen Hil-ID="0x300056" Focus="false"/>
+					<Screen Hil-ID="0x300075" Focus="false"/>
+					<Screen Hil-ID="0x300076" Focus="false"/>
+					<Screen Hil-ID="0x300077" Focus="false"/>
+					<Screen Hil-ID="0x300078" Focus="false"/>
+				</FreeWidgetController>
+				<FreeWidgetController WidgetName="SCA_ExtTrip_prg">
+					<Screen Hil-ID="0x30003B" Focus="false"/>
+					<Screen Hil-ID="0x30003C" Focus="false"/>
+					<Screen Hil-ID="0x30001B" Focus="false"/>
+					<Screen Hil-ID="0x30001D" Focus="false"/>
+					<Screen Hil-ID="0x300025" Focus="false"/>
+					<Screen Hil-ID="0x300024" Focus="false"/>
+					<Screen Hil-ID="0x300063" Focus="false"/>
+					<Screen Hil-ID="0x300065" Focus="false"/>
+					<Screen Hil-ID="0x300067" Focus="false"/>
+				</FreeWidgetController>
+				<FreeWidgetController WidgetName="SCA_ExtTripAMG_prg">
+					<Screen Hil-ID="0x3E0003" Focus="false"/>
+				</FreeWidgetController>
+				<MenuReferenceFileLinkWidget>MenuTree_ArrowsDefault_StaticContainer_prg.xml</MenuReferenceFileLinkWidget>
+				<ListConfig>
+					<TIL>
+						<Windows_FileName>AVICFG_Windows_TIL_Prg.xml</Windows_FileName>
+						<Bufflets_FileName>AVICFG_Buflets_Prg.xml</Bufflets_FileName>
+						<Animation_Name>TextualList_Prg</Animation_Name>
+						<CursorOffsetX>-39</CursorOffsetX>
+						<CursorOffsetY>0</CursorOffsetY>
+						<InitDAAnimID>Animation_InitDAReduced_ListOnly_Prg</InitDAAnimID>
+						<CommonBuflet>TIL_prg_List</CommonBuflet>
+						<FocusClientID>FMAN_nenDynmArea_Prg</FocusClientID>
+						<DirectMessageFile>XCOMP_DirectMessagingConfig.xml</DirectMessageFile>
+					</TIL>
+					<HFO>
+						<Windows_FileName>AVICFG_Windows_HFO_Prg.xml</Windows_FileName>
+						<Bufflets_FileName>AVICFG_Buflets_Prg.xml</Bufflets_FileName>
+						<Animation_Name>OverlayMenu_Prg</Animation_Name>
+						<CursorOffsetX>596</CursorOffsetX>
+						<CursorOffsetY>0</CursorOffsetY>
+						<InitDAAnimID>Animation_InitDAReduced_ListOnly_Prg</InitDAAnimID>
+						<AVITREND>HMI::AVITREND::DirtyRectRenderer</AVITREND>
+						<CommonBuflet>HFO_prg_List</CommonBuflet>
+						<InvertLayout>Enable</InvertLayout>
+					</HFO>
+					<GIL>
+						<Windows_FileName>AVICFG_Windows_GIL_Prg.xml</Windows_FileName>
+						<Bufflets_FileName>AVICFG_Buflets_Prg.xml</Bufflets_FileName>
+						<Animation_Name>GraphicalList_Prg</Animation_Name>
+						<CursorOffsetX>0</CursorOffsetX>
+						<CursorOffsetY>0</CursorOffsetY>
+						<InitDAAnimID>Animation_InitDAReduced_ListOnly_Prg</InitDAAnimID>
+						<CommonBuflet>GIL_prg_List</CommonBuflet>
+						<FocusClientID>FMAN_nenDynmArea_Prg</FocusClientID>
+						<DirectMessageFile>XCOMP_DirectMessagingConfig.xml</DirectMessageFile>
+					</GIL>
+					<ADC>
+						<Windows_FileName>AVICFG_Windows_ADC_Prg.xml</Windows_FileName>
+						<Bufflets_FileName>AVICFG_Buflets_Prg.xml</Bufflets_FileName>
+						<Animation_Name>TextualList_Prg</Animation_Name>
+						<CursorOffsetX>33</CursorOffsetX>
+						<CursorOffsetY>0</CursorOffsetY>
+						<InitDAAnimID>Animation_InitDAReduced_ListOnly_Prg</InitDAAnimID>
+						<AVITREND>HMI::AVITREND::DirtyRectRenderer</AVITREND>
+						<CommonBuflet>TIL_prg_List</CommonBuflet>
+						<FocusClientID>FMAN_nenDynmArea_Prg</FocusClientID>
+						<DirectMessageFile>ADC_DirectMessagingConfig.xml</DirectMessageFile>
+						<DividerOffsetX>96</DividerOffsetX>
+						<DividerOffsetY>42</DividerOffsetY>
+						<SpeedUpRenderingTransition>Enable</SpeedUpRenderingTransition>
+						<ArrowVisibility>Enable</ArrowVisibility>
+					</ADC>
+					<ADCABC>
+						<Windows_FileName>AVICFG_Windows_ABC_Prg.xml</Windows_FileName>
+						<Bufflets_FileName>AVICFG_Buflets_Prg.xml</Bufflets_FileName>
+						<Animation_Name>AbcAnchoring_Prg</Animation_Name>
+					</ADCABC>
+				</ListConfig>
+				<ADCControllerWidget>MenuTree_prg</ADCControllerWidget>
+				<BitmapGroup_MappingTable GroupName="Default" GroupID="rod_prg"/>
+			</Architecture>
+			<Architecture variant="VAR205" id="trd">
+				<WarningStandardControllerWidget commonWidget="WarningsStandard_Common_trd_StaticContent" animWidget="WarningsStandard_trd_WithoutAnimation" softKeys="WIMMDL_VC_WarningsStandard_trd_ButtonController" referenceFileLink="WIMMDL_VC_WarningsStandard_trd_ButtonController.xml">WarningsStandard_trd</WarningStandardControllerWidget>
+				<WarningNightViewControllerWidget generateScreens="false"/>
+				<SlacksStandardControllerWidget>SlacksStandard_trd</SlacksStandardControllerWidget>
+				<WIM_FaultMemController softKeys="WIMMDL_VC_FaultMemController_trd_ButtonController" referenceFileLink="WIMMDL_VC_FaultMemController_trd_ButtonController.xml">WIM_FaultMemController_trd</WIM_FaultMemController>
+				<MenuControllerWidget>MenuTree_trd</MenuControllerWidget>
+				<FreeWidgetController WidgetName="SCA_Manager_trd">
+					<Screen Hil-ID="0x3E0010" Focus="false"/>
+					<Screen Hil-ID="0x3E0001" Focus="false"/>
+					<Screen Hil-ID="0x3E0002" Focus="false"/>
+					<Screen Hil-ID="0x300007" Focus="false"/>
+				</FreeWidgetController>
+				<FreeWidgetController WidgetName="SCA_WarmUpAMG_trd">
+					<Screen Hil-ID="0x3E0004" Focus="false"/>
+					<Screen Hil-ID="0x3E0005" Focus="false"/>
+					<Screen Hil-ID="0x3E0009" Focus="false"/>
+					<Screen Hil-ID="0x3E0006" Focus="false"/>
+					<Screen Hil-ID="0x3E0008" Focus="false"/>
+					<Screen Hil-ID="0x3E0007" Focus="false"/>
+					<Screen Hil-ID="0x3E0011" Focus="false"/>
+					<Screen Hil-ID="0x3E0012" Focus="false"/>
+				</FreeWidgetController>
+				<FreeWidgetController WidgetName="SCA_ECOScore_trd">
+					<Screen Hil-ID="0x300005" Focus="false"/>
+					<Screen Hil-ID="0x300060" Focus="false"/>
+					<Screen Hil-ID="0x300061" Focus="false"/>
+					<Screen Hil-ID="0x300073" Focus="false"/>
+					<Screen Hil-ID="0x300074" Focus="false"/>
+					<Screen Hil-ID="0x300053" Focus="false"/>
+					<Screen Hil-ID="0x300054" Focus="false"/>
+					<Screen Hil-ID="0x300018" Focus="false"/>
+					<Screen Hil-ID="0x300069" Focus="false"/>
+					<Screen Hil-ID="0x300070" Focus="false"/>
+					<Screen Hil-ID="0x300071" Focus="false"/>
+					<Screen Hil-ID="0x300072" Focus="false"/>
+				</FreeWidgetController>
+				<FreeWidgetController WidgetName="SCA_ElecExtTrip_trd">
+					<Screen Hil-ID="0x30001F" Focus="false"/>
+					<Screen Hil-ID="0x300066" Focus="false"/>
+				</FreeWidgetController>
+				<FreeWidgetController WidgetName="SCA_ExtTrip_trd">
+					<Screen Hil-ID="0x300006" Focus="false"/>
+					<Screen Hil-ID="0x300019" Focus="false"/>
+					<Screen Hil-ID="0x300062" Focus="false"/>
+					<Screen Hil-ID="0x300064" Focus="false"/>
+				</FreeWidgetController>
+				<FreeWidgetController WidgetName="SCA_HydrogenExtTrip_trd">
+					<Screen Hil-ID="0x300059" Focus="false"/>
+					<Screen Hil-ID="0x300068" Focus="false"/>
+				</FreeWidgetController>
+				<FreeWidgetController WidgetName="SCA_ExtTripAMG_trd">
+					<Screen Hil-ID="0x3E0003" Focus="false"/>
+				</FreeWidgetController>
+				<MenuReferenceFileLinkWidget>MenuTree_ArrowsDefault_StaticContainer_trd.xml</MenuReferenceFileLinkWidget>
+				<ListConfig>
+					<TIL>
+						<Windows_FileName>AVICFG_Windows_TIL_Trd.xml</Windows_FileName>
+						<Bufflets_FileName>AVICFG_Buflets_Trd.xml</Bufflets_FileName>
+						<Animation_Name>TextualList_Trd</Animation_Name>
+						<CursorOffsetX>-58</CursorOffsetX>
+						<CursorOffsetY>-3</CursorOffsetY>
+						<InitDAAnimID>Animation_InitDAReduced_ListOnly_Trd</InitDAAnimID>
+						<CommonBuflet>TIL_trd_List</CommonBuflet>
+						<FocusClientID>FMAN_nenDynmArea_Trd</FocusClientID>
+						<DirectMessageFile>XCOMP_DirectMessagingConfig.xml</DirectMessageFile>
+					</TIL>
+					<HFO>
+						<Windows_FileName>AVICFG_Windows_HFO_Trd.xml</Windows_FileName>
+						<Bufflets_FileName>AVICFG_Buflets_Trd.xml</Bufflets_FileName>
+						<Animation_Name>OverlayMenu_Trd</Animation_Name>
+						<CursorOffsetX>458</CursorOffsetX>
+						<CursorOffsetY>0</CursorOffsetY>
+						<InitDAAnimID>Animation_InitDAReduced_ListOnly_Trd</InitDAAnimID>
+						<AVITREND>HMI::AVITREND::DirtyRectRenderer</AVITREND>
+						<CommonBuflet>HFO_trd_List</CommonBuflet>
+						<InvertLayout>Enable</InvertLayout>
+					</HFO>
+					<GIL>
+						<Windows_FileName>AVICFG_Windows_GIL_Trd.xml</Windows_FileName>
+						<Bufflets_FileName>AVICFG_Buflets_Trd.xml</Bufflets_FileName>
+						<Animation_Name>GraphicalList_Trd</Animation_Name>
+						<CursorOffsetX>0</CursorOffsetX>
+						<CursorOffsetY>0</CursorOffsetY>
+						<InitDAAnimID>Animation_InitDAReduced_ListOnly_Trd</InitDAAnimID>
+						<FocusClientID>FMAN_nenDynmArea_Trd</FocusClientID>
+						<DirectMessageFile>XCOMP_DirectMessagingConfig.xml</DirectMessageFile>
+						<CommonBuflet>GIL_trd_List</CommonBuflet>
+					</GIL>
+					<ADC>
+						<Windows_FileName>AVICFG_Windows_ADC_Trd.xml</Windows_FileName>
+						<Bufflets_FileName>AVICFG_Buflets_Trd.xml</Bufflets_FileName>
+						<Animation_Name>TextualList_Trd</Animation_Name>
+						<CursorOffsetX>48</CursorOffsetX>
+						<CursorOffsetY>0</CursorOffsetY>
+						<InitDAAnimID>Animation_InitDAReduced_ListOnly_Trd</InitDAAnimID>
+						<AVITREND>HMI::AVITREND::DirtyRectRenderer</AVITREND>
+						<CommonBuflet>TIL_trd_List</CommonBuflet>
+						<FocusClientID>FMAN_nenDynmArea_Trd</FocusClientID>
+						<DirectMessageFile>ADC_DirectMessagingConfig.xml</DirectMessageFile>
+						<DividerOffsetX>224</DividerOffsetX>
+						<DividerOffsetY>45</DividerOffsetY>
+						<SpeedUpRenderingTransition>Enable</SpeedUpRenderingTransition>
+						<ArrowVisibility>Enable</ArrowVisibility>
+					</ADC>
+					<ADCABC>
+						<Windows_FileName>AVICFG_Windows_ABC_Trd.xml</Windows_FileName>
+						<Bufflets_FileName>AVICFG_Buflets_Trd.xml</Bufflets_FileName>
+						<Animation_Name>AbcAnchoring_Trd</Animation_Name>
+					</ADCABC>
+				</ListConfig>
+				<ADCControllerWidget>MenuTree_trd</ADCControllerWidget>
+				<BitmapGroup_MappingTable GroupName="Default" GroupID="rod_trd"/>
+			</Architecture>
+			<Architecture variant="VAR205" id="prg">
+				<WarningStandardControllerWidget commonWidget="WarningsStandard_Common_prg_StaticContent" animWidget="WarningsStandard_prg_WithoutAnimation" softKeys="WIMMDL_VC_WarningsStandard_prg_ButtonController" referenceFileLink="WIMMDL_VC_WarningsStandard_prg_ButtonController.xml">WarningsStandard_prg</WarningStandardControllerWidget>
+				<WarningNightViewControllerWidget generateScreens="false"/>
+				<SlacksStandardControllerWidget>SlacksStandard_prg</SlacksStandardControllerWidget>
+				<WIM_FaultMemController softKeys="WIMMDL_VC_FaultMemController_prg_ButtonController" referenceFileLink="WIMMDL_VC_FaultMemController_prg_ButtonController.xml">WIM_FaultMemController_prg</WIM_FaultMemController>
+				<MenuControllerWidget>MenuTree_prg</MenuControllerWidget>
+				<FreeWidgetController WidgetName="SCA_Manager_prg">
+					<Screen Hil-ID="0x300039" Focus="false"/>
+					<Screen Hil-ID="0x3E0010" Focus="false"/>
+					<Screen Hil-ID="0x3E0001" Focus="false"/>
+					<Screen Hil-ID="0x3E0002" Focus="false"/>
+					<Screen Hil-ID="0x300007" Focus="false"/>
+				</FreeWidgetController>
+				<FreeWidgetController WidgetName="SCA_WarmUpAMG_prg">
+					<Screen Hil-ID="0x3E0004" Focus="false"/>
+					<Screen Hil-ID="0x3E0005" Focus="false"/>
+					<Screen Hil-ID="0x3E0009" Focus="false"/>
+					<Screen Hil-ID="0x3E0006" Focus="false"/>
+					<Screen Hil-ID="0x3E0008" Focus="false"/>
+					<Screen Hil-ID="0x3E0007" Focus="false"/>
+					<Screen Hil-ID="0x3E0011" Focus="false"/>
+					<Screen Hil-ID="0x3E0012" Focus="false"/>
+				</FreeWidgetController>
+				<FreeWidgetController WidgetName="SCA_ECOScore_prg">
+					<Screen Hil-ID="0x300041" Focus="false"/>
+					<Screen Hil-ID="0x300042" Focus="false"/>
+					<Screen Hil-ID="0x300043" Focus="false"/>
+					<Screen Hil-ID="0x300044" Focus="false"/>
+					<Screen Hil-ID="0x300055" Focus="false"/>
+					<Screen Hil-ID="0x300056" Focus="false"/>
+				</FreeWidgetController>
+				<FreeWidgetController WidgetName="SCA_ExtTrip_prg">
+					<Screen Hil-ID="0x30003B" Focus="false"/>
+					<Screen Hil-ID="0x30003C" Focus="false"/>
+					<Screen Hil-ID="0x30001B" Focus="false"/>
+					<Screen Hil-ID="0x30001D" Focus="false"/>
+					<Screen Hil-ID="0x300025" Focus="false"/>
+					<Screen Hil-ID="0x300024" Focus="false"/>
+				</FreeWidgetController>
+				<FreeWidgetController WidgetName="SCA_ExtTripAMG_prg">
+					<Screen Hil-ID="0x3E0003" Focus="false"/>
+				</FreeWidgetController>
+				<MenuReferenceFileLinkWidget>MenuTree_ArrowsDefault_StaticContainer_prg.xml</MenuReferenceFileLinkWidget>
+				<ListConfig>
+					<TIL>
+						<Windows_FileName>AVICFG_Windows_TIL_Prg.xml</Windows_FileName>
+						<Bufflets_FileName>AVICFG_Buflets_Prg.xml</Bufflets_FileName>
+						<Animation_Name>TextualList_Prg</Animation_Name>
+						<CursorOffsetX>-39</CursorOffsetX>
+						<CursorOffsetY>0</CursorOffsetY>
+						<InitDAAnimID>Animation_InitDAReduced_ListOnly_Prg</InitDAAnimID>
+						<CommonBuflet>TIL_prg_List</CommonBuflet>
+						<FocusClientID>FMAN_nenDynmArea_Prg</FocusClientID>
+						<DirectMessageFile>XCOMP_DirectMessagingConfig.xml</DirectMessageFile>
+					</TIL>
+					<HFO>
+						<Windows_FileName>AVICFG_Windows_HFO_Prg.xml</Windows_FileName>
+						<Bufflets_FileName>AVICFG_Buflets_Prg.xml</Bufflets_FileName>
+						<Animation_Name>OverlayMenu_Prg</Animation_Name>
+						<CursorOffsetX>596</CursorOffsetX>
+						<CursorOffsetY>0</CursorOffsetY>
+						<InitDAAnimID>Animation_InitDAReduced_ListOnly_Prg</InitDAAnimID>
+						<AVITREND>HMI::AVITREND::DirtyRectRenderer</AVITREND>
+						<CommonBuflet>HFO_prg_List</CommonBuflet>
+						<InvertLayout>Enable</InvertLayout>
+					</HFO>
+					<GIL>
+						<Windows_FileName>AVICFG_Windows_GIL_Prg.xml</Windows_FileName>
+						<Bufflets_FileName>AVICFG_Buflets_Prg.xml</Bufflets_FileName>
+						<Animation_Name>GraphicalList_Prg</Animation_Name>
+						<CursorOffsetX>0</CursorOffsetX>
+						<CursorOffsetY>0</CursorOffsetY>
+						<InitDAAnimID>Animation_InitDAReduced_ListOnly_Prg</InitDAAnimID>
+						<FocusClientID>FMAN_nenDynmArea_Prg</FocusClientID>
+						<DirectMessageFile>XCOMP_DirectMessagingConfig.xml</DirectMessageFile>
+						<CommonBuflet>GIL_prg_List</CommonBuflet>
+					</GIL>
+					<ADC>
+						<Windows_FileName>AVICFG_Windows_ADC_Prg.xml</Windows_FileName>
+						<Bufflets_FileName>AVICFG_Buflets_Prg.xml</Bufflets_FileName>
+						<Animation_Name>TextualList_Prg</Animation_Name>
+						<CursorOffsetX>33</CursorOffsetX>
+						<CursorOffsetY>0</CursorOffsetY>
+						<InitDAAnimID>Animation_InitDAReduced_ListOnly_Prg</InitDAAnimID>
+						<AVITREND>HMI::AVITREND::DirtyRectRenderer</AVITREND>
+						<CommonBuflet>TIL_prg_List</CommonBuflet>
+						<FocusClientID>FMAN_nenDynmArea_Prg</FocusClientID>
+						<DirectMessageFile>ADC_DirectMessagingConfig.xml</DirectMessageFile>
+						<DividerOffsetX>96</DividerOffsetX>
+						<DividerOffsetY>42</DividerOffsetY>
+						<SpeedUpRenderingTransition>Enable</SpeedUpRenderingTransition>
+						<ArrowVisibility>Enable</ArrowVisibility>
+					</ADC>
+					<ADCABC>
+						<Windows_FileName>AVICFG_Windows_ABC_Prg.xml</Windows_FileName>
+						<Bufflets_FileName>AVICFG_Buflets_Prg.xml</Bufflets_FileName>
+						<Animation_Name>AbcAnchoring_Prg</Animation_Name>
+					</ADCABC>
+				</ListConfig>
+				<ADCControllerWidget>MenuTree_prg</ADCControllerWidget>
+				<BitmapGroup_MappingTable GroupName="Default" GroupID="rod_prg"/>
+			</Architecture>
+		</ArchDepSettings>
+		<AdditionalWidgetConfig>
+			<MaskScreen variant="VAR213" file="00_ProjectSettings\ExcludedScreens.xml"/>
+			<MaskScreen variant="VAR205" file="00_ProjectSettings\ExcludedScreens_VAR205.xml"/>
+			<AdditionalTextResources file="02_Resources\XC_TextResources.xml"/>
+			<AdditionalIcons file="02_Resources\AdditionalIcons_prg.xml"/>
+			<AdditionalIcons variant="VAR205" file="02_Resources\VAR205_AdditionalIcons_trd.xml"/>
+			<AdditionalIcons variant="VAR213" file="02_Resources\VAR213_AdditionalIcons_trd.xml"/>
+			<BitmapConfig>
+				<BitmapFilePath variant="VAR205" path="02_Resources\VAR205_Bitmaps_trd"/>
+				<BitmapFilePath variant="VAR213" path="02_Resources\VAR213_Bitmaps_trd"/>
+				<BitmapFilePath path="02_Resources\Bitmaps_prg"/>
+				<BitmapFilePath path="02_Screens\Resources\Bitmaps"/>
+			</BitmapConfig>
+			<APIConditions file="02_Screens\Conditions\APIConditions.xml"/>
+			<!--<APIConditions file="02_Screens\Conditions\APIConditionsAMG.xml"/>-->
+			<PatternConditions file="02_Screens\Conditions\PatternConditions.xml"/>
+			<PatternErrorValuesConditions file="02_Screens\Conditions\PatternErrorValuesConditions.xml"/>
+			<!--<BlinkingConfig>
+                                <BlinkingConfigFile file="03_Configuration\XC_BlinkingConfig.xml"/>
+                        </BlinkingConfig>-->
+			<ComplexContentConfig file="02_Screens\ComplexContent\ComplexContentConfig.xml"/>
+			<BlinkingConfig>
+				<TTAStructures InsertPoint="TTA_Telltales_01">
+					<Input file="..\..\tta\core\tta_telltales_hpp.in"/>
+					<Output file="..\..\..\adapt\gen\xcomp\tta_telltales.hpp"/>
+				</TTAStructures>
+				<BlinkingConfigFile variant="VAR213" file="03_Configuration\XC_BlinkingConfig.xml"/>
+				<BlinkingConfigFile variant="VAR205" file="03_Configuration\XC_BlinkingConfig_VAR205.xml"/>
+			</BlinkingConfig>
+			<AddGridInfoConfig file="03_Configuration\XC_AddGridInfoConfig.xml"/>
+			<ADCAddGridInfoConfig variant="VAR213" file="03_Configuration\XC_IC_AdcAddGridInfoConfig.xml"/>
+			<ADCAddGridInfoConfig variant="VAR205" file="03_Configuration\XC_IC_AdcAddGridInfoConfig_VAR205.xml"/>
+			<ComplexContentValidation>
+				<Input variant="VAR213" file="03_Configuration\XC_ComplexContentRef_VAR213.xml"/>
+				<Input variant="VAR205" file="03_Configuration\XC_ComplexContentRef_VAR205.xml"/>
+				<Output variant="VAR213" file="..\..\..\tool\brutus\adapt\model\00_Output\ComplexContent\XC_ComplexContent_VAR213.xml"/>
+				<Output variant="VAR205" file="..\..\..\tool\brutus\adapt\model\00_Output\ComplexContent\XC_ComplexContent_VAR205.xml"/>
+			</ComplexContentValidation>
+		</AdditionalWidgetConfig>
+		<DaimlerConfiguration file="02_Screens\HmiResources.xml"/>
+	</DisplayConfiguration>
+	<DisplayConfiguration Name="HUD">
+		<DisplaySettings>
+			<DisplaySuffix>HUD</DisplaySuffix>
+			<IconConfigurationsConfig file="03_Configuration\XC_HUD_IconConfigurations.xml"/>
+			<WarningStandardControllerWidget>WarningsHUD</WarningStandardControllerWidget>
+			<SlacksStandardControllerWidget>SlacksHUD</SlacksStandardControllerWidget>
+			<BitmapGroup_MappingTable GroupName="Default" GroupID="rod"/>
+			<ListConfig>
+				<ListAnimHandler>HUDListAnimationHandler</ListAnimHandler>
+				<RemoteListDividerDeltaY>32</RemoteListDividerDeltaY>
+				<ListSurface_HL>Wndw_CursorListCurrentHLHud</ListSurface_HL>
+				<ListSurface_NHL>Wndw_CursorListCurrentNHLHud</ListSurface_NHL>
+				<ListSurfaceBuflet>Bflt_Chrome_CursorTextListHud</ListSurfaceBuflet>
+			</ListConfig>
+			<ListConfig>
+				<ADC>
+					<Windows_FileName>AVICFG_Windows_TIL_Hud.xml</Windows_FileName>
+					<Bufflets_FileName>AVICFG_Buflets_Hud.xml</Bufflets_FileName>
+					<Animation_Name>TextualList_Hud</Animation_Name>
+					<CursorOffsetX>0</CursorOffsetX>
+					<CursorOffsetY>0</CursorOffsetY>
+					<InitDAAnimID>Animation_InitHUD_On</InitDAAnimID>
+					<AVITREND>HMI::AVITREND::DirtyRectRenderer</AVITREND>
+					<CommonBuflet>TIL_hud_List</CommonBuflet>
+				</ADC>
+			</ListConfig>
+		</DisplaySettings>
+		<AdditionalWidgetConfig>
+			<MaskScreen file="00_ProjectSettings\HUD_ExcludedScreens.xml"/>
+			<APIConditions file="02_Screens_HUD\Conditions\HUD_APIConditions.xml"/>
+			<ComplexContentConfig file="02_Screens_HUD\ComplexContent\ComplexContentConfig.xml"/>
+			<PatternConditions file="02_Screens_HUD\Conditions\HUD_PatternConditions.xml"/>
+			<PatternErrorValuesConditions file="02_Screens_HUD\Conditions\HUD_PatternErrorValuesConditions.xml"/>
+			<ADCAddGridInfoConfig file="03_Configuration\XC_HUD_AdcAddGridInfoConfig.xml"/>
+		</AdditionalWidgetConfig>
+		<DaimlerConfiguration file="02_Screens_HUD\HUD_HmiResources.xml"/>
+	</DisplayConfiguration>
+	<XCompilerPackagesConfiguration>
+		<!-- SURA -->
+		<PackageConfig file="..\..\sura\mdl\SURA_PackageConfig.xml"/>
+		<!-- POINTERS -->
+		<PackageConfig file="..\..\pointers\mdl\POINTERS_PackageConfig.xml"/>
+		<!-- RPM -->
+		<PackageConfig file="..\..\rpm\mdl\RPM_PackageConfig.xml"/>
+		<!-- RPMMDL -->
+		<PackageConfig file="..\..\rpmmdl\mdl\RPMMDL_PackageConfig.xml"/>
+		<!-- BGCA -->
+		<PackageConfig file="..\..\bgca\mdl\BGCA_PackageConfig.xml"/>
+		<!--BGNDMDL-->
+		<PackageConfig file="..\..\bgnmdl\mdl\BGNMDL_PackageConfig.xml"/>
+		<!--STATMDL-->
+		<PackageConfig file="..\..\statmdl\mdl\STAT_PackageConfig.xml"/>
+		<!--TUBESMDL-->
+		<PackageConfig file="..\..\tubemdl\mdl\TUBE_PackageConfig.xml"/>
+		<!--SCMMDL-->
+		<PackageConfig file="..\..\scmmdl\mdl\SCM_PackageConfig.xml"/>
+		<!--TAESMDL-->
+		<PackageConfig file="..\..\taesmdl\mdl\TAES_PackageConfig.xml"/>
+		<!--TRCMDL-->
+		<PackageConfig file="..\..\trcmdl\mdl\TRC_PackageConfig.xml"/>
+		<!--CFGMDL-->
+		<PackageConfig file="..\..\cfgmdl\mdl\CFG_PackageConfig.xml"/>
+		<!--DSPHMDL-->
+		<PackageConfig file="..\..\dsphmdl\mdl\DSPH_PackageConfig.xml"/>
+		<!--TSAMDL-->
+		<PackageConfig file="..\..\tsamdl\mdl\TSA_PackageConfig.xml"/>
+		<!--FASMDL-->
+		<PackageConfig file="..\..\fasmdl\mdl\FAS_PackageConfig.xml"/>
+		<!--CW_MDL-->
+		<PackageConfig file="..\..\cwmdl\mdl\CW_PackageConfig.xml"/>
+		<!--SBW_MDL-->
+		<PackageConfig file="..\..\sbwmdl\mdl\SBW_PackageConfig.xml"/>
+		<!--WIM_MDL-->
+		<PackageConfig file="..\..\wimmdl\mdl\WIM_PackageConfig.xml"/>
+		<!--ADBMDL-->
+		<PackageConfig file="..\..\abluemdl\mdl\AdBlue_PackageConfig.xml"/>
+		<!--ATAMDL-->
+		<PackageConfig file="..\..\atamdl\mdl\ATA_PackageConfig.xml"/>
+		<!--KBD-->
+		<PackageConfig file="..\..\kbd\mdl\KBD_PackageConfig.xml"/>
+		<!--TPMMDL-->
+		<PackageConfig file="..\..\tpmmdl\mdl\TPM_PackageConfig.xml"/>
+		<!--DIAG_MDL-->
+		<PackageConfig file="..\..\diagmdl\mdl\DIAG_PackageConfig.xml"/>
+		<!--PRDMDL-->
+		<PackageConfig file="..\..\prdmdl\mdl\PRD_PackageConfig.xml"/>
+		<!--HUDSIMDL-->
+		<PackageConfig file="..\..\hudsimdl\mdl\HUDSI_PackageConfig.xml"/>
+		<!--GARMDL-->
+		<PackageConfig file="..\..\garmdl\mdl\GAR_PackageConfig.xml"/>
+		<!--APCMDL-->
+		<PackageConfig file="..\..\apcmdl\mdl\APC_PackageConfig.xml"/>
+		<!--COOLMDL-->
+		<PackageConfig file="..\..\coolmdl\mdl\COOL_PackageConfig.xml"/>
+		<!--WIMMDL-->
+		<PackageConfig file="..\..\wim\mdl\WIMCtrl_PackageConfig.xml"/>
+		<!--TPOL-->
+		<PackageConfig file="..\..\tpol\mdl\TPOL_PackageConfig.xml"/>
+		<!--TPOLMDL-->
+		<PackageConfig variant="VAR213" file="..\..\tpolmdl\mdl\TPOLMDL_PackageConfig.xml"/>
+		<PackageConfig variant="VAR205" file="..\..\tpolmdl\mdl\TPOLMDL_PackageConfig_VAR205.xml"/>
+		<!--ASPMDL-->
+		<PackageConfig file="..\..\aspmdl\mdl\ASP_PackageConfig.xml"/>
+		<!--GEARMDL-->
+		<PackageConfig file="..\..\gearmdl\mdl\GEAR_PackageConfig.xml"/>
+		<!--ADCMDL-->
+		<PackageConfig file="..\..\adcmdl\mdl\ADC_PackageConfig.xml"/>
+		<!--HUDBWMDL-->
+		<PackageConfig file="..\..\hudbwmdl\mdl\HUDBW_PackageConfig.xml"/>
+		<!--SACMDL-->
+		<PackageConfig file="..\..\sacmdl\mdl\SAC_PackageConfig.xml"/>
+		<!--CHRGMDL-->
+		<PackageConfig file="..\..\chrgmdl\mdl\CHRG_PackageConfig.xml"/>
+		<!--ANTF-->
+		<PackageConfig file="..\..\antf\mdl\ANTF_PackageConfig.xml"/>
+		<!--AVI-->
+		<PackageConfig file="..\..\avi\mdl\AVI_PackageConfig.xml"/>
+		<!--AVIEXT-->
+		<PackageConfig file="..\..\aviext\pkg\avicfg\mdl\AVICFG_PackageConfig.xml"/>
+		<!--ALGO-->
+		<PackageConfig file="..\..\aviext\pkg\algo\mdl\ALGO_PackageConfig.xml"/>
+		<!--PAINT-->
+		<PackageConfig file="..\..\aviext\pkg\paint\mdl\PAINT_PackageConfig.xml"/>
+		<!-- GLENZ -->
+		<PackageConfig file="..\..\aviext\pkg\glenz\mdl\GLENZ_PackageConfig.xml"/>
+		<!-- UTILS -->
+		<PackageConfig file="..\..\aviext\pkg\utils\mdl\UTILS_PackageConfig.xml"/>
+		<!--SUA-->
+		<PackageConfig file="..\..\sua\mdl\SUA_PackageConfig.xml"/>
+		<!--WARP-->
+		<PackageConfig file="..\..\warp\mdl\WARP_PackageConfig.xml"/>
+		<!--ICBWMDL-->
+		<PackageConfig file="..\..\icbwmdl\mdl\ICBW_PackageConfig.xml"/>
+		<!--TTA-->
+		<PackageConfig file="..\..\tta\mdl\TTA_PackageConfig.xml"/>
+		<!--ESA-->
+		<PackageConfig file="..\..\esa\mdl\ESA_PackageConfig.xml"/>
+		<!--AMMDL-->
+		<PackageConfig file="..\..\ammdl\mdl\AMMDL_PackageConfig.xml"/>
+		<!--LISA-->
+		<PackageConfig variant="VAR205" file="..\..\lisa\mdl\LISA_PackageConfig_VAR205.xml"/>
+		<PackageConfig variant="VAR213" file="..\..\lisa\mdl\LISA_PackageConfig_VAR213.xml"/>
+		<!--LIST-->
+		<PackageConfig file="..\..\list\mdl\LIST_PackageConfig.xml"/>
+		<!--CSA-->
+		<PackageConfig variant="VAR213" file="..\..\csa\mdl\CSA_PackageConfig_VAR213.xml"/>
+		<PackageConfig variant="VAR205" file="..\..\csa\mdl\CSA_PackageConfig_VAR205.xml"/>
+		<!--BCA-->
+		<PackageConfig variant="VAR213" file="..\..\bca\mdl\BCA_PackageConfig_VAR213.xml"/>
+		<PackageConfig variant="VAR205" file="..\..\bca\mdl\BCA_PackageConfig_VAR205.xml"/>
+		<!--SLDMDL-->
+		<PackageConfig file="..\..\sldmdl\mdl\SLD_PackageConfig.xml"/>
+		<!--GEA-->
+		<PackageConfig file="..\..\GEA\mdl\GEA_PackageConfig.xml"/>
+		<!--OFN-->
+		<PackageConfig file="..\..\ofn\mdl\OFN_PackageConfig.xml"/>
+		<!--CCSA-->
+		<PackageConfig file="..\..\ccsa\mdl\CCSA_PackageConfig.xml"/>
+		<!--SCSA-->
+		<PackageConfig file="..\..\scsa\mdl\SCSA_PackageConfig.xml"/>
+		<!--SHMA-->
+		<PackageConfig file="..\..\shma\mdl\SHMA_PackageConfig.xml"/>
+		<!--DAMTA-->
+		<PackageConfig file="..\..\damta\mdl\DAMTA_PackageConfig.xml"/>
+		<!--DANVA-->
+		<PackageConfig file="..\..\danva\mdl\DANVA_PackageConfig.xml"/>
+		<!--INAN-->
+		<PackageConfig file="..\..\inan\INAN_PackageConfig.xml"/>
+		<!--SEMA-->
+		<PackageConfig file="..\..\sema\mdl\SEMA_PackageConfig.xml"/>
+		<!--BARW-->
+		<PackageConfig file="..\..\barw\mdl\BARW_PackageConfig.xml"/>
+		<!--DFW-->
+		<PackageConfig file="..\..\dfw\mdl\DFW_PackageConfig.xml"/>
+		<!--DSM-->
+		<PackageConfig file="..\..\dsm\mdl\DSM_PackageConfig.xml"/>
+		<!--NINES-->
+		<PackageConfig file="..\..\nines\mdl\NINES_PackageConfig.xml"/>
+		<!--SPIN-->
+		<PackageConfig file="..\..\spin\mdl\SPIN_PackageConfig.xml"/>
+		<!--SLIS-->
+		<PackageConfig file="..\..\slis\mdl\SLIS_PackageConfig.xml"/>
+		<!--LRW-->
+		<PackageConfig file="..\..\lrw\mdl\LRW_PackageConfig.xml"/>
+		<!--PUSW-->
+		<PackageConfig file="..\..\pusw\mdl\PUSW_PackageConfig.xml"/>
+		<!--TAW-->
+		<PackageConfig file="..\..\taw\mdl\TAW_PackageConfig.xml"/>
+		<!--TGLC-->
+		<PackageConfig file="..\..\tglc\mdl\TGLC_PackageConfig.xml"/>
+		<!--TRSW-->
+		<PackageConfig file="..\..\trsw\mdl\TRSW_PackageConfig.xml"/>
+		<!--WFCEXT-->
+		<PackageConfig file="..\..\wfcext\mdl\WFC_Ext_PackageConfig.xml"/>
+		<!--CEDAA-->
+		<PackageConfig file="..\..\cedaa\mdl\CEDAA_PackageConfig.xml"/>
+		<!--AMAN-->
+		<PackageConfig file="..\..\aman\mdl\AMAN_PackageConfig.xml"/>
+		<!--SPDMDL-->
+		<PackageConfig file="..\..\spdmdl\mdl\SPDMDL_PackageConfig.xml"/>
+		<!--SPDA-->
+		<PackageConfig file="..\..\tda\mdl\TDA_PackageConfig.xml"/>
+		<!--AAD-->
+		<PackageConfig file="..\..\aad\mdl\AAD_PackageConfig.xml"/>
+		<!--DRA-->
+		<PackageConfig file="..\..\dra\mdl\DRA_PackageConfig.xml"/>
+		<!--HUDSPDA-->
+		<PackageConfig file="..\..\hudspda\mdl\HUDSPDA_PackageConfig.xml"/>
+		<!-- ECA -->
+		<PackageConfig file="..\..\eca\mdl\ECA_PackageConfig.xml"/>
+		<!--AMG-->
+		<PackageConfig file="..\..\amgmdl\mdl\AMG_PackageConfig.xml"/>
+		<!--GMA-->
+		<PackageConfig file="..\..\gma\mdl\GMA_PackageConfig.xml"/>
+		<!--COBAA-->
+		<PackageConfig file="..\..\cobaa\mdl\COBAA_PackageConfig.xml"/>
+		<!--TSAA-->
+		<PackageConfig variant="VAR213" file="..\..\tsaa\mdl\TSAA_PackageConfig_VAR213.xml"/>
+		<PackageConfig variant="VAR205" file="..\..\tsaa\mdl\TSAA_PackageConfig_VAR205.xml"/>
+		<!--ASA-->
+		<PackageConfig variant="VAR213" file="..\..\asa\mdl\ASA_PackageConfig_VAR213.xml"/>
+		<PackageConfig variant="VAR205" file="..\..\asa\mdl\ASA_PackageConfig_VAR205.xml"/>
+		<!--DAMNP-->
+		<PackageConfig file="..\..\damnp\mdl\DAMNP_PackageConfig.xml"/>
+		<!--XCMODEL-->
+		<PackageConfig variant="VAR213" file="03_Configuration\GroupMapping_VAR213.xml"/>
+		<PackageConfig variant="VAR205" file="03_Configuration\GroupMapping_VAR205.xml"/>
+		<!--BGA-->
+		<PackageConfig file="..\..\bga\mdl\BGA_PackageConfig.xml"/>
+		<!--NVIEWMDL-->
+		<PackageConfig file="..\..\nviewmdl\mdl\NVIEW_PackageConfig.xml"/>
+		<!--NVIEWV-->
+		<PackageConfig file="..\..\nviewv\mdl\NVIEWv_PackageConfig.xml"/>
+		<!--ISA-->
+		<PackageConfig file="..\..\isa\mdl\ISA_PackageConfig.xml"/>
+		<!--TUBES-->
+		<PackageConfig file="..\..\tubes\mdl\TUBES_PackageConfig.xml"/>
+		<!--WCA-->
+		<PackageConfig file="..\..\wca\mdl\WCA_PackageConfig.xml"/>
+		<!--DCD-->
+		<PackageConfig file="..\..\DCD\mdl\DCD_PackageConfig.xml"/>
+		<!--FMAN-->
+		<PackageConfig file="..\..\fman\mdl\FMAN_PackageConfig.xml"/>
+		<!--HILIA-->
+		<PackageConfig file="..\..\hilia\mdl\HILIA_PackageConfig.xml"/>
+		<!--HTPKG-->
+		<PackageConfig file="..\..\htpkg\mdl\HTPKG_PackageConfig.xml"/>
+		<!--EIAMDL-->
+		<PackageConfig file="..\..\eiamdl\mdl\EIA_PackageConfig.xml"/>
+		<!--DCAPP-->
+		<PackageConfig file="..\..\dcapp\mdl\DCAPP_PackageConfig.xml"/>
+		<!--HUDRPMA-->
+		<PackageConfig file="..\..\hudrpma\mdl\HUDRPMA_PackageConfig.xml"/>
+		<!--ESIA-->
+		<PackageConfig file="..\..\esia\mdl\ESIA_PackageConfig.xml"/>
+		<!--FIA-->
+		<PackageConfig file="..\..\fia\mdl\FIA_PackageConfig.xml"/>
+		<!--DCAPP-->
+		<PackageConfig file="..\..\dcapp\mdl\DCAPP_PackageConfig.xml"/>
+		<!--SSA-->
+		<PackageConfig file="..\..\ssa\mdl\SSA_PackageConfig.xml"/>
+		<!--SCAPA-->
+		<PackageConfig file="..\..\scapa\mdl\SCAPA_PackageConfig.xml"/>
+	</XCompilerPackagesConfiguration>
+	<Schemas>
+		<DAGSchemas path="..\..\dagxsd\mdl\xsd"/>
+		<HMILanguageSchemas path="..\..\..\tool\brutus\core\XSD"/>
+		<RSST_ExportSchemaSet path="..\..\..\tool\rsstexp\core\xsd\export"/>
+		<grADI_ProjectSchemaSet path="..\..\..\tool\rsstexp\core\xsd\model"/>
+		<AdditionalWidgetConfigurationsSchemas path="..\..\..\tool\xcomp\mdl\xsd"/>
+		<AdditionalWidgetConfigurationsSchemas path="..\..\..\tool\brutus\core\XSD"/>
+	</Schemas>
+</XCompilerConfiguration>
