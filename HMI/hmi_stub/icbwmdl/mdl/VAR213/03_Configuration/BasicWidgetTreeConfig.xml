@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<!--
+*****************************
+Copyright by Continental AG
+
+Title        : BasicWidgetTreeConfig.xml
+
+Description  : Contains the Widget Tree structure for project W213
+
+Environment  : <Description of environment e.g. operating system, processor, etc.>
+
+Responsible  : Corneliu Teodorescu
+
+Guidelines   : <Name and Version of guidelines used>
+
+Revision List:
+
+$Log: BasicWidgetTreeConfig.xml
+Revision 1.4 2017/07/03 Mos-EXT, Lorena (uidq1862)
+MR 60545 - UI 2016+ Focus Handling / shifting the focus smoothly
+Revision  2017/06/13 Croitoru Sandu (uidd7758)  
+DC MR 60346  MY18 205/213 HL: PRDMDL: Implement changes after review ORM 11992
+Revision  2017/05/29 Fartais-EXT, Lucian (uidr3054)
+DC MR 59987 - BR 213 HL MY18 E035: Implement new telltales position for ChargeScreen STF#47345
+Revision  2017/02/23 Fartais-EXT, Lucian (uidr3054)
+DC MR 59933 - BR 213 HL MY18 E035: TUBEMDL updates and Correction of findings
+Revision  2017/03/21 Lorena Mos (uidq1862)
+MR 58338 - ICBWMDL: Resource addaptation for Responsible and Modern Classic for the index indicator
+Revision  2017/03/14 Lorena Mos (uidq1862)
+MR 58328 - CR 38738 205MOPF Implement new Modern Classic style for GARMDL
+Revision  2017/03/10 Lorena Mos (uidq1862)
+MR 58697 - DAMNP - build variant specific model split
+Revision  2017/02/27 Lorena Mos (uidq1862)
+MR 57918 - ICBWMLD: Change display size and position of the DA and SCA for 213 and 205 Mopf HL  
+Revision  2017/02/22 Mos-EXT Lorena (uidq1862)
+DC MR 34575 MY18 E034 213/205: Centralized GLENZ Channel Selection
+Revision  2017/02/14 Mos-EXT Lorena (uidq1862)
+DC MR 58416 ICBWMDL:Split BasicWidgetTree and Folderstructure of the ICBWMDL folder
+Revision  2017/01/09 Mos-EXT, Lorena (uidq1862)
+DC MR 58171 - BR 205 HL MY18 E034: TUBEMDL: Update Responsible resources acording to E034 DSG.
+$Revision  2017/01/04 Fartais-EXT, Lucian (uidr3054)
+DC MR 57783 - BR 205 HL MY18: PART 2: TUBEMDL implementation of Responsible Style ALP#37742 P
+Revision 2017/01/03 Lorena Mos (uidq1862)
+DC MR 57578 - WIM/WIMMDL adaptations for new style responsible
+Revision 2016/12/15 Daniel Oaida (uidr2655)
+DC MR 57278 - ANIM: Adapt EcoScoreAnimation for E033
+Revision  2016/12/13 Fartais-EXT, Lucian (uidr3054)
+DC MR 57230 - P1 Hybrid for Responsible style
+Revision 2016/07/25 Fartais-EXT, Lucian (uidr3054)
+DC MR 54586 - BR 213 HL MY17 E023: introduction of new SOC bargraph for Traditional Sport and update of AMG Bargraph
+Revision 2016/07/25 Estera Ungureanu (uidj2632)
+DC MR 54675 - 213HL MY17 Shift Up Bargraph in NightView
+Revision 2016/04/08 Teodorescu-EXT, Corneliu (uidn9015)
+DC MR 52395 - Nightview Animations for AMG: changes for ICBWMDL; SCMMDL, STATMDL and SURA
+Revision 2016/04/07 Teodorescu-EXT, Corneliu (uidn9015)
+DC MR 52562 - MY17: AMG: Dynamic Red Area takeover from E015.1, with additional changes
+Revision 2016/04/07 Teodorescu-EXT, Corneliu (uidn9015)
+DC MR 52432 - AMG Distronic Ring Activation: Progressive Sport
+Revision 2016/03/14 Teodorescu-EXT, Corneliu (uidn9015)
+DC MR 52199 - 213MY17 E022: GLENZ file splitting for start-up acceleration
+Revision 2016/01/08 Teodorescu-EXT, Corneliu (uidn9015)
+DC MR 50970 - Changes in NVIEWMDL and other components after review of FDS NVMDL
+Revision 2015/12/16 Teodorescu-EXT, Corneliu (uidn9015)
+DC MR 50940 - BR222 MOPF E021: Nightview Animation Step 3 implementation and TUBEMDL updates for previous Steps.
+Revision 2015/12/10 14:23:58CET Teodorescu-EXT, Corneliu (uidn9015)
+DC MR 51021 - 222MOPF NightViewAnimation Step2: Traffic Sign Assistant Changes
+Revision 2015/11/23 Teodorescu-EXT, Corneliu (uidn9015)
+DC MR 50792 - New POINTERS module and owner widget
+Revision 2015/11/23 Teodorescu-EXT, Corneliu (uidn9015)
+DC MR 50791 - New POINTERS module and owner widget
+Revision 2015/19/11 Teodorescu-EXT, Corneliu (uidn9015)
+DC MR 50532 - 222 Mopf Nightview Step 2: TUBEMDL and STATMDL modifications
+Revision 2015/11/11 14:01:01CET Teodorescu-EXT, Corneliu (uidn9015)
+DC MR 49446 - BR222Mopf - changelist #16790 for new FAS graphic
+Revision 2015/10/29 Teodorescu-EXT, Corneliu (uidn9015)
+DC MR 50451 - BR222MOPF: Flipping mechanism for the DataStorage
+Revision 2015/10/09 14:23:58CET Teodorescu-EXT, Corneliu (uidn9015)
+DC MR 50341 - Tube cover animation widget
+Revision 2015/08/13 Teodorescu-EXT, Corneliu (uidn9015) 
+MR 49312 - E021: Overtake Nightview Implementation for Dynamic Area Components from E020
+Revision 2015/08/07 Chis-EXT, Horia (uidg9973) 
+DC MR 49220 - Nightview: Overtake application module changes for E020 in E021
+Revision 2015/07/15 Chis-EXT, Horia (uidg9973) 
+DC MR 48345 - BR213HL: Remove broken Rendering Debugger
+2015/04/28  Alexandru Sopt (uidv8350)
+MR 46951 - Distronic animation handling
+Revision 2015/03/27 Chis-EXT, Horia (uidg9973) 
+MR 46861 - Creation of ICBWMDL_MenuAnimationHandler
+Revision 2015/04/17 Chis-EXT, Horia (uidg9973) 
+MR 47038 - BR213HL E009.2: Tube performance update
+Revision 2015/03/25 Voiculescu, Bogdan (uidv0172)
+DC MR 46821 ADC/PiP: Adaption of VideoIn Startup Sequence for Picture in Picture
+Revision 2015/03/29 Chis-EXT, Horia (uidg9973) 
+MR 46242 - BR213HL E009.2: SAC style guide changes
+Revision 2015/03/19 Gheorghica-EXT, Stefan (uidv8348) 
+MR 46405 - BR213-Safety New handling of monitoring areas between styles and screens
+Revision 2015/03/19 Gheorghica-EXT, Stefan (uidv8348) 
+MR 46767 - Changes for showing empty DA, SCA and CDA content until  resource set "menu" is loaded in ICBW
+2015/02/04 Yuan Pei Lin (uidw7152)
+MR 45797 - Hybrid graphs in the right tube: sport style
+2015/01/10 Gheorghica-EXT, Stefan (uidv8348)
+MR 44960 - Glas effect in the tubes
+Revision 2014/12/11 Gheorghica-EXT, Stefan (uidv8348)
+MR 44730 - 213HL E009.1 Charge screen for progressive (follow-up for MR43116)
+Revision 2014/11/04 Gheorghica-EXT, Stefan (uidv8348)
+MR 43116 - BR213HL Startup charge screen
+MR 43196 - Changes for Charge Screen in SCMMDL, DSPHMDL, ICBWMDL and BGNMDL
+Revision 2014/11/04 Gheorghica-EXT, Stefan (uidv8348)
+MR 43199 - BR213HL: Coolant/SOC layer concept changes
+Revision 2014/10/20 Gheorghica-EXT, Stefan (uidv8348)
+Revision 1.29 2014/10/13 Gheorghica-EXT, Stefan (uidv8348)
+Revision 1.36 2014/10/20 Gheorghica-EXT, Stefan (uidv8348)
+DC MR 41843 - Telltales: style guide changes for E009
+Revision 1.35 2014/10/13 Gheorghica-EXT, Stefan (uidv8348)
+DC MR 42910 - Align SCA strategy states to coded values in EEPROM + change pos.+size of some ICBWMDL widgets 2nd CCB
+Revision 1.34 2014/08/22 16:36:54CEST Albu-EXT, Calin (uidw5006)
+DC MR 42180: Introduction of Slacks for Progressive based on Traditional
+Revision 1.33 2014/08/17 19:14:36CEST Cucerzan, Melania (uidw2516)
+DC MR 41979 - PF3NG BR213 HL Introduction Package AMAN Architecture Manager and Configuration of Navigation Logic
+DC MR 41999 - PRDMDL - suffix for traditional
+Revision 1.32 2014/08/17 15:03:34CEST Halmaciu, Florin (uidl6278)
+DC MR 41777 Implementation of Turbine ICBWMDL, BGNMDL
+Revision 1.31 2014/08/14 11:41:57CEST Halmaciu, Florin (uidl6278)
+DC MR 41995 BR213HL: Right tube content under SCA manager
+Revision 1.30 2014/08/11 13:18:21CEST Sopt-EXT, Alexandru (uidv8350)
+DC MR 41449 Telltales: implement progressive variant
+Revision 1.29 2014/08/06 18:06:52CEST Gheorghica-EXT, Stefan (uidv8348)
+DC MR 41449 - Telltales implement progressive variant
+Revision 1.28 2014/08/05 17:29:41CEST Gheorghica-EXT, Stefan (uidv8348)
+DC MR 41788 - AMMDL Widget name adjustment and ORMs 6745, 6746
+Revision 1.27 2014/07/29 10:47:13CEST Gheorghica-EXT, Stefan (uidv8348)
+DC MR 41342 - Progressive-Changes in ICBWMDL
+Revision 1.26 2014/07/25 15:38:10CEST Gheorghica-EXT, Stefan (uidv8348)
+DC MR 41342 - Progressive-Changes in ICBWMDL
+Revision 1.25 2014/07/25 12:34:27CEST Gheorghica-EXT, Stefan (uidv8348)
+DC MR 40720 - BR213HL E008 widget tree changes
+DC MR 41287 - BR213HLGCE008SAC Progressive 1st Wave
+DC MR 41508 - Gear implement progressive variant
+DC MR 41525 - Status area implement progressive variant
+DC MR 41510 - TSA implement progressive variant
+DC MR 41512 - Tank implement progressive variant
+DC MR 41175 - BR213E008 Menu tree for progressive architecture
+DC MR 41307 - Introduction of SceneManager_prg and clean up of SceneManager
+DC MR 41308 - Introduction of BackgroundServerPrg
+DC MR 41357 - WIMMDL Introduction of progressive architecture for WarningsStandardFaultMemController
+Revision 1.23 2014/05/16 16:22:04CEST Gheorghica-EXT, Stefan (uidv8348)
+DC MR 40631 - MR 40591 - BR213 HL Correction for HIL silhouette icon concept_pre35
+Revision 1.22 2014/04/29 11:36:34CEST Gheorghica-EXT, Stefan (uidv8348)
+DC MR 40554 - BR213HL Carry over ICBWMDL changes for feature SLD
+Revision 1.21 2014/04/18 16:11:19CEST Gheorghica-EXT, Stefan (uidv8348)
+DC MR 40542 Changes in SCMMDL/ICBWMDL for E007pre35
+Revision 1.20 2014/04/08 15:57:11CEST Gheorghica-EXT, Stefan (uidv8348)
+DC MR 39243 - BR213HL GC: Gear changes for E007
+DC MR 40143 - New widgets for the Chrome Rings
+DC MR 37982 - WIM: Introduction of "Singleline Acknowledgements" - MR47
+DC MR 40375 - Powermeter in the right tube
+DC MR 40285 - Create SCA_Manager in ICBWMDL
+Revision 1.18 2014/04/07 09:12:32CEST Gheorghica-EXT, Stefan (uidv8348)
+DC BR213HL: Startup MR for package SLDMDL
+Revision 1.17 2014/04/03 11:28:40CEST Gheorghica-EXT, Stefan (uidv8348)
+DC MR 34277 - BR213 High Line Start up LIST - Widget in 213 HL
+Revision 1.14 2014/04/01 16:06:56CEST Gheorghica-EXT, Stefan (uidv8348)
+DC MR 39685 - Pointers, rings, dials - new model configuration
+Revision 1.12 2014/03/31 17:04:48CEST Gheorghica-EXT, Stefan (uidv8348)
+DC MR 39825 - Implementation of 213HIL concept in ICBWMDL
+Revision 1.6 2014/02/11 13:02:52CET Gheorghica-EXT, Stefan (uidv8348)
+DC MR 39202 - BR213 HL Remove APC manual implementation for menus
+Revision 1.5 2014/01/20 17:45:31CET Gheorghica-EXT, Stefan (uidv8348)
+DC MR 37949 - BR213 HL Correction of distronic ring
+Revision 1.4 2014/01/15 10:16:09CET Gheorghica-EXT, Stefan (uidv8348)
+DC MR 37390 - STATMDL, TUBEMDL Widget configurations required by the new layer concept
+Revision 1.3 2014/01/08 18:48:59CET Filimon, Andrei (uidt4153)
+DC MR 37631 BR213HL/GC/E006/SAC: harmonization of filenames in package
+Revision 1.2 2013/12/19 11:21:13CET Gheorghica-EXT, Stefan (uidv8348)
+DC MR 37421 - Startup MR ICBWMDL
+Revision 1.1 2013/12/06 10:05:55CET Gheorghica-EXT, Stefan (uidv8348)
+Initial revision
+Member added to project /id/dag_PF3/sw/pkg/icbwmdl/mdl/03_Configuration/project.pj
+Revision 1.1.1.40 2013/11/06 12:34:32CET Filimon, Andrei (uidt4153)
+DC MR 36673 Introduction of DirtyRect Debugging Renderer
+Revision 1.1.1.39 2013/11/06 09:42:21CET Voiculescu, Bogdan (uidv0172)
+DC MR 33386 BR213 HL: ADC/ExtKI Startup MR
+Revision 1.1.1.38 2013/11/05 16:05:34CET Sopt-EXT, Alexandru (uidv8350)
+DC MR 36555 Work around in the model
+Revision 1.1.1.37 2013/10/03 15:54:59CEST Cucerzan, Melania (uidw2516)
+MR36102 - BR213HL/GC/E005.1/SAC: finalise model split for SAC
+Revision 1.1.1.36 2013/09/17 17:21:43CEST Voiculescu, Bogdan (uidv0172)
+DC MR 34967 HUD: HUD Basic Widget Tree (Model split)
+Revision 1.1.1.35 2013/09/17 14:33:47CEST Filimon, Andrei (uidt4153)
+DC MR 34745 Removal of MenuManager and HUD Menu Manager
+Revision 1.1.1.34 2013/09/17 14:31:00CEST Bordinc, Nicusor (uid95791)
+DC MR 35031 BR213HL: StartupMR Distronic Ring HUD / Modelsplit PRD / API split PRD/SCS
+Revision 1.1.1.33 2013/09/16 09:44:50CEST Albu-EXT, Calin (uidw5006)
+DC MR 35002: KBD - API Split
+Revision 1.1.1.32 2013/09/13 16:10:20CEST Voiculescu, Bogdan (uidv0172)
+DC MR 34967 HUD: HUD Basic Widget Tree (Model split)
+Revision 1.1.1.31 2013/09/13 14:38:32CEST Sopt-EXT, Alexandru (uidv8350)
+DC MR 34730 GEAR - model split| DC MR 34731TUBE - model split| DC MR 34787 Status area top - take over scene controller
+Revision 1.1.1.30 2013/09/09 18:27:29CEST Filimon, Andrei (uidt4153)
+DC MR 34745 Removal of MenuManager and HUD Menu Manager
+Revision 1.1.1.29 2013/09/04 16:03:12CEST Filimon, Andrei (uidt4153)
+DC MR 34745 Removal of MenuManager and HUD Menu Manager
+Revision 1.1.1.28 2013/08/28 18:10:54CEST Chirila Rosa, Adela (uidt6989)
+DC MR 34379 BR213HL: Startup-MR for ASSYST PLUS (GAR)
+Revision 1.1.1.27 2013/08/17 15:21:19CEST Filimon, Andrei (uidt4153)
+DC MR 34703 Clear widget for IC and HUD
+Revision 1.1.1.26 2013/08/16 09:35:42CEST Sopt-EXT, Alexandru (uidv8350)
+DC MR 34634 State of charge display in the right tube - startup
+Revision 1.1.1.25 2013/08/16 07:04:10CEST Sopt-EXT, Alexandru (uidv8350)
+DC MR 34634 State of charge display in the right tube - startup
+Revision 1.1.1.24 2013/08/14 21:11:50CEST Halmaciu, Florin (uidl6278)
+DC MR 34613 BR213IC HL GC: StartUp APC ('model split', 'API split' and 'refactored BRUTUS' shall also be covered)
+Revision 1.1.1.23 2013/08/09 08:56:54CEST Gheorghica-EXT, Stefan (uidv8348)
+DC MR 34367 - Parktronic removal
+Revision 1.1.1.22 2013/08/05 17:23:17CEST Chirila Rosa, Adela (uidt6989)
+DC MR 34320 BR213HL: Startup-MR for garage level
+Revision 1.1.1.21 2013/06/26 09:20:09CEST Bordinc, Nicusor (uid95791)
+DC MR 33189 BR213HL E004: Implemenation of Distronic Ring
+Revision 1.1.1.20 2013/06/04 15:19:17CEST Bordinc, Nicusor (uid95791)
+DC MR 33189 BR213HL E004: Implemenation of Distronic Ring
+Revision 1.1.1.19 2013/06/03 16:41:46CEST Dumitru, Vasile (uidl6995)
+DC MR 33140: BR213HL: Startup-MR for Attention Assist
+Revision 1.1.1.18 2013/06/03 13:29:02CEST Ciuca, Gabriela (uidt7271)
+DC MR 33155
+Revision 1.1.1.17 2013/06/03 13:12:25CEST Muresan-EXT, Irina (uidv8351)
+DC MR 33462: BR213HL: Modelsplit WIMController/FaultMemory (WIM)
+Revision 1.1.1.16 2013/06/01 18:16:30CEST Magherusan, Claudia (uidt8500)
+DC MR 33137 Parktronic model - Startup (GC)
+Revision 1.1.1.15 2013/05/31 17:00:19CEST Filimon, Andrei (uidt4153)
+DC MR 33341 KBD Introduction of KeyRouter Widget in Basic Widget Tree
+Revision 1.1.1.14 2013/05/28 10:28:53CEST Muresan-EXT, Irina (uidv8351)
+DC MR 33254: BR213HL: Modelsplit Seatbeltwarning
+DC MR 33320: BR213HL: Modelsplit complex warnings (WIM)
+DC MR 33462: BR213HL: Modelsplit WIMController/FaultMemory (WIM)
+Revision 1.1.1.13 2013/05/27 14:32:47CEST Voiculescu, Bogdan (uidv0172)
+MR 33386 - BR213 HL: ADC/ExtKI Startup MR
+Revision 1.1.1.12 2013/05/24 09:16:41CEST Chirila Rosa, Adela (uidt6989)
+DC MR 33136 TSA model - Startup (GC)
+Revision 1.1.1.11 2013/05/13 10:59:46CEST Filimon, Andrei (uidt4153)
+DC MR 33093 XCModel: introduce the restructured 'ProjectConfig' into BR213 Projects
+DC MR 33137 Parktronic model - Startup (GC)
+DC MR 33290 Switch Illumination Handler Startup MR W213HL
+Revision 1.1.1.10 2013/05/13 08:09:57CEST Gheorghica-EXT, Stefan (uidv8348)
+DC MR 33137 - Parktronic model - Startup (GC)
+
+Revision 1.1.1.8 2013/04/05 12:20:50CEST Filimon, Andrei (uidt4153)
+DC MR 31309 REV and VEL Gauge Startup MR BR213HL
+Revision 1.1.1.7 2013/03/26 21:10:04CET Filimon, Andrei (uidt4153)
+Overtake of integration patches
+Revision 1.1.1.6 2013/03/13 10:40:36CET Filimon, Andrei (uidt4153)
+DC MR 32242 Startup for Menutree in BR213IC-GC-HL
+DC MR 32350 BR213HLE003SACIntroduction to Basic Widget Tree
+Revision 1.1.1.5 2013/03/01 18:05:06CET Filimon Andrei (uidt4153) (uidt4153)
+DC MR 31300 SCM_MDL StartupMR BR213HL
+DC MR 31309 REV and VEL Gauge Startup MR BR213HL
+Revision 1.1.1.4 2013/03/01 17:57:55CET Magherusan Claudia (uidt8500) (uidt8500)
+DC MR 31278 Tank and Coolant temperature configuration - Startup (GC)
+DC MR 31277 Telltales configuration - Startup (GC)
+DC MR 31276 GEAR - Startup (GC)
+DC MR 31271 Status-line configuration - startup (GC)
+Revision 1.1.1.3 2013/03/01 16:46:34CET Ciuca Gabriela (uidt7271) (uidt7271)
+DC MR 31362 BackgroundServer Startup MR BR213HL
+Revision 1.1.1.2 2013/02/12 14:09:40CET Filimon Andrei (uidt4153) (uidt4153)
+DC MR 31279 Widget Tree configuration BR213HL E003
+
+*****************************
+-->
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../tool/xcomp/mdl/xsd/BasicWidgetTreeConfig.xsd">
+	<Info>
+		<Company>Continental AG</Company>
+		<Customer>Daimler AG</Customer>
+		<ModelLine>IC213HL</ModelLine>
+		<SamplePhase>E009.2</SamplePhase>
+		<ReleaseNotes>
+			<ReleaseNote author="Bogdan Voiculescu" date="2015-03-25">IC Basic Widget Tree</ReleaseNote>
+		</ReleaseNotes>
+	</Info>
+	<RootWidget filename="\..\..\VAR213\01_Widgets\IC_Root.xml" name="IC_Root">
+		<WidgetGroup filename="\..\..\Common\01_Widgets\KeyRouterContainer.xml" name="KeyRouterContainer">
+			<Widget filename="\..\..\..\..\sacmdl\mdl\VAR213\01_Widgets\MDRL_Container.xml" name="MDRL_Container"/>
+			<Widget filename="\..\..\..\..\adcmdl\mdl\Common\01_Widgets\DCAppBootControl.xml" name="DCAppBootControl"/>
+			<Widget filename="\..\..\..\..\adcmdl\mdl\common\01_Widgets\AdcVideoInBufletHandler.xml" name="AdcVideoInBufletHandler"/>
+			<Widget filename="\..\..\..\..\nviewmdl\mdl\01_Widgets\NviewVideoInBufletHandler.xml" name="NviewVideoInBufletHandler"/>
+			<WidgetGroup filename="\..\..\..\..\garmdl\mdl\Common\01_Widgets\GARContainer.xml" name="GARContainer">
+				<WidgetGroup filename="\..\..\..\..\dsphmdl\mdl\01_Widgets\DisplayHandler.xml" name="DisplayHandler">
+					<Widget filename="\..\..\Common\01_Widgets\ICBWMDL_MenuAnimationHandler.xml" name="ICBWMDL_MenuAnimationHandler"/>
+					<Widget filename="\..\..\Common\01_Widgets\BlackScreen.xml" name="BlackScreen"/>
+					<WidgetGroup filename="\..\..\Common\01_Widgets\DisplayOn.xml" name="DisplayOn">
+						<Widget filename="\..\..\..\..\aviext\pkg\utils\mdl\01_Widgets\DataStorageFlipHandler.xml" name="DataStorageFlipHandler"/>
+						<Widget filename="\..\..\Common\01_Widgets\HilCollectorWidget.xml" name="HilCollectorWidget"/>
+						<Widget filename="\..\..\Common\01_Widgets\ListAnimationHandler.xml" name="ListAnimationHandler"/>
+						<Widget filename="\..\..\..\..\ammdl\mdl\AMMDL_IC_ConflictMatrix.xml" name="AMMDL_IC"/>
+						<Widget filename="\..\..\Common\01_Widgets\VOM_Collector.xml" name="VOM_Collector"/>
+						<Widget filename="\..\..\..\..\aviext\pkg\glenz\mdl\Common\01_Widgets\GlenzAnimationHandler.xml" name="GlenzAnimationHandler"/>
+						<WidgetGroup filename="\..\..\..\..\sldmdl\mdl\01_Widgets\SLDControl.xml" name="SLDControl">
+							<WidgetGroup filename="\..\..\Common\01_Widgets\ScreenManager.xml" name="ScreenManager">
+								<Widget filename="\..\..\..\..\adcmdl\mdl\Common\01_Widgets\PIPEarlyRequestHandler.xml" name="PIPEarlyRequestHandler"/>
+								<WidgetGroup filename="\..\..\..\..\diagmdl\mdl\01_Widgets\DisplayTestContainer.xml" name="DisplayTestContainer"/>
+								<Widget filename="\..\..\..\..\sldmdl\mdl\01_Widgets\IC_SLDPicture.xml" name="IC_SLDPicture"/>
+								<Widget filename="\..\..\..\..\sldmdl\mdl\01_Widgets\IC_DemoPictureController.xml" name="IC_DemoPictureController"/>
+								<WidgetGroup filename="\..\..\..\..\aman\mdl\01_Widgets\ArchitectureManager.xml" name="ArchitectureManager">
+									<WidgetGroup filename="\..\..\..\..\scmmdl\mdl\01_Widgets\SceneManager_trd.xml" name="SceneManager_trd">
+										<!-- Background -->
+										<WidgetGroup filename="\..\..\Common\01_Widgets\BackgroundContainer_trd.xml" name="BackgroundContainer_trd"/>
+										<!--Focus Manager Trd-->
+										<Widget filename="\..\..\Common\01_Widgets\FocusManager_trd.xml" name="FocusManager_trd">
+											<!-- DynamicArea_trd >> Dynamic -->
+											<WidgetGroup filename="\..\..\VAR213\01_Widgets\DynamicArea_trd.xml" name="DynamicArea_trd">
+												<WidgetGroup filename="\..\..\VAR213\01_Widgets\DynAreaPrioContainer_trd.xml" name="DynAreaPrioContainer_trd">
+													<Widget filename="\..\..\..\..\htpkg\mdl\01_Widgets\HTPKG_RootWidget.xml" name="HTPKG_RootWidget"/>
+													<WidgetGroup filename="\..\..\..\..\sacmdl\mdl\VAR213\01_Widgets\SAC_Container_trd.xml" name="SAC_Container_trd"/>
+													<WidgetGroup filename="\..\..\Common\01_Widgets\DA_EmptyContent_trd.xml" name="DA_EmptyContent_trd"/>
+													<WidgetGroup filename="\..\..\..\..\damnp\mdl\VAR213\01_Widgets\DynAreaNonPrioContainer_trd.xml" name="DynAreaNonPrioContainer_trd">
+														<WidgetGroup filename="\..\..\..\..\damnp\mdl\VAR213\01_Widgets\StandardView_trd.xml" name="StandardView_trd">
+															<WidgetGroup filename="\..\..\..\..\wimmdl\mdl\01_Widgets\VAR213\WarningsStandard_trd.xml" name="WarningsStandard_trd"/>
+															<WidgetGroup filename="\..\..\..\..\tpolmdl\mdl\01_Widgets\MenuTree_trd.xml" name="MenuTree_trd">
+																<WidgetGroup filename="\..\..\..\..\wimmdl\mdl\01_Widgets\VAR213\WIM_FaultMemController_trd.xml" name="WIM_FaultMemController_trd"/>
+																<WidgetGroup  filename="\..\..\..\..\wimmdl\mdl\01_Widgets\VAR213\WIM_FaultMemController_trd_WithoutStreet_Dimmed_StaticContent.xml" name="WIM_FaultMemController_trd_WithoutStreet_Dimmed_StaticContent"/>
+															</WidgetGroup>
+														</WidgetGroup>
+														<WidgetGroup filename="\..\..\..\..\damnp\mdl\VAR213\01_Widgets\NightView_trd.xml" name="NightView_trd">
+															<WidgetGroup filename="\..\..\..\..\nviewmdl\mdl\01_Widgets\NightviewOnly_trd.xml" name="NightviewOnly_trd"/>
+															<WidgetGroup  filename="\..\..\..\..\wimmdl\mdl\01_Widgets\VAR213\WarningsNightView_trd.xml" name="WarningsNightView_trd"/>
+														</WidgetGroup>
+														<WidgetGroup filename="\..\..\..\..\nviewmdl\mdl\01_Widgets\NightviewCommon_trd.xml" name="NightviewCommon_trd"/>
+													</WidgetGroup>
+													<WidgetGroup filename="\..\..\..\..\chrgmdl\mdl\Common\01_Widgets\CHRG_ChargeScreenController_trd.xml" name="CHRG_ChargeScreenController_trd"/>
+												</WidgetGroup>
+											</WidgetGroup>
+											<!--DA Highlight Trd-->
+											<Widget filename="\..\..\VAR213\01_Widgets\DA_Index_trd.xml" name="DA_Index_trd"/>
+											<!-- Tubes Container >> Main -->
+											<WidgetGroup filename="\..\..\..\..\tubemdl\mdl\Common\01_Widgets\Tubes_trd.xml" name="Tubes_trd">
+												<WidgetGroup  filename="\..\..\..\..\tubemdl\mdl\VAR213\01_Widgets\LeftTube_trd.xml" name="LeftTube_trd">
+													<WidgetGroup filename="\..\..\..\..\prdmdl\mdl\Common\01_Widgets\PRD_LeftTubePointer_trd.xml" name="PRD_LeftTubePointer_trd"/>
+													<WidgetGroup filename="\..\..\..\..\prdmdl\mdl\Common\01_Widgets\PRD_LeftTubeBackground_trd.xml" name="PRD_LeftTubeBackground_trd"/>
+													<WidgetGroup filename="\..\..\..\..\prdmdl\mdl\VAR213\01_Widgets\PRD_LeftTubeCover_trd.xml" name="PRD_LeftTubeCover_trd"/>
+												</WidgetGroup>
+												<WidgetGroup filename="\..\..\..\..\tubemdl\mdl\VAR213\01_Widgets\RightTube_trd.xml" name="RightTube_trd">
+													<!--RightTubeCover-->
+													<WidgetGroup filename="\..\..\..\..\prdmdl\mdl\Common\01_Widgets\PRD_RightTubeCover_trd.xml" name="PRD_RightTubeCover_trd"/>
+													<!--SCA-->
+													<WidgetGroup filename="\..\..\VAR213\01_Widgets\SCA_Manager_trd.xml" name="SCA_Manager_trd">
+														<WidgetGroup filename="\..\..\..\..\tubemdl\mdl\Common\01_Widgets\TUBE_CoolantChargeManager_RevGauge_trd.xml" name="TUBE_CoolantChargeManager_RevGauge_trd"/>
+														<WidgetGroup filename="\..\..\..\..\tubemdl\mdl\Common\01_Widgets\TUBE_CoolantChargeManager_Powermeter_trd.xml" name="TUBE_CoolantChargeManager_Powermeter_trd"/>
+														<WidgetGroup filename="\..\..\..\..\tubemdl\mdl\Common\01_Widgets\TUBE_CoolantChargeManager_trd.xml" name="TUBE_CoolantChargeManager_trd"/>
+														<WidgetGroup filename="\..\..\..\..\tubemdl\mdl\VAR213\01_Widgets\TUBE_CoolantChargeManager_trd_spo.xml" name="TUBE_CoolantChargeManager_trd_spo"/>
+													</WidgetGroup>
+												</WidgetGroup>
+											</WidgetGroup>
+											<!--SCA Highlight Trd-->
+											<Widget filename="\..\..\VAR213\01_Widgets\SCA_Index_trd.xml" name="SCA_Index_trd"/>
+										</Widget>
+										<!--ODOScreen-->
+										<WidgetGroup filename="\..\..\..\..\sacmdl\mdl\VAR213\01_Widgets\SAC_StartupODOScreen_trd.xml" name="SAC_StartupODOScreen_trd"/>
+										<!-- CHRG_ChargeScreen -->
+										<WidgetGroup filename="\..\..\..\..\chrgmdl\mdl\VAR213\01_Widgets\CHRG_ChargeScreenRoot_trd.xml" name="CHRG_ChargeScreenRoot_trd"/>
+										<!-- STATMDL >> Main -->
+										<WidgetGroup filename="\..\..\..\..\statmdl\mdl\Common\01_Widgets\StaticArea_trd.xml" name="StaticArea_trd"/>
+										<!-- GearContainer_trd >>-->
+										<WidgetGroup filename="\..\..\..\..\gearmdl\mdl\Common\01_Widgets\GearContainer_trd.xml" name="GearContainer_trd"/>
+										<!-- GearContainerCharge_trd >>-->
+										<WidgetGroup filename="\..\..\..\..\gearmdl\mdl\Common\01_Widgets\GearContainerCharge_trd.xml" name="GearContainerCharge_trd"/>
+										<!-- TelltalesContainer_trd-->
+										<WidgetGroup filename="\..\..\..\..\tubemdl\mdl\VAR213\01_Widgets\TelltalesContainer_trd.xml" name="TelltalesContainer_trd"/>
+										<!-- TelltalesContainerCharge_trd-->
+										<WidgetGroup filename="\..\..\..\..\tubemdl\mdl\VAR213\01_Widgets\TelltalesContainerCharge_trd.xml" name="TelltalesContainerCharge_trd"/>
+										<!-- Dials >> Main -->
+										<WidgetGroup filename="\..\..\..\..\wimmdl\mdl\01_Widgets\VAR213\SlacksStandard_trd.xml" name="SlacksStandard_trd"/>
+										<!--DA Proxy Trd-->
+										<Widget filename="\..\..\Common\01_Widgets\DA_Proxy_trd.xml" name="DA_Proxy_trd"/>
+										<!--Tubes Proxy Trd-->
+										<Widget filename="\..\..\Common\01_Widgets\Tubes_Proxy_trd.xml" name="Tubes_Proxy_trd"/>
+										<!--ShiftUp Bar-->
+										<Widget filename="\..\..\..\..\amgmdl\mdl\VAR213\01_Widgets\AMG_ShiftUpBar_Manager_trd.xml" name="AMG_ShiftUpBar_Manager_trd"/>
+									</WidgetGroup>
+									<WidgetGroup filename="\..\..\..\..\scmmdl\mdl\01_Widgets\SceneManager_prg.xml" name="SceneManager_prg">
+										<!--Background-->
+										<WidgetGroup filename="\..\..\..\..\icbwmdl\mdl\Common\01_Widgets\BackgroundContainer_prg.xml" name="BackgroundContainer_prg"/>
+										<!--ODOScreen-->
+										<WidgetGroup filename="\..\..\..\..\sacmdl\mdl\VAR213\01_Widgets\SAC_StartupODOScreen_prg.xml" name="SAC_StartupODOScreen_prg"/>
+										<!-- CHRG_ChargeScreen -->
+										<WidgetGroup filename="\..\..\..\..\chrgmdl\mdl\VAR213\01_Widgets\CHRG_ChargeScreenRoot_prg.xml" name="CHRG_ChargeScreenRoot_prg"/>
+										<!-- STATMDL >> Main -->
+										<WidgetGroup filename="\..\..\..\..\statmdl\mdl\VAR213\01_Widgets\StaticArea_prg.xml" name="StaticArea_prg"/>
+										<!-- GearContainer_prg-->
+										<WidgetGroup filename="\..\..\..\..\gearmdl\mdl\VAR213\01_Widgets\GearContainer_prg.xml" name="GearContainer_prg"/>
+										<!-- TelltalesContainer_prg-->
+										<WidgetGroup filename="\..\..\..\..\tubemdl\mdl\Common\01_Widgets\TelltalesContainer_prg.xml" name="TelltalesContainer_prg"/>
+										<!-- TelltalesContainerCharge_prg-->
+										<WidgetGroup filename="\..\..\..\..\tubemdl\mdl\VAR213\01_Widgets\TelltalesContainerCharge_prg.xml" name="TelltalesContainerCharge_prg"/>
+										<!--Slacks-->
+										<WidgetGroup filename="\..\..\..\..\wimmdl\mdl\01_Widgets\VAR213\SlacksStandard_prg.xml" name="SlacksStandard_prg"/>
+										<!--SpeedoCtrl-->
+										<WidgetGroup filename="\..\..\..\..\spdmdl\mdl\01_Widgets\SPDMDL_WE_SpeedoCtrl_prg.xml" name="SPDMDL_WE_SpeedoCtrl_prg"/>
+										<!--TSAContainer-->
+										<WidgetGroup filename="\..\..\..\..\tsamdl\mdl\01_Widgets\TSAContainer_prg.xml" name="TSAContainer_prg"/>
+										<!--Focus Manager Prg-->
+										<Widget filename="\..\..\Common\01_Widgets\FocusManager_prg.xml" name="FocusManager_prg">
+											<!-- DynamicArea_prg >> Dynamic -->
+											<WidgetGroup filename="\..\..\Common\01_Widgets\DynamicArea_prg.xml" name="DynamicArea_prg">
+												<WidgetGroup filename="\..\..\VAR213\01_Widgets\DynAreaPrioContainer_prg.xml" name="DynAreaPrioContainer_prg">
+													<Widget filename="\..\..\..\..\htpkg\mdl\01_Widgets\HTPKG_RootWidget.xml" name="HTPKG_RootWidget"/>
+													<WidgetGroup filename="\..\..\..\..\sacmdl\mdl\VAR213\01_Widgets\SAC_Container_prg.xml" name="SAC_Container_prg"/>
+													<WidgetGroup filename="\..\..\Common\01_Widgets\DA_EmptyContent_prg.xml" name="DA_EmptyContent_prg"/>
+													<WidgetGroup filename="\..\..\..\..\damnp\mdl\VAR213\01_Widgets\DynAreaNonPrioContainer_prg.xml" name="DynAreaNonPrioContainer_prg">
+														<WidgetGroup filename="\..\..\..\..\damnp\mdl\VAR213\01_Widgets\StandardView_prg.xml" name="StandardView_prg">
+															<WidgetGroup filename="\..\..\..\..\wimmdl\mdl\01_Widgets\VAR213\WarningsStandard_prg.xml" name="WarningsStandard_prg"/>
+															<WidgetGroup filename="\..\..\..\..\tpolmdl\mdl\01_Widgets\MenuTree_prg.xml" name="MenuTree_prg">
+																<WidgetGroup filename="\..\..\..\..\wimmdl\mdl\01_Widgets\VAR213\WIM_FaultMemController_prg.xml" name="WIM_FaultMemController_prg"/>
+															</WidgetGroup>
+														</WidgetGroup>
+														<WidgetGroup filename="\..\..\..\..\damnp\mdl\VAR213\01_Widgets\NightView_prg.xml" name="NightView_prg">
+															<WidgetGroup filename="\..\..\..\..\nviewmdl\mdl\01_Widgets\NightviewOnly_prg.xml" name="NightviewOnly_prg"/>
+															<WidgetGroup filename="\..\..\..\..\wimmdl\mdl\01_Widgets\VAR213\WarningsNightView_prg.xml" name="WarningsNightView_prg"/>
+														</WidgetGroup>
+														<WidgetGroup filename="\..\..\..\..\nviewmdl\mdl\01_Widgets\NightviewCommon_prg.xml" name="NightviewCommon_prg"/>
+													</WidgetGroup>
+													<WidgetGroup filename="\..\..\..\..\chrgmdl\mdl\Common\01_Widgets\CHRG_ChargeScreenController_prg.xml" name="CHRG_ChargeScreenController_prg"/>
+												</WidgetGroup>
+											</WidgetGroup>
+											<!--DA Highlight Prg-->
+											<Widget filename="\..\..\Common\01_Widgets\DA_Index_prg.xml" name="DA_Index_prg"/>
+											<!--TurbineManager_prg-->
+											<WidgetGroup filename="\..\..\Common\01_Widgets\TurbineManager_prg.xml" name="TurbineManager_prg">
+												<!--TUBE-->
+												<Widget filename="\..\..\..\..\tubemdl\mdl\Common\01_Widgets\TUBE_FuelChargeManager_prg.xml" name="TUBE_FuelChargeManager_prg"/>
+												<!--Turbine_prg_cla-->
+												<WidgetGroup filename="\..\..\Common\01_Widgets\Turbine_prg_cla.xml" name="Turbine_prg_cla">
+													<!--RPM-->
+													<Widget filename="\..\..\..\..\rpmmdl\mdl\01_Widgets\RPMManager_prg.xml" name="RPMManager_prg"/>
+													<!--ShiftUpBar_prg_spo-->
+													<Widget filename="\..\..\..\..\amgmdl\mdl\Common\01_Widgets\AMG_WE_ShiftUpBar_prg_cla.xml" name="AMG_WE_ShiftUpBar_prg_cla"/>
+													<!--SegmentRingCtrl_prg_cla-->
+													<Widget filename="\..\..\..\..\rpmmdl\mdl\01_Widgets\RPMMDL_WE_SegmentRingCtrl_prg_cla.xml" name="RPMMDL_WE_SegmentRingCtrl_prg_cla"/>
+													<!--DynamicRedArea_prg_cla-->
+													<Widget filename="\..\..\..\..\rpmmdl\mdl\01_Widgets\RPM_DynamicRedArea_prg_cla.xml" name="RPM_DynamicRedArea_prg_cla"/>
+												</WidgetGroup>
+												<!--Turbine_prg_spo-->
+												<WidgetGroup filename="\..\..\Common\01_Widgets\Turbine_prg_spo.xml" name="Turbine_prg_spo">
+													<!--RevMeter-->
+													<Widget filename="\..\..\..\..\rpmmdl\mdl\01_Widgets\RevMeter_prg_spo.xml" name="RevMeter_prg_spo"/>
+													<!--ShiftUpBar_prg_spo-->
+													<Widget filename="\..\..\..\..\amgmdl\mdl\Common\01_Widgets\AMG_WE_ShiftUpBar_prg_spo.xml" name="AMG_WE_ShiftUpBar_prg_spo"/>
+													<!--SegmentRing_prg_spo-->
+													<Widget filename="\..\..\..\..\rpmmdl\mdl\01_Widgets\RPMMDL_WE_SegmentRingCtrl_prg_spo.xml" name="RPMMDL_WE_SegmentRingCtrl_prg_spo"/>
+												</WidgetGroup>
+											</WidgetGroup>
+											<Widget filename="\..\..\Common\01_Widgets\Turbine_Index_prg.xml" name="Turbine_Index_prg"/>
+											<!--SCA-->
+											<Widget filename="\..\..\Common\01_Widgets\SCA_Manager_prg.xml" name="SCA_Manager_prg"/>
+											<!--SCA Highlight Prg-->
+											<Widget filename="\..\..\Common\01_Widgets\SCA_Index_prg.xml" name="SCA_Index_prg"/>
+										</Widget>
+										<!--DA Proxy Prg-->
+										<Widget filename="\..\..\Common\01_Widgets\DA_Proxy_prg.xml" name="DA_Proxy_prg"/>
+										<!--TurbineManager_Proxy_Prg-->
+										<Widget filename="\..\..\Common\01_Widgets\TurbineManager_Proxy_prg.xml" name="TurbineManager_Proxy_prg"/>
+										<!--SCA Proxy Prg-->
+										<Widget filename="\..\..\Common\01_Widgets\SCA_Manager_Proxy_prg.xml" name="SCA_Manager_Proxy_prg"/>
+										<!--ShiftUp Bar -->
+										<Widget filename="\..\..\..\..\amgmdl\mdl\Common\01_Widgets\AMG_ShiftUpBar_Manager_prg.xml" name="AMG_ShiftUpBar_Manager_prg"/>
+										<!--SCA GEARS Replacement feature-->
+										<Widget filename="\..\..\..\..\amgmdl\mdl\Common\01_Widgets\SCA_Gears_SmallInstrProxy_prg.xml" name="SCA_Gears_SmallInstrProxy_prg"/>
+									</WidgetGroup>
+								</WidgetGroup>
+								
+							</WidgetGroup>
+						</WidgetGroup>
+					</WidgetGroup>
+				</WidgetGroup>
+			</WidgetGroup>
+			<Widget filename="\..\..\..\..\dsphmdl\mdl\01_Widgets\SwitchIlluminationHandler.xml" name="SwitchIlluminationHandler"/>
+		</WidgetGroup>
+	</RootWidget>
+</Root>

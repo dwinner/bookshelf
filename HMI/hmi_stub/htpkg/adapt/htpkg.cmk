@@ -1,0 +1,29 @@
+# include CMAKE pre_process
+include(${CMAKE_HOME_DIRECTORY}/tool/cmake/adapt/pre_process.cmake)
+#------------------------------------------------------
+# define your package name (use package folder name)
+set (MyCat "")			# Only visible in MSVC Solution Tree: [ application | artemmis | ...]
+set (MyPkg "htpkg")		# MKS package/tool name
+
+#------------------------------------------------------
+# define your build project.
+# 01_CORE:	_Kernel_proj 		/ _BaseSystem_proj 		/ _PosixShmMan_proj
+# 02_APP:	_JCP_Legacy_proj 	/ _HMI_proj 			/ _SafeGraphics_proj
+# 03_LIB:	_BaseServices_proj 	/ _LibHMIClient_proj		/ _OSAL_proj
+set (target_proj "_HMI_proj")
+
+#------------------------------------------------------
+# define a file list
+set(MDL
+        ./../../pkg/${MyPkg}/mdl/HTPKG_PackageConfig.xml
+    )   
+
+file(GLOB_RECURSE MDL_01_Widgets ${CMAKE_CURRENT_LIST_DIR}/../mdl/01_Widgets/*.xml)
+file(GLOB_RECURSE MDL_02_Resources ${CMAKE_CURRENT_LIST_DIR}/../mdl/02_Resources/*.xml)
+file(GLOB_RECURSE MDL_03_Configuration ${CMAKE_CURRENT_LIST_DIR}/../mdl/03_Configuration/*.xml)
+file(GLOB_RECURSE MDL_04_Application ${CMAKE_CURRENT_LIST_DIR}/../mdl/04_Application/*.xml)
+file(GLOB_RECURSE MDL_05_API ${CMAKE_CURRENT_LIST_DIR}/../mdl/05_API/*.xml)
+
+#------------------------------------------------------
+# add your lists to solution
+include(${CMAKE_HOME_DIRECTORY}/tool/cmake/adapt/post_process.cmake)
