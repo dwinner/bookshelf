@@ -263,75 +263,7 @@ namespace ADS_Library
         }
     }
 
-    #endregion
-
-    #region Deque LinkedList based
-    //public class Deque<T>
-    //{
-    //    ADS_LinkedList<T> _items = new ADS_LinkedList<T>();
-
-    //    public void EnqueueFirst(T value)
-    //    {
-    //        _items.AddFirst(value);
-    //    }
-
-    //    public void EnqueueLast(T value)
-    //    {
-    //        _items.AddLast(value);
-    //    }
-
-    //    public T DequeueFirst()
-    //    {
-    //        if (_items.Count == 0)
-    //        {
-    //            throw new InvalidOperationException("DequeueFirst called when deque is empty");
-    //        }
-
-    //        T temp = _items.Head.Value;
-    //        _items.RemoveFirst();
-    //        return temp;
-    //    }
-
-    //    public T DequeueLast()
-    //    {
-    //        if (_items.Count == 0)
-    //        {
-    //            throw new InvalidOperationException("DequeueLast called when deque is empty");
-    //        }
-
-    //        T temp = _items.Tail.Value;
-    //        _items.RemoveLast();
-    //        return temp;
-    //    }
-
-    //    public T PeekFirst()
-    //    {
-    //        if (_items.Count == 0)
-    //        {
-    //            throw new InvalidOperationException("Dequeue PeekFirst called when deque is empty");
-    //        }
-    //        return _items.Head.Value;
-    //    }
-
-    //    public T PeekLast()
-    //    {
-    //        if (_items.Count == 0)
-    //        {
-    //            throw new InvalidOperationException("Dequeue PeekLast called when deque is empty");
-    //        }
-    //        return _items.Tail.Value;
-    //    }
-
-    //    public int Count
-    //    {
-    //        get
-    //        {
-    //            return _items.Count;
-    //        }
-    //    }
-    //}
-
-    #endregion
+    #endregion    
 
     #region Deque Array based
 
