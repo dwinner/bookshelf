@@ -1,104 +1,6 @@
-/*************************************************************************
- *  Compilation:  javac BreadthFirstPaths.java
- *  Execution:    java BreadthFirstPaths G s
- *  Dependencies: Graph.java Queue.java Stack.java StdOut.java
- *  Data files:   http://algs4.cs.princeton.edu/41undirected/tinyCG.txt
- *
- *  Run breadth first search on an undirected graph.
- *  Runs in O(E + V) time.
- *
- *  %  java Graph tinyCG.txt
- *  6 8
- *  0: 2 1 5 
- *  1: 0 2 
- *  2: 0 1 3 4 
- *  3: 5 4 2 
- *  4: 3 2 
- *  5: 3 0 
- *
- *  %  java BreadthFirstPaths tinyCG.txt 0
- *  0 to 0 (0):  0
- *  0 to 1 (1):  0-1
- *  0 to 2 (1):  0-2
- *  0 to 3 (2):  0-2-3
- *  0 to 4 (2):  0-2-4
- *  0 to 5 (1):  0-5
- *
- *************************************************************************/
-
-
-/**
- *  The <tt>BreadthFirstPaths</tt> class represents a data type for finding
- *  paths in a graph with the fewest number of edges using breadth-first search.
- *  It supports a single-source version (shortest paths from one vertex to every
- *  other vertex) and a multiple-source version (paths from any one of a set
- *  of source vertices to every other vertex).
- *  <p>
- *  The constructor takes time proportional to V + E, where V is the number of 
- *  vertices and E is the number of edges.
- *  <p>
- *  For additional documentation, see <a href="/algs4/41graph">Section 4.1</a> of
- *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
- *
- *  @author Robert Sedgewick
- *  @author Kevin Wayne
- */
-public class BreadthFirstPaths {
-    private static final int INFINITY = Integer.MAX_VALUE;
-    private boolean[] marked;  // marked[v] = is there an s-v path
-    private int[] edgeTo;      // edgeTo[v] = previous edge on shortest s-v path
-    private int[] distTo;      // distTo[v] = number of edges shortest s-v path
-
-   /**
-     * Compute the shortest path from s to every other vertex in graph G.
-     * @param G the graph
-     * @param s the source vertex
-     */
-    public BreadthFirstPaths(Graph G, int s) {
-        marked = new boolean[G.V()];
-        distTo = new int[G.V()];
-        edgeTo = new int[G.V()];
-        bfs(G, s);
-
-        assert check(G, s);
-    }
-
-   /**
-     * Compute the shortest path from any one of the source vertices to every other vertex in graph G.
-     * @param G the graph
-     * @param sources the source vertices
-     */
-    public BreadthFirstPaths(Graph G, Iterable<Integer> sources) {
-        marked = new boolean[G.V()];
-        distTo = new int[G.V()];
-        edgeTo = new int[G.V()];
-        for (int v = 0; v < G.V(); v++) distTo[v] = INFINITY;
-        bfs(G, sources);
-    }
-
-
-    // BFS from single soruce
-    private void bfs(Graph G, int s) {
-        Queue<Integer> q = new Queue<Integer>();
-        for (int v = 0; v < G.V(); v++) distTo[v] = INFINITY;
-        distTo[s] = 0;
-        marked[s] = true;
-        q.enqueue(s);
-
-        while (!q.isEmpty()) {
-            int v = q.dequeue();
-            for (int w : G.adj(v)) {
-                if (!marked[w]) {
-                    edgeTo[w] = v;
-                    distTo[w] = distTo[v] + 1;
-                    marked[w] = true;
-                    q.enqueue(w);
-                }
-            }
-        }
-    }
-
-    // BFS from multiple sources
+public class BreadthFirstPaths
+{    
+    // breadth-first search from multiple sources
     private void bfs(Graph G, Iterable<Integer> sources) {
         Queue<Integer> q = new Queue<Integer>();
         for (int s : sources) {
@@ -119,30 +21,39 @@ public class BreadthFirstPaths {
         }
     }
 
-   /**
-     * Is there a path between the source s (or sources) and vertex v?
+    /**
+     * Is there a path between the source vertex {@code s} (or sources) and vertex {@code v}?
      * @param v the vertex
+     * @return {@code true} if there is a path, and {@code false} otherwise
+     * @throws IllegalArgumentException unless {@code 0 <= v < V}
      */
     public boolean hasPathTo(int v) {
+        validateVertex(v);
         return marked[v];
     }
 
-   /**
-     * Number of edges in shortest path between the source s (or sources) and vertex v?
+    /**
+     * Returns the number of edges in a shortest path between the source vertex {@code s}
+     * (or sources) and vertex {@code v}?
      * @param v the vertex
-     * @return the number of edges in the shortest path
+     * @return the number of edges in such a shortest path
+     *         (or {@code Integer.MAX_VALUE} if there is no such path)
+     * @throws IllegalArgumentException unless {@code 0 <= v < V}
      */
     public int distTo(int v) {
+        validateVertex(v);
         return distTo[v];
     }
 
-   /**
-     * The shortest path bewteen s (or sources) and v; null if no such path
-     * Number of edges in shortest path between the source s (or sources) and vertex v?
-     * @param v the vertex
-     * @return the sequence of vertices on the path, as an Iterable
+    /**
+     * Returns a shortest path between the source vertex {@code s} (or sources)
+     * and {@code v}, or {@code null} if no such path.
+     * @param  v the vertex
+     * @return the sequence of vertices on a shortest path, as an Iterable
+     * @throws IllegalArgumentException unless {@code 0 <= v < V}
      */
     public Iterable<Integer> pathTo(int v) {
+        validateVertex(v);
         if (!hasPathTo(v)) return null;
         Stack<Integer> path = new Stack<Integer>();
         int x;
@@ -181,7 +92,7 @@ public class BreadthFirstPaths {
             }
         }
 
-        // check that v = edgeTo[w] satisfies distTo[w] + distTo[v] + 1
+        // check that v = edgeTo[w] satisfies distTo[w] = distTo[v] + 1
         // provided v is reachable from s
         for (int w = 0; w < G.V(); w++) {
             if (!hasPathTo(w) || w == s) continue;
@@ -197,8 +108,37 @@ public class BreadthFirstPaths {
         return true;
     }
 
+    // throw an IllegalArgumentException unless {@code 0 <= v < V}
+    private void validateVertex(int v) {
+        int V = marked.length;
+        if (v < 0 || v >= V)
+            throw new IllegalArgumentException("vertex " + v + " is not between 0 and " + (V-1));
+    }
 
-    // test client
+    // throw an IllegalArgumentException if vertices is null, has zero vertices,
+    // or has a vertex not between 0 and V-1
+    private void validateVertices(Iterable<Integer> vertices) {
+        if (vertices == null) {
+            throw new IllegalArgumentException("argument is null");
+        }
+        int vertexCount = 0;
+        for (Integer v : vertices) {
+            vertexCount++;
+            if (v == null) {
+                throw new IllegalArgumentException("vertex is null");
+            }
+            validateVertex(v);
+        }
+        if (vertexCount == 0) {
+            throw new IllegalArgumentException("zero vertices");
+        }
+    }
+
+    /**
+     * Unit tests the {@code BreadthFirstPaths} data type.
+     *
+     * @param args the command-line arguments
+     */
     public static void main(String[] args) {
         In in = new In(args[0]);
         Graph G = new Graph(in);
