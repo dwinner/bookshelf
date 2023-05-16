@@ -1,10 +1,28 @@
 /******************************************************************************
- *  Compilation:  javac DirectedDFS.java
- *  Execution:    java DirectedDFS digraph.txt s
- *  Dependencies: Digraph.java Bag.java In.java StdOut.java
- *  Data files:   https://algs4.cs.princeton.edu/42digraph/tinyDG.txt
- *                https://algs4.cs.princeton.edu/42digraph/mediumDG.txt
- *                https://algs4.cs.princeton.edu/42digraph/largeDG.txt
+13
+22
+4  2
+2  3
+3  2
+6  0
+0  1
+2  0
+11 12
+12  9
+9 10
+9 11
+7  9
+10 12
+11  4
+4  3
+3  5
+6  8
+8  6
+5  4
+0  5
+6  4
+6  9
+7  6
  *
  *  Determine single-source or multiple-source reachability in a digraph
  *  using depth first search.
