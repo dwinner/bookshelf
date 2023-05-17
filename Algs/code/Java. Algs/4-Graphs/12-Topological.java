@@ -1,9 +1,8 @@
 /******************************************************************************
  *  Compilation:  javac Topological.java
  *  Execution:    java  Topological filename.txt delimiter
- *  Dependencies: Digraph.java DepthFirstOrder.java DirectedCycle.java
- *                EdgeWeightedDigraph.java EdgeWeightedDirectedCycle.java
- *                SymbolDigraph.java
+ *  Dependencies: 	DepthFirstOrder.java
+ *                	SymbolDigraph.java
  *  Data files:   https://algs4.cs.princeton.edu/42digraph/jobs.txt
  *
  *  Compute topological ordering of a DAG or edge-weighted DAG.
