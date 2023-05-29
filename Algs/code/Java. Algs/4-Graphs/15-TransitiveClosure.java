@@ -1,11 +1,28 @@
 /******************************************************************************
- *  Compilation:  javac TransitiveClosure.java
- *  Execution:    java TransitiveClosure filename.txt
- *  Dependencies: Digraph.java DepthFirstDirectedPaths.java In.java StdOut.java
- *  Data files:   https://algs4.cs.princeton.edu/42digraph/tinyDG.txt
- *
- *  Compute transitive closure of a digraph and support
- *  reachability queries.
+13
+22
+ 4  2
+ 2  3
+ 3  2
+ 6  0
+ 0  1
+ 2  0
+11 12
+12  9
+ 9 10
+ 9 11
+ 7  9
+10 12
+11  4
+ 4  3
+ 3  5
+ 6  8
+ 8  6
+ 5  4
+ 0  5
+ 6  4
+ 6  9
+ 7  6
  *
  *  Preprocessing time: O(V(E + V)) time.
  *  Query time: O(1).
