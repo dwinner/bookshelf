@@ -1,71 +1,140 @@
-/*************************************************************************
- *  Compilation:  javac AdjMatrixEdgeWeightedDigraph.java
- *  Execution:    java AdjMatrixEdgeWeightedDigraph V E
- *  Dependencies: StdOut.java
+/******************************************************************************
+8
+13
+5 4 0.35
+4 7 0.37
+5 7 0.28
+5 1 0.32
+4 0 0.38
+0 2 0.26
+3 7 0.39
+1 3 0.29
+7 2 0.34
+6 2 0.40
+3 6 0.52
+6 0 0.58
+6 4 0.93
  *
  *  An edge-weighted digraph, implemented using an adjacency matrix.
- *  Parallel edges are disallowed; self-loops are allowd.
- *  
- *************************************************************************/
+ *  Parallel edges are disallowed; self-loops are allowed.
+ *
+ ******************************************************************************/
+
+package edu.princeton.cs.algs4;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-
+/**
+ *  The {@code AdjMatrixEdgeWeightedDigraph} class represents an edge-weighted
+ *  digraph of vertices named 0 through <em>V</em> - 1, where each
+ *  directed edge is of type {@link DirectedEdge} and has a real-valued weight.
+ *  It supports the following two primary operations: add a directed edge
+ *  to the digraph and iterate over all of edges incident from a given vertex.
+ *  It also provides
+ *  methods for returning the number of vertices <em>V</em> and the number
+ *  of edges <em>E</em>. Parallel edges are disallowed; self-loops are permitted.
+ *  <p>
+ *  This implementation uses an adjacency-matrix representation.
+ *  All operations take constant time (in the worst case) except
+ *  iterating over the edges incident from a given vertex, which takes
+ *  time proportional to <em>V</em>.
+ */
 public class AdjMatrixEdgeWeightedDigraph {
-    private int V;
+    private static final String NEWLINE = System.getProperty("line.separator");
+
+    private final int V;
     private int E;
     private DirectedEdge[][] adj;
-    
-    // empty graph with V vertices
+
+    /**
+     * Initializes an empty edge-weighted digraph with {@code V} vertices and 0 edges.
+     * @param V the number of vertices
+     * @throws IllegalArgumentException if {@code V < 0}
+     */
     public AdjMatrixEdgeWeightedDigraph(int V) {
-        if (V < 0) throw new RuntimeException("Number of vertices must be nonnegative");
+        if (V < 0) throw new IllegalArgumentException("number of vertices must be non-negative");
         this.V = V;
         this.E = 0;
         this.adj = new DirectedEdge[V][V];
     }
 
-    // random graph with V vertices and E edges
+    /**
+     * Initializes a random edge-weighted digraph with {@code V} vertices and <em>E</em> edges.
+     * @param V the number of vertices
+     * @param E the number of edges
+     * @throws IllegalArgumentException if {@code V < 0}
+     * @throws IllegalArgumentException if {@code E < 0}
+     */
     public AdjMatrixEdgeWeightedDigraph(int V, int E) {
         this(V);
-        if (E < 0) throw new RuntimeException("Number of edges must be nonnegative");
-        if (E > V*V) throw new RuntimeException("Too many edges");
+        if (E < 0) throw new IllegalArgumentException("number of edges must be non-negative");
+        if (E > V*V) throw new IllegalArgumentException("too many edges");
 
         // can be inefficient
         while (this.E != E) {
-            int v = (int) (V * Math.random());
-            int w = (int) (V * Math.random());
-            double weight = Math.round(100 * Math.random()) / 100.0;
+            int v = StdRandom.uniformInt(V);
+            int w = StdRandom.uniformInt(V);
+            double weight = 0.01 * StdRandom.uniformInt(0, 100);
             addEdge(new DirectedEdge(v, w, weight));
         }
     }
 
-    // number of vertices and edges
-    public int V() { return V; }
-    public int E() { return E; }
+    /**
+     * Returns the number of vertices in the edge-weighted digraph.
+     * @return the number of vertices in the edge-weighted digraph
+     */
+    public int V() {
+        return V;
+    }
 
+    /**
+     * Returns the number of edges in the edge-weighted digraph.
+     * @return the number of edges in the edge-weighted digraph
+     */
+    public int E() {
+        return E;
+    }
 
-    // add directed edge v->w
+    /**
+     * Adds the directed edge {@code e} to the edge-weighted digraph (if there
+     * is not already an edge with the same endpoints).
+     * @param e the edge
+     */
     public void addEdge(DirectedEdge e) {
         int v = e.from();
         int w = e.to();
+        validateVertex(v);
+        validateVertex(w);
         if (adj[v][w] == null) {
             E++;
             adj[v][w] = e;
         }
     }
 
-    // return list of neighbors of v
+    /**
+     * Returns the directed edges incident from vertex {@code v}.
+     * @param v the vertex
+     * @return the directed edges incident from vertex {@code v} as an Iterable
+     * @throws IllegalArgumentException unless {@code 0 <= v < V}
+     */
     public Iterable<DirectedEdge> adj(int v) {
+        validateVertex(v);
         return new AdjIterator(v);
     }
 
     // support iteration over graph vertices
     private class AdjIterator implements Iterator<DirectedEdge>, Iterable<DirectedEdge> {
-        private int v, w = 0;
-        public AdjIterator(int v) { this.v = v; }
+        private int v;
+        private int w = 0;
 
-        public Iterator<DirectedEdge> iterator() { return this; }
+        public AdjIterator(int v) {
+            this.v = v;
+        }
+
+        public Iterator<DirectedEdge> iterator() {
+            return this;
+        }
 
         public boolean hasNext() {
             while (w < V) {
@@ -76,17 +145,24 @@ public class AdjMatrixEdgeWeightedDigraph {
         }
 
         public DirectedEdge next() {
-            if (hasNext()) { return adj[v][w++];                 }
-            else           { throw new NoSuchElementException(); }
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+            return adj[v][w++];
         }
 
-        public void remove()  { throw new UnsupportedOperationException();  }
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
     }
 
-
-    // string representation of Graph - takes quadratic time
+    /**
+     * Returns a string representation of the edge-weighted digraph. This method takes
+     * time proportional to <em>V</em><sup>2</sup>.
+     * @return the number of vertices <em>V</em>, followed by the number of edges <em>E</em>,
+     *   followed by the <em>V</em> adjacency lists of edges
+     */
     public String toString() {
-        String NEWLINE = System.getProperty("line.separator");
         StringBuilder s = new StringBuilder();
         s.append(V + " " + E + NEWLINE);
         for (int v = 0; v < V; v++) {
@@ -99,8 +175,18 @@ public class AdjMatrixEdgeWeightedDigraph {
         return s.toString();
     }
 
+    // throw an IllegalArgumentException unless {@code 0 <= v < V}
+    private void validateVertex(int v) {
+        if (v < 0 || v >= V)
+            throw new IllegalArgumentException("vertex " + v + " is not between 0 and " + (V-1));
+    }
 
-    // test client
+
+    /**
+     * Unit tests the {@code AdjMatrixEdgeWeightedDigraph} data type.
+     *
+     * @param args the command-line arguments
+     */
     public static void main(String[] args) {
         int V = Integer.parseInt(args[0]);
         int E = Integer.parseInt(args[1]);

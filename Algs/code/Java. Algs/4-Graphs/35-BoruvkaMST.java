@@ -1,15 +1,25 @@
-/*************************************************************************
- *  Compilation:  javac BoruvkaMST.java
- *  Execution:    java BoruvkaMST filename.txt
- *  Dependencies: EdgeWeightedGraph.java Edge.java Bag.java
- *                UF.java In.java StdOut.java
- *  Data files:   http://algs4.cs.princeton.edu/43mst/tinyEWG.txt
- *                http://algs4.cs.princeton.edu/43mst/mediumEWG.txt
- *                http://algs4.cs.princeton.edu/43mst/largeEWG.txt
- *
+/******************************************************************************
+8
+16
+4 5 0.35
+4 7 0.37
+5 7 0.28
+0 7 0.16
+1 5 0.32
+0 4 0.38
+2 3 0.17
+1 7 0.19
+0 2 0.26
+1 2 0.36
+1 3 0.29
+2 7 0.34
+6 2 0.40
+3 6 0.52
+6 0 0.58
+6 4 0.93
  *  Compute a minimum spanning forest using Boruvka's algorithm.
  *
- *  % java BoruvkaMST tinyEWG.txt 
+ *  % java BoruvkaMST tinyEWG.txt
  *  0-2 0.26000
  *  6-2 0.40000
  *  5-7 0.28000
@@ -19,14 +29,45 @@
  *  0-7 0.16000
  *  1.81000
  *
- *************************************************************************/
+ ******************************************************************************/
 
+package edu.princeton.cs.algs4;
 
+/**
+ *  The {@code BoruvkaMST} class represents a data type for computing a
+ *  <em>minimum spanning tree</em> in an edge-weighted graph.
+ *  The edge weights can be positive, zero, or negative and need not
+ *  be distinct. If the graph is not connected, it computes a <em>minimum
+ *  spanning forest</em>, which is the union of minimum spanning trees
+ *  in each connected component. The {@code weight()} method returns the
+ *  weight of a minimum spanning tree and the {@code edges()} method
+ *  returns its edges.
+ *  <p>
+ *  This implementation uses <em>Boruvka's algorithm</em> and the union-find
+ *  data type.
+ *  The constructor takes &Theta;(<em>E</em> log <em>V</em>) time in
+ *  the worst case, where <em>V</em> is the number of vertices and
+ *  <em>E</em> is the number of edges.
+ *  Each instance method takes &Theta;(1) time.
+ *  It uses &Theta;(<em>V</em>) extra space (not including the
+ *  edge-weighted graph).
+ *  <p>
+ *  This {@code weight()} method correctly computes the weight of the MST
+ *  if all arithmetic performed is without floating-point rounding error
+ *  or arithmetic overflow.
+ *  This is the case if all edge weights are non-negative integers
+ *  and the weight of the MST does not exceed 2<sup>52</sup>.
+ */
 public class BoruvkaMST {
+    private static final double FLOATING_POINT_EPSILON = 1.0E-12;
+
     private Bag<Edge> mst = new Bag<Edge>();    // edges in MST
     private double weight;                      // weight of MST
 
-    // Boruvka's algorithm
+    /**
+     * Compute a minimum spanning tree (or forest) of an edge-weighted graph.
+     * @param G the edge-weighted graph
+     */
     public BoruvkaMST(EdgeWeightedGraph G) {
         UF uf = new UF(G.V());
 
@@ -50,7 +91,7 @@ public class BoruvkaMST {
                 if (e != null) {
                     int v = e.either(), w = e.other(v);
                     // don't add the same edge twice
-                    if (!uf.connected(v, w)) {
+                    if (uf.find(v) != uf.find(w)) {
                         mst.add(e);
                         weight += e.weight();
                         uf.union(v, w);
@@ -63,20 +104,27 @@ public class BoruvkaMST {
         assert check(G);
     }
 
-
-    // edges in minimum spanning forest, as an Iterable
+    /**
+     * Returns the edges in a minimum spanning tree (or forest).
+     * @return the edges in a minimum spanning tree (or forest) as
+     *    an iterable of edges
+     */
     public Iterable<Edge> edges() {
         return mst;
     }
 
-    // weight of minimum spanning forest
+
+    /**
+     * Returns the sum of the edge weights in a minimum spanning tree (or forest).
+     * @return the sum of the edge weights in a minimum spanning tree (or forest)
+     */
     public double weight() {
         return weight;
     }
 
     // is the weight of edge e strictly less than that of edge f?
     private static boolean less(Edge e, Edge f) {
-        return e.weight() < f.weight();
+        return e.compareTo(f) < 0;
     }
 
     // check optimality conditions (takes time proportional to E V lg* V)
@@ -87,8 +135,7 @@ public class BoruvkaMST {
         for (Edge e : edges()) {
             totalWeight += e.weight();
         }
-        double EPSILON = 1E-12;
-        if (Math.abs(totalWeight - weight()) > EPSILON) {
+        if (Math.abs(totalWeight - weight()) > FLOATING_POINT_EPSILON) {
             System.err.printf("Weight of edges does not equal weight(): %f vs. %f\n", totalWeight, weight());
             return false;
         }
@@ -97,7 +144,7 @@ public class BoruvkaMST {
         UF uf = new UF(G.V());
         for (Edge e : edges()) {
             int v = e.either(), w = e.other(v);
-            if (uf.connected(v, w)) {
+            if (uf.find(v) == uf.find(w)) {
                 System.err.println("Not a forest");
                 return false;
             }
@@ -105,9 +152,9 @@ public class BoruvkaMST {
         }
 
         // check that it is a spanning forest
-        for (Edge e : edges()) {
+        for (Edge e : G.edges()) {
             int v = e.either(), w = e.other(v);
-            if (!uf.connected(v, w)) {
+            if (uf.find(v) != uf.find(w)) {
                 System.err.println("Not a spanning forest");
                 return false;
             }
@@ -115,7 +162,6 @@ public class BoruvkaMST {
 
         // check that it is a minimal spanning forest (cut optimality conditions)
         for (Edge e : edges()) {
-            int v = e.either(), w = e.other(v);
 
             // all edges in MST except e
             uf = new UF(G.V());
@@ -127,7 +173,7 @@ public class BoruvkaMST {
             // check that e is min weight edge in crossing cut
             for (Edge f : G.edges()) {
                 int x = f.either(), y = f.other(x);
-                if (!uf.connected(x, y)) {
+                if (uf.find(x) != uf.find(y)) {
                     if (f.weight() < e.weight()) {
                         System.err.println("Edge " + f + " violates cut optimality conditions");
                         return false;
@@ -140,6 +186,11 @@ public class BoruvkaMST {
         return true;
     }
 
+    /**
+     * Unit tests the {@code BoruvkaMST} data type.
+     *
+     * @param args the command-line arguments
+     */
     public static void main(String[] args) {
         In in = new In(args[0]);
         EdgeWeightedGraph G = new EdgeWeightedGraph(in);

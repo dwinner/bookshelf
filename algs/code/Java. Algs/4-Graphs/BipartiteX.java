@@ -1,22 +1,11 @@
 /******************************************************************************
-13
-13
-0 5
-4 3
-0 1
-9 12
-6 4
-5 4
-0 2
-11 12
-9 10
-0 6
-7 8
-9 11
-5 3
+ *  Compilation:  javac BipartiteX.java
+ *  Execution:    java  Bipartite V E F
+ *  Dependencies: Graph.java
  *
  *  Given a graph, find either (i) a bipartition or (ii) an odd-length cycle.
  *  Runs in O(E + V) time.
+ *
  *
  ******************************************************************************/
 
@@ -24,7 +13,7 @@ package edu.princeton.cs.algs4;
 
 
 /**
- *  The {@code Bipartite} class represents a data type for
+ *  The {@code BipartiteX} class represents a data type for
  *  determining whether an undirected graph is <em>bipartite</em> or whether
  *  it has an <em>odd-length cycle</em>.
  *  A graph is bipartite if and only if it has no odd-length cycle.
@@ -33,21 +22,23 @@ package edu.princeton.cs.algs4;
  *  bipartition; if not, the <em>oddCycle</em> operation determines a
  *  cycle with an odd number of edges.
  *  <p>
- *  This implementation uses <em>depth-first search</em>.
+ *  This implementation uses <em>breadth-first search</em> and is nonrecursive.
  *  The constructor takes &Theta;(<em>V</em> + <em>E</em>) time in
- *  the worst case, where <em>V</em> is the number of vertices and <em>E</em>
- *  is the number of edges.
+ *  in the worst case, where <em>V</em> is the number of vertices
+ *  and <em>E</em> is the number of edges.
  *  Each instance method takes &Theta;(1) time.
  *  It uses &Theta;(<em>V</em>) extra space (not including the graph).
- *  See {@link BipartiteX} for a nonrecursive version that uses breadth-first
- *  search.
+ *  See {@link Bipartite} for a recursive version that uses depth-first search.
  */
-public class Bipartite {
+public class BipartiteX {
+    private static final boolean WHITE = false;
+    private static final boolean BLACK = true;
+
     private boolean isBipartite;   // is the graph bipartite?
     private boolean[] color;       // color[v] gives vertices on one side of bipartition
     private boolean[] marked;      // marked[v] = true iff v has been visited in DFS
     private int[] edgeTo;          // edgeTo[v] = last edge on path to v
-    private Stack<Integer> cycle;  // odd-length cycle
+    private Queue<Integer> cycle;  // odd-length cycle
 
     /**
      * Determines whether an undirected graph is bipartite and finds either a
@@ -55,43 +46,57 @@ public class Bipartite {
      *
      * @param  G the graph
      */
-    public Bipartite(Graph G) {
+    public BipartiteX(Graph G) {
         isBipartite = true;
         color  = new boolean[G.V()];
         marked = new boolean[G.V()];
         edgeTo = new int[G.V()];
 
-        for (int v = 0; v < G.V(); v++) {
+        for (int v = 0; v < G.V() && isBipartite; v++) {
             if (!marked[v]) {
-                dfs(G, v);
+                bfs(G, v);
             }
         }
         assert check(G);
     }
 
-    private void dfs(Graph G, int v) {
-        marked[v] = true;
-        for (int w : G.adj(v)) {
+    private void bfs(Graph G, int s) {
+        Queue<Integer> q = new Queue<Integer>();
+        color[s] = WHITE;
+        marked[s] = true;
+        q.enqueue(s);
 
-            // short circuit if odd-length cycle found
-            if (cycle != null) return;
-
-            // found uncolored vertex, so recur
-            if (!marked[w]) {
-                edgeTo[w] = v;
-                color[w] = !color[v];
-                dfs(G, w);
-            }
-
-            // if v-w create an odd-length cycle, find it
-            else if (color[w] == color[v]) {
-                isBipartite = false;
-                cycle = new Stack<Integer>();
-                cycle.push(w);  // don't need this unless you want to include start vertex twice
-                for (int x = v; x != w; x = edgeTo[x]) {
-                    cycle.push(x);
+        while (!q.isEmpty()) {
+            int v = q.dequeue();
+            for (int w : G.adj(v)) {
+                if (!marked[w]) {
+                    marked[w] = true;
+                    edgeTo[w] = v;
+                    color[w] = !color[v];
+                    q.enqueue(w);
                 }
-                cycle.push(w);
+                else if (color[w] == color[v]) {
+                    isBipartite = false;
+
+                    // to form odd cycle, consider s-v path and s-w path
+                    // and let x be closest node to v and w common to two paths
+                    // then (w-x path) + (x-v path) + (edge v-w) is an odd-length cycle
+                    // Note: distTo[v] == distTo[w];
+                    cycle = new Queue<Integer>();
+                    Stack<Integer> stack = new Stack<Integer>();
+                    int x = v, y = w;
+                    while (x != y) {
+                        stack.push(x);
+                        cycle.enqueue(y);
+                        x = edgeTo[x];
+                        y = edgeTo[y];
+                    }
+                    stack.push(x);
+                    while (!stack.isEmpty())
+                        cycle.enqueue(stack.pop());
+                    cycle.enqueue(w);
+                    return;
+                }
             }
         }
     }
@@ -119,9 +124,10 @@ public class Bipartite {
     public boolean color(int v) {
         validateVertex(v);
         if (!isBipartite)
-            throw new UnsupportedOperationException("graph is not bipartite");
+            throw new UnsupportedOperationException("Graph is not bipartite");
         return color[v];
     }
+
 
     /**
      * Returns an odd-length cycle if the graph is not bipartite, and
@@ -161,7 +167,6 @@ public class Bipartite {
                 return false;
             }
         }
-
         return true;
     }
 
@@ -173,7 +178,7 @@ public class Bipartite {
     }
 
     /**
-     * Unit tests the {@code Bipartite} data type.
+     * Unit tests the {@code BipartiteX} data type.
      *
      * @param args the command-line arguments
      */
@@ -195,7 +200,7 @@ public class Bipartite {
         StdOut.println(G);
 
 
-        Bipartite b = new Bipartite(G);
+        BipartiteX b = new BipartiteX(G);
         if (b.isBipartite()) {
             StdOut.println("Graph is bipartite");
             for (int v = 0; v < G.V(); v++) {

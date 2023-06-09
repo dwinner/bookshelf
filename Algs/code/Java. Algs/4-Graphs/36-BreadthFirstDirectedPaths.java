@@ -1,9 +1,30 @@
-/*************************************************************************
- *  Compilation:  javac BreadthFirstDirectedPaths.java
- *  Execution:    java BreadthFirstDirectedPaths V E
- *  Dependencies: Digraph.java Queue.java Stack.java
+/******************************************************************************
+13
+22
+ 4  2
+ 2  3
+ 3  2
+ 6  0
+ 0  1
+ 2  0
+11 12
+12  9
+ 9 10
+ 9 11
+ 7  9
+10 12
+11  4
+ 4  3
+ 3  5
+ 6  8
+ 8  6
+ 5  4
+ 0  5
+ 6  4
+ 6  9
+ 7  6
  *
- *  Run breadth first search on a digraph.
+ *  Run breadth-first search on a digraph.
  *  Runs in O(E + V) time.
  *
  *  % java BreadthFirstDirectedPaths tinyDG.txt 3
@@ -21,29 +42,68 @@
  *  3 to 11 (-):  not connected
  *  3 to 12 (-):  not connected
  *
- *************************************************************************/
+ ******************************************************************************/
 
+package edu.princeton.cs.algs4;
+
+/**
+ *  The {@code BreadthDirectedFirstPaths} class represents a data type for
+ *  finding shortest paths (number of edges) from a source vertex <em>s</em>
+ *  (or set of source vertices) to every other vertex in the digraph.
+ *  <p>
+ *  This implementation uses breadth-first search.
+ *  The constructor takes &Theta;(<em>V</em> + <em>E</em>) time in the
+ *  worst case, where <em>V</em> is the number of vertices and <em>E</em> is
+ *  the number of edges.
+ *  Each instance method takes &Theta;(1) time.
+ *  It uses &Theta;(<em>V</em>) extra space (not including the digraph).
+ *  <p>
+ *  For additional documentation,
+ *  see <a href="https://algs4.cs.princeton.edu/42digraph">Section 4.2</a> of
+ *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
+ *
+ *  @author Robert Sedgewick
+ *  @author Kevin Wayne
+ */
 public class BreadthFirstDirectedPaths {
     private static final int INFINITY = Integer.MAX_VALUE;
     private boolean[] marked;  // marked[v] = is there an s->v path?
     private int[] edgeTo;      // edgeTo[v] = last edge on shortest s->v path
     private int[] distTo;      // distTo[v] = length of shortest s->v path
 
-    // single source
+    /**
+     * Computes the shortest path from {@code s} and every other vertex in graph {@code G}.
+     * @param G the digraph
+     * @param s the source vertex
+     * @throws IllegalArgumentException unless {@code 0 <= v < V}
+     */
     public BreadthFirstDirectedPaths(Digraph G, int s) {
         marked = new boolean[G.V()];
         distTo = new int[G.V()];
         edgeTo = new int[G.V()];
-        for (int v = 0; v < G.V(); v++) distTo[v] = INFINITY;
+        for (int v = 0; v < G.V(); v++)
+            distTo[v] = INFINITY;
+        validateVertex(s);
         bfs(G, s);
     }
 
-    // multiple sources
+    /**
+     * Computes the shortest path from any one of the source vertices in {@code sources}
+     * to every other vertex in graph {@code G}.
+     * @param G the digraph
+     * @param sources the source vertices
+     * @throws IllegalArgumentException if {@code sources} is {@code null}
+     * @throws IllegalArgumentException if {@code sources} contains no vertices
+     * @throws IllegalArgumentException unless each vertex {@code v} in
+     *         {@code sources} satisfies {@code 0 <= v < V}
+     */
     public BreadthFirstDirectedPaths(Digraph G, Iterable<Integer> sources) {
         marked = new boolean[G.V()];
         distTo = new int[G.V()];
         edgeTo = new int[G.V()];
-        for (int v = 0; v < G.V(); v++) distTo[v] = INFINITY;
+        for (int v = 0; v < G.V(); v++)
+            distTo[v] = INFINITY;
+        validateVertices(sources);
         bfs(G, sources);
     }
 
@@ -87,18 +147,40 @@ public class BreadthFirstDirectedPaths {
         }
     }
 
-    // length of shortest path from s (or sources) to v
-    public int distTo(int v) {
-        return distTo[v];
-    }
-
-    // is there a directed path from s (or sources) to v?
+    /**
+     * Is there a directed path from the source {@code s} (or sources) to vertex {@code v}?
+     * @param v the vertex
+     * @return {@code true} if there is a directed path, {@code false} otherwise
+     * @throws IllegalArgumentException unless {@code 0 <= v < V}
+     */
     public boolean hasPathTo(int v) {
+        validateVertex(v);
         return marked[v];
     }
 
-    // shortest path from s (or sources) to v; null if no such path
+    /**
+     * Returns the number of edges in a shortest path from the source {@code s}
+     * (or sources) to vertex {@code v}?
+     * @param v the vertex
+     * @return the number of edges in such a shortest path
+     *         (or {@code Integer.MAX_VALUE} if there is no such path)
+     * @throws IllegalArgumentException unless {@code 0 <= v < V}
+     */
+    public int distTo(int v) {
+        validateVertex(v);
+        return distTo[v];
+    }
+
+    /**
+     * Returns a shortest path from {@code s} (or sources) to {@code v}, or
+     * {@code null} if no such path.
+     * @param v the vertex
+     * @return the sequence of vertices on a shortest path, as an Iterable
+     * @throws IllegalArgumentException unless {@code 0 <= v < V}
+     */
     public Iterable<Integer> pathTo(int v) {
+        validateVertex(v);
+
         if (!hasPathTo(v)) return null;
         Stack<Integer> path = new Stack<Integer>();
         int x;
@@ -108,6 +190,37 @@ public class BreadthFirstDirectedPaths {
         return path;
     }
 
+    // throw an IllegalArgumentException unless {@code 0 <= v < V}
+    private void validateVertex(int v) {
+        int V = marked.length;
+        if (v < 0 || v >= V)
+            throw new IllegalArgumentException("vertex " + v + " is not between 0 and " + (V-1));
+    }
+
+    // throw an IllegalArgumentException if vertices is null, has zero vertices,
+    // or has a vertex not between 0 and V-1
+    private void validateVertices(Iterable<Integer> vertices) {
+        if (vertices == null) {
+            throw new IllegalArgumentException("argument is null");
+        }
+        int vertexCount = 0;
+        for (Integer v : vertices) {
+            vertexCount++;
+            if (v == null) {
+                throw new IllegalArgumentException("vertex is null");
+            }
+            validateVertex(v);
+        }
+        if (vertexCount == 0) {
+            throw new IllegalArgumentException("zero vertices");
+        }
+    }
+
+    /**
+     * Unit tests the {@code BreadthFirstDirectedPaths} data type.
+     *
+     * @param args the command-line arguments
+     */
     public static void main(String[] args) {
         In in = new In(args[0]);
         Digraph G = new Digraph(in);
