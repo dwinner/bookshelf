@@ -1,10 +1,12 @@
-/*************************************************************************
+/******************************************************************************
  *  Compilation:  javac Huffman.java
  *  Execution:    java Huffman - < input.txt   (compress)
  *  Execution:    java Huffman + < input.txt   (expand)
  *  Dependencies: BinaryIn.java BinaryOut.java
- *  Data files:   http://algs4.cs.princeton.edu/55compression/abra.txt
- *                http://algs4.cs.princeton.edu/55compression/tinytinyTale.txt
+ *  Data files:   https://algs4.cs.princeton.edu/55compression/abra.txt
+ *                https://algs4.cs.princeton.edu/55compression/tinytinyTale.txt
+ *                https://algs4.cs.princeton.edu/55compression/medTale.txt
+ *                https://algs4.cs.princeton.edu/55compression/tale.txt
  *
  *  Compress or expand a binary input stream using the Huffman algorithm.
  *
@@ -16,12 +18,29 @@
  *  % java Huffman - < abra.txt | java Huffman +
  *  ABRACADABRA!
  *
- *************************************************************************/
+ ******************************************************************************/
 
+package edu.princeton.cs.algs4;
+
+/**
+ *  The {@code Huffman} class provides static methods for compressing
+ *  and expanding a binary input using Huffman codes over the 8-bit extended
+ *  ASCII alphabet.
+ *  <p>
+ *  For additional documentation,
+ *  see <a href="https://algs4.cs.princeton.edu/55compression">Section 5.5</a> of
+ *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
+ *
+ *  @author Robert Sedgewick
+ *  @author Kevin Wayne
+ */
 public class Huffman {
 
     // alphabet size of extended ASCII
     private static final int R = 256;
+
+    // Do not instantiate.
+    private Huffman() { }
 
     // Huffman trie node
     private static class Node implements Comparable<Node> {
@@ -38,8 +57,8 @@ public class Huffman {
 
         // is the node a leaf node?
         private boolean isLeaf() {
-            assert (left == null && right == null) || (left != null && right != null);
-            return (left == null && right == null);
+            assert ((left == null) && (right == null)) || ((left != null) && (right != null));
+            return (left == null) && (right == null);
         }
 
         // compare, based on frequency
@@ -48,8 +67,11 @@ public class Huffman {
         }
     }
 
-
-    // compress bytes from standard input and write to standard output
+    /**
+     * Reads a sequence of 8-bit bytes from standard input; compresses them
+     * using Huffman codes with an 8-bit alphabet; and writes the results
+     * to standard output.
+     */
     public static void compress() {
         // read the input
         String s = BinaryStdIn.readString();
@@ -94,11 +116,11 @@ public class Huffman {
     // build the Huffman trie given frequencies
     private static Node buildTrie(int[] freq) {
 
-        // initialze priority queue with singleton trees
+        // initialize priority queue with singleton trees
         MinPQ<Node> pq = new MinPQ<Node>();
-        for (char i = 0; i < R; i++)
-            if (freq[i] > 0)
-                pq.insert(new Node(i, freq[i], null, null));
+        for (char c = 0; c < R; c++)
+            if (freq[c] > 0)
+                pq.insert(new Node(c, freq[c], null, null));
 
         // merge two smallest trees
         while (pq.size() > 1) {
@@ -134,12 +156,14 @@ public class Huffman {
         }
     }
 
-
-    // expand Huffman-encoded input from standard input and write to standard output
+    /**
+     * Reads a sequence of bits that represents a Huffman-compressed message from
+     * standard input; expands them; and writes the results to standard output.
+     */
     public static void expand() {
 
         // read in Huffman trie from input stream
-        Node root = readTrie(); 
+        Node root = readTrie();
 
         // number of bytes to write
         int length = BinaryStdIn.readInt();
@@ -168,7 +192,12 @@ public class Huffman {
         }
     }
 
-
+    /**
+     * Sample client that calls {@code compress()} if the command-line
+     * argument is "-" an {@code expand()} if it is "+".
+     *
+     * @param args the command-line arguments
+     */
     public static void main(String[] args) {
         if      (args[0].equals("-")) compress();
         else if (args[0].equals("+")) expand();
