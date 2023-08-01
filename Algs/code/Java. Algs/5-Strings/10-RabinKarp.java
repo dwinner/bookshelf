@@ -1,36 +1,3 @@
-/******************************************************************************
- *  Compilation:  javac RabinKarp.java
- *  Execution:    java RabinKarp pat txt
- *  Dependencies: StdOut.java
- *
- *  Reads in two strings, the pattern and the input text, and
- *  searches for the pattern in the input text using the
- *  Las Vegas version of the Rabin-Karp algorithm.
- *
- *  % java RabinKarp abracadabra abacadabrabracabracadabrabrabracad
- *  pattern: abracadabra
- *  text:    abacadabrabracabracadabrabrabracad
- *  match:                 abracadabra
- *
- *  % java RabinKarp rab abacadabrabracabracadabrabrabracad
- *  pattern: rab
- *  text:    abacadabrabracabracadabrabrabracad
- *  match:           rab
- *
- *  % java RabinKarp bcara abacadabrabracabracadabrabrabracad
- *  pattern: bcara
- *  text:         abacadabrabracabracadabrabrabracad
- *
- *  %  java RabinKarp rabrabracad abacadabrabracabracadabrabrabracad
- *  text:    abacadabrabracabracadabrabrabracad
- *  pattern:                        rabrabracad
- *
- *  % java RabinKarp abacad abacadabrabracabracadabrabrabracad
- *  text:    abacadabrabracabracadabrabrabracad
- *  pattern: abacad
- *
- ******************************************************************************/
-
 package edu.princeton.cs.algs4;
 
 import java.math.BigInteger;
@@ -39,12 +6,7 @@ import java.util.Random;
 /**
  *  The {@code RabinKarp} class finds the first occurrence of a pattern string
  *  in a text string.
- *  <p>
- *  This implementation uses the Rabin-Karp algorithm.
- *  <p>
- *  For additional documentation,
- *  see <a href="https://algs4.cs.princeton.edu/53substring">Section 5.3</a> of
- *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
+ *  <p>This implementation uses the Rabin-Karp algorithm.</p>
  */
 public class RabinKarp {
     private String pat;      // the pattern  // needed only for Las Vegas
