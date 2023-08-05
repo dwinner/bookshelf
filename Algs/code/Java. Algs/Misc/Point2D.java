@@ -1,25 +1,27 @@
-/*************************************************************************
+/******************************************************************************
  *  Compilation:  javac Point2D.java
+ *  Execution:    java Point2D x0 y0 n
+ *  Dependencies: StdDraw.java StdRandom.java
  *
  *  Immutable point data type for points in the plane.
  *
- *************************************************************************/
+ ******************************************************************************/
+
+package edu.princeton.cs.algs4;
 
 import java.util.Arrays;
 import java.util.Comparator;
 
 
 /**
- *  The <tt>Point</tt> class is an immutable data type to encapsulate a
+ *  The {@code Point} class is an immutable data type to encapsulate a
  *  two-dimensional point with real-value coordinates.
  *  <p>
- *  For additional documentation, see <a href="/algs4/12oop">Section 1.2</a> of
- *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
- *
- *  @author Robert Sedgewick
- *  @author Kevin Wayne
+ *  Note: in order to deal with the difference behavior of double and
+ *  Double with respect to -0.0 and +0.0, the Point2D constructor converts
+ *  any coordinates that are -0.0 to +0.0.
  */
-public class Point2D implements Comparable<Point2D> {
+public final class Point2D implements Comparable<Point2D> {
 
     /**
      * Compares two points by x-coordinate.
@@ -36,21 +38,6 @@ public class Point2D implements Comparable<Point2D> {
      */
     public static final Comparator<Point2D> R_ORDER = new ROrder();
 
-    /**
-     * Compares two points by polar angle (between 0 and 2pi) with respect to this point.
-     */
-    public final Comparator<Point2D> POLAR_ORDER = new PolarOrder();
-
-    /**
-     * Compares two points by atan2() angle (between -pi and pi) with respect to this point.
-     */
-    public final Comparator<Point2D> ATAN2_ORDER = new Atan2Order();
-
-    /**
-     * Compares two points by distance to this point.
-     */
-    public final Comparator<Point2D> DISTANCE_TO_ORDER = new DistanceToOrder();
-
     private final double x;    // x coordinate
     private final double y;    // y coordinate
 
@@ -58,10 +45,20 @@ public class Point2D implements Comparable<Point2D> {
      * Initializes a new point (x, y).
      * @param x the x-coordinate
      * @param y the y-coordinate
+     * @throws IllegalArgumentException if either {@code x} or {@code y}
+     *    is {@code Double.NaN}, {@code Double.POSITIVE_INFINITY} or
+     *    {@code Double.NEGATIVE_INFINITY}
      */
     public Point2D(double x, double y) {
-        this.x = x;
-        this.y = y;
+        if (Double.isInfinite(x) || Double.isInfinite(y))
+            throw new IllegalArgumentException("Coordinates must be finite");
+        if (Double.isNaN(x) || Double.isNaN(y))
+            throw new IllegalArgumentException("Coordinates cannot be NaN");
+        if (x == 0.0) this.x = 0.0;  // convert -0.0 to +0.0
+        else          this.x = x;
+
+        if (y == 0.0) this.y = 0.0;  // convert -0.0 to +0.0
+        else          this.y = y;
     }
 
     /**
@@ -82,7 +79,7 @@ public class Point2D implements Comparable<Point2D> {
 
     /**
      * Returns the polar radius of this point.
-     * @return the polar radius of this point in polar coordiantes: sqrt(x*x + y*y)
+     * @return the polar radius of this point in polar coordinates: sqrt(x*x + y*y)
      */
     public double r() {
         return Math.sqrt(x*x + y*y);
@@ -90,7 +87,7 @@ public class Point2D implements Comparable<Point2D> {
 
     /**
      * Returns the angle of this point in polar coordinates.
-     * @return the angle (in radians) of this point in polar coordiantes (between -pi/2 and pi/2)
+     * @return the angle (in radians) of this point in polar coordinates (between –&pi; and &pi;)
      */
     public double theta() {
         return Math.atan2(y, x);
@@ -98,7 +95,7 @@ public class Point2D implements Comparable<Point2D> {
 
     /**
      * Returns the angle between this point and that point.
-     * @return the angle in radians (between -pi and pi) between this point and that point (0 if equal)
+     * @return the angle in radians (between –&pi; and &pi;) between this point and that point (0 if equal)
      */
     private double angleTo(Point2D that) {
         double dx = that.x - this.x;
@@ -107,11 +104,11 @@ public class Point2D implements Comparable<Point2D> {
     }
 
     /**
-     * Is a->b->c a counterclockwise turn?
+     * Returns true if a→b→c is a counterclockwise turn.
      * @param a first point
      * @param b second point
      * @param c third point
-     * @return { -1, 0, +1 } if a->b->c is a { clockwise, collinear; counterclocwise } turn.
+     * @return { -1, 0, +1 } if a→b→c is a { clockwise, collinear; counterclockwise } turn.
      */
     public static int ccw(Point2D a, Point2D b, Point2D c) {
         double area2 = (b.x-a.x)*(c.y-a.y) - (b.y-a.y)*(c.x-a.x);
@@ -154,10 +151,16 @@ public class Point2D implements Comparable<Point2D> {
     }
 
     /**
-     * Compares this point to that point by y-coordinate, breaking ties by x-coordinate.
-     * @param that the other point
-     * @return { a negative integer, zero, a positive integer } if this point is
-     *    { less than, equal to, greater than } that point
+     * Compares two points by y-coordinate, breaking ties by x-coordinate.
+     * Formally, the invoking point (x0, y0) is less than the argument point (x1, y1)
+     * if and only if either {@code y0 < y1} or if {@code y0 == y1} and {@code x0 < x1}.
+     *
+     * @param  that the other point
+     * @return the value {@code 0} if this string is equal to the argument
+     *         string (precisely when {@code equals()} returns {@code true});
+     *         a negative integer if this point is less than the argument
+     *         point; and a positive integer if this point is greater than the
+     *         argument point
      */
     public int compareTo(Point2D that) {
         if (this.y < that.y) return -1;
@@ -167,21 +170,44 @@ public class Point2D implements Comparable<Point2D> {
         return 0;
     }
 
+    /**
+     * Compares two points by polar angle (between 0 and 2&pi;) with respect to this point.
+     *
+     * @return the comparator
+     */
+    public Comparator<Point2D> polarOrder() {
+        return new PolarOrder();
+    }
+
+    /**
+     * Compares two points by atan2() angle (between –&pi; and &pi;) with respect to this point.
+     *
+     * @return the comparator
+     */
+    public Comparator<Point2D> atan2Order() {
+        return new Atan2Order();
+    }
+
+    /**
+     * Compares two points by distance to this point.
+     *
+     * @return the comparator
+     */
+    public Comparator<Point2D> distanceToOrder() {
+        return new DistanceToOrder();
+    }
+
     // compare points according to their x-coordinate
     private static class XOrder implements Comparator<Point2D> {
         public int compare(Point2D p, Point2D q) {
-            if (p.x < q.x) return -1;
-            if (p.x > q.x) return +1;
-            return 0;
+            return Double.compare(p.x, q.x);
         }
     }
 
     // compare points according to their y-coordinate
     private static class YOrder implements Comparator<Point2D> {
         public int compare(Point2D p, Point2D q) {
-            if (p.y < q.y) return -1;
-            if (p.y > q.y) return +1;
-            return 0;
+            return Double.compare(p.y, q.y);
         }
     }
 
@@ -189,20 +215,16 @@ public class Point2D implements Comparable<Point2D> {
     private static class ROrder implements Comparator<Point2D> {
         public int compare(Point2D p, Point2D q) {
             double delta = (p.x*p.x + p.y*p.y) - (q.x*q.x + q.y*q.y);
-            if (delta < 0) return -1;
-            if (delta > 0) return +1;
-            return 0;
+            return Double.compare(delta, 0);
         }
     }
- 
-    // compare other points relative to atan2 angle (bewteen -pi/2 and pi/2) they make with this Point
+
+    // compare other points relative to atan2 angle (between -pi/2 and pi/2) they make with this Point
     private class Atan2Order implements Comparator<Point2D> {
         public int compare(Point2D q1, Point2D q2) {
             double angle1 = angleTo(q1);
             double angle2 = angleTo(q2);
-            if      (angle1 < angle2) return -1;
-            else if (angle1 > angle2) return +1;
-            else                      return  0;
+            return Double.compare(angle1, angle2);
         }
     }
 
@@ -232,18 +254,19 @@ public class Point2D implements Comparable<Point2D> {
         public int compare(Point2D p, Point2D q) {
             double dist1 = distanceSquaredTo(p);
             double dist2 = distanceSquaredTo(q);
-            if      (dist1 < dist2) return -1;
-            else if (dist1 > dist2) return +1;
-            else                    return  0;
+            return Double.compare(dist1, dist2);
         }
     }
 
 
     /**
-     * Does this point equal y?
-     * @param other the other point
-     * @return true if this point equals the other point; false otherwise
+     * Compares this point to the specified point.
+     *
+     * @param  other the other point
+     * @return {@code true} if this point equals {@code other};
+     *         {@code false} otherwise
      */
+    @Override
     public boolean equals(Object other) {
         if (other == this) return true;
         if (other == null) return false;
@@ -256,6 +279,7 @@ public class Point2D implements Comparable<Point2D> {
      * Return a string representation of this point.
      * @return a string representation of this point in the format (x, y)
      */
+    @Override
     public String toString() {
         return "(" + x + ", " + y + ")";
     }
@@ -264,6 +288,7 @@ public class Point2D implements Comparable<Point2D> {
      * Returns an integer hash code for this point.
      * @return an integer hash code for this point
      */
+    @Override
     public int hashCode() {
         int hashX = ((Double) x).hashCode();
         int hashY = ((Double) y).hashCode();
@@ -288,20 +313,24 @@ public class Point2D implements Comparable<Point2D> {
 
     /**
      * Unit tests the point data type.
+     *
+     * @param args the command-line arguments
      */
     public static void main(String[] args) {
         int x0 = Integer.parseInt(args[0]);
         int y0 = Integer.parseInt(args[1]);
-        int N = Integer.parseInt(args[2]);
+        int n = Integer.parseInt(args[2]);
 
         StdDraw.setCanvasSize(800, 800);
         StdDraw.setXscale(0, 100);
         StdDraw.setYscale(0, 100);
-        StdDraw.setPenRadius(.005);
-        Point2D[] points = new Point2D[N];
-        for (int i = 0; i < N; i++) {
-            int x = StdRandom.uniform(100);
-            int y = StdRandom.uniform(100);
+        StdDraw.setPenRadius(0.005);
+        StdDraw.enableDoubleBuffering();
+
+        Point2D[] points = new Point2D[n];
+        for (int i = 0; i < n; i++) {
+            int x = StdRandom.uniformInt(100);
+            int y = StdRandom.uniformInt(100);
             points[i] = new Point2D(x, y);
             points[i].draw();
         }
@@ -309,17 +338,18 @@ public class Point2D implements Comparable<Point2D> {
         // draw p = (x0, x1) in red
         Point2D p = new Point2D(x0, y0);
         StdDraw.setPenColor(StdDraw.RED);
-        StdDraw.setPenRadius(.02);
+        StdDraw.setPenRadius(0.02);
         p.draw();
 
 
         // draw line segments from p to each point, one at a time, in polar order
         StdDraw.setPenRadius();
         StdDraw.setPenColor(StdDraw.BLUE);
-        Arrays.sort(points, p.POLAR_ORDER);
-        for (int i = 0; i < N; i++) {
+        Arrays.sort(points, p.polarOrder());
+        for (int i = 0; i < n; i++) {
             p.drawTo(points[i]);
-            StdDraw.show(100);
+            StdDraw.show();
+            StdDraw.pause(100);
         }
     }
 }

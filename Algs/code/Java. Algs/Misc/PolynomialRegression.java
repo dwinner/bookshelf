@@ -26,9 +26,6 @@ import Jama.QRDecomposition;
  *  This implementation performs a QR-decomposition of the underlying
  *  Vandermonde matrix, so it is not the fastest
  *  or most numerically stable way to perform the polynomial regression.
- *
- *  @author Robert Sedgewick
- *  @author Kevin Wayne
  */
 public class PolynomialRegression {
     private final int N;         // number of observations
