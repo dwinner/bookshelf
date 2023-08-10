@@ -4,8 +4,8 @@
  *  Execution:    java RunLength + < input.txt   (expand)
  *  Dependencies: BinaryIn.java BinaryOut.java
  *  Data files:   https://algs4.cs.princeton.edu/55compression/4runs.bin
- *                https://algs4.cs.princeton.edu/55compression/q32x48.bin
- *                https://algs4.cs.princeton.edu/55compression/q64x96.bin
+ *               https://algs4.cs.princeton.edu/55compression/q32x48.bin
+ *               https://algs4.cs.princeton.edu/55compression/q64x96.bin
  *
  *  Compress or expand binary input from standard input using
  *  run-length encoding.
@@ -41,14 +41,20 @@ public class RunLength {
      * using run-length encoding with 8-bit run lengths); decodes them;
      * and writes the results to standard output.
      */
-    public static void expand() {
+    public static void expand()
+	{
         boolean b = false;
-        while (!BinaryStdIn.isEmpty()) {
+        while (!BinaryStdIn.isEmpty())
+		{
             int run = BinaryStdIn.readInt(LG_R);
             for (int i = 0; i < run; i++)
-                BinaryStdOut.write(b);
+			{
+				BinaryStdOut.write(b);
+			}
+                
             b = !b;
         }
+		
         BinaryStdOut.close();
     }
 
@@ -57,7 +63,8 @@ public class RunLength {
      * them using run-length coding with 8-bit run lengths; and writes the
      * results to standard output.
      */
-    public static void compress() {
+    public static void compress()
+	{
         char run = 0;
         boolean old = false;
         while (!BinaryStdIn.isEmpty()) {
