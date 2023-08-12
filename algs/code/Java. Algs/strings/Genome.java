@@ -1,18 +1,8 @@
 /******************************************************************************
- *  Compilation:  javac Genome.java
- *  Execution:    java Genome - < input.txt   (compress)
- *  Execution:    java Genome + < input.txt   (expand)
- *  Dependencies: BinaryIn.java BinaryOut.java
- *  Data files:   https://algs4.cs.princeton.edu/55compression/genomeTiny.txt
- *
  *  Compress or expand a genomic sequence using a 2-bit code.
- *
- *  % more genomeTiny.txt
- *  ATAGATGCATAGCGCATAGCTAGATGTGCTAGC
  *
  *  % java Genome - < genomeTiny.txt | java Genome +
  *  ATAGATGCATAGCGCATAGCTAGATGTGCTAGC
- *
  ******************************************************************************/
 
 package edu.princeton.cs.algs4;
