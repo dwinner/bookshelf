@@ -1,77 +1,5 @@
-/******************************************************************************
- *  Compilation:  javac RedBlackBST.java
- *  Execution:    java RedBlackBST < input.txt
- *  Dependencies: StdIn.java StdOut.java
- *  Data files:   https://algs4.cs.princeton.edu/33balanced/tinyST.txt
- *
- *  A symbol table implemented using a left-leaning red-black BST.
- *  This is the 2-3 version.
- *
- *  Note: commented out assertions because DrJava now enables assertions
- *        by default.
- *
- *  % more tinyST.txt
- *  S E A R C H E X A M P L E
- *
- *  % java RedBlackBST < tinyST.txt
- *  A 8
- *  C 4
- *  E 12
- *  H 5
- *  L 11
- *  M 9
- *  P 10
- *  R 3
- *  S 0
- *  X 7
- *
- ******************************************************************************/
-
-package edu.princeton.cs.algs4;
-
-import java.util.NoSuchElementException;
-
-/**
- *  The {@code BST} class represents an ordered symbol table of generic
- *  key-value pairs.
- *  It supports the usual <em>put</em>, <em>get</em>, <em>contains</em>,
- *  <em>delete</em>, <em>size</em>, and <em>is-empty</em> methods.
- *  It also provides ordered methods for finding the <em>minimum</em>,
- *  <em>maximum</em>, <em>floor</em>, and <em>ceiling</em>.
- *  It also provides a <em>keys</em> method for iterating over all of the keys.
- *  A symbol table implements the <em>associative array</em> abstraction:
- *  when associating a value with a key that is already in the symbol table,
- *  the convention is to replace the old value with the new value.
- *  Unlike {@link java.util.Map}, this class uses the convention that
- *  values cannot be {@code null}—setting the
- *  value associated with a key to {@code null} is equivalent to deleting the key
- *  from the symbol table.
- *  <p>
- *  It requires that
- *  the key type implements the {@code Comparable} interface and calls the
- *  {@code compareTo()} and method to compare two keys. It does not call either
- *  {@code equals()} or {@code hashCode()}.
- *  <p>
- *  This implementation uses a <em>left-leaning red-black BST</em>.
- *  The <em>put</em>, <em>get</em>, <em>contains</em>, <em>remove</em>,
- *  <em>minimum</em>, <em>maximum</em>, <em>ceiling</em>, <em>floor</em>,
- *  <em>rank</em>, and <em>select</em> operations each take
- *  &Theta;(log <em>n</em>) time in the worst case, where <em>n</em> is the
- *  number of key-value pairs in the symbol table.
- *  The <em>size</em>, and <em>is-empty</em> operations take &Theta;(1) time.
- *  The <em>keys</em> methods take
- *  <em>O</em>(log <em>n</em> + <em>m</em>) time, where <em>m</em> is
- *  the number of keys returned by the iterator.
- *  Construction takes &Theta;(1) time.
- *  <p>
- *  For alternative implementations of the symbol table API, see {@link ST},
- *  {@link BinarySearchST}, {@link SequentialSearchST}, {@link BST},
- *  {@link SeparateChainingHashST}, {@link LinearProbingHashST}, and
- *  {@link AVLTreeST}.
- */
-
-public class RedBlackBST<Key extends Comparable<Key>, Value> {
-
+public class RedBlackBST<Key extends Comparable<Key>, Value>
+{
     private static final boolean RED   = true;
     private static final boolean BLACK = false;
 
@@ -706,23 +634,5 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         if (x == null) return black == 0;
         if (!isRed(x)) black--;
         return isBalanced(x.left, black) && isBalanced(x.right, black);
-    }
-
-
-    /**
-     * Unit tests the {@code RedBlackBST} data type.
-     *
-     * @param args the command-line arguments
-     */
-    public static void main(String[] args) {
-        RedBlackBST<String, Integer> st = new RedBlackBST<String, Integer>();
-        for (int i = 0; !StdIn.isEmpty(); i++) {
-            String key = StdIn.readString();
-            st.put(key, i);
-        }
-        StdOut.println();
-        for (String s : st.keys())
-            StdOut.println(s + " " + st.get(s));
-        StdOut.println();
     }
 }
