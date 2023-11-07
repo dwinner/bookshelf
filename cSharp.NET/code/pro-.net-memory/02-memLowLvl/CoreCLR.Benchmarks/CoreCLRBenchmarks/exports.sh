@@ -1,2 +1,0 @@
-export COMPlus_PerfMapEnabled=1
-export COMPlus_EnableEventLog=1
